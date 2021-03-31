@@ -28,7 +28,7 @@
 * [Javes 2.0](https://github.com/Javes786/javes-2.0)
 * [TeleBot](https://github.com/xditya/TeleBot)
 * [Uniborg](https://github.com/SpEcHiDe/UniBorg)
-* [CipherX1-ops](https://t.me/CipherX1-ops)
+* [CipherX](https://t.me/CipherXBot)
 * [Hellboi-Danish](https://t.me/Hellboi-Danish)
 
 
