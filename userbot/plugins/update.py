@@ -16,14 +16,14 @@ IS_SELECTED_DIFFERENT_BRANCH = (
     "please check out to an official branch, and re-start the updater."
 )
 OFFICIAL_UPSTREAM_REPO = Config.UPSTREAM_REPO
-BOT_IS_UP_TO_DATE = "**The ßﾚαςκ ﾚïgh†ηïηg †** is up-to-date sur👍."
+BOT_IS_UP_TO_DATE = "**The ßﾚαςκ ﾚïgh†ηïηg †** is up-to-date sir⚜️."
 NEW_BOT_UP_DATE_FOUND = (
     "New Update Found For {branch_name}\n"
     "ChangeLog: \n\n{changelog}\n"
     "UPdate Your ßﾚαςκ ﾚïgh†ηïηg ..."
 )
 NEW_UP_DATE_FOUND = (
-    "New UPdate Founded Sir🤩 {branch_name}\n" "`UPdating your   ßﾚαςκ ﾚïgh†ηïηg...`"
+    "Alert! New UPdate Founded🍷 {branch_name}\n" "`UPdating your ßﾚαςκ ﾚïgh†ηïηg...`"
 )
 REPO_REMOTE_NAME = "temponame"
 IFFUCI_ACTIVE_BRANCH_NAME = "master"
@@ -67,7 +67,7 @@ async def updater(message):
     )
 
     if not changelog:
-        await message.edit("`No Update AvaiLAbLe still want to check just restart bot`")
+        await message.edit("`No Update AvaiLAbLe if still you want to check just restart bot`")
         return
     if message.text[8:] != "now":
         message_one = NEW_BOT_UP_DATE_FOUND.format(
@@ -84,7 +84,7 @@ async def updater(message):
             os.remove("change.log")
         else:
             await message.edit(message_one)
-        await message.respond(f'Do `.update now` to update ✌ ')
+        await message.respond(f'Do `.update now` to update 𝕭𝖑𝖆𝖈𝖐 𝕷𝖎𝖌𝖍𝖙𝖓𝖎𝖓𝖌⚡️')
         return
     temp_upstream_remote.fetch(active_branch_name)
     repo.git.reset("--hard", "FETCH_HEAD")
@@ -142,7 +142,7 @@ async def deploy_start(tgbot, message, refspec, remote):
     await message.edit(RESTARTING_APP)
     await asyncio.sleep(2)
     await message.edit(
-        "**UPdatinG Your `ßﾚαςκ ﾚïgh†ηïηg` UserBoT sur!!!\nPlease WaiT FoR 20-25 mins Modules Are LoaDinG AFTer ThaT TYPe `.awake` to check if I am On**🤗😅"
+        "**UpdatinG Your `ßﾚαςκ ﾚïgh†ηïηg` UserBoT✨️ sir!!!\nPlease WaiT FoR 5-10 mins, modules are loading after that type `.awake` to check if I am On**🤗😅"
     )
     await remote.push(refspec=refspec)
     await tgbot.disconnect()
