@@ -253,7 +253,7 @@ async def krish_op(event):
         if not lightning_sql.is_approved(chats.id):
             lightning_sql.approve(chats.id, "**Heya Sir**")
             await borg.send_message(
-                chats, "**Heya @hacker11000.You Are My Co Dev Pls Come In**"
+                chats, "**Alert! [{DEFAULTUSER}](tg://user?id={ghanta}) My dev 𝕶𝖗𝖎𝖘𝖍𝖓𝖆😎 is here  **"
             )
 
 
