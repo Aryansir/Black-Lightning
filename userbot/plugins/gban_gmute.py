@@ -117,7 +117,7 @@ async def gben(userbot):
     )
 
 
-@borg.on(lightning_cmd(pattern="ungben ?(.*)"))
+@borg.on(lightning_cmd(pattern="ungban ?(.*)"))
 async def gunben(userbot):
     dc = userbot
     sender = await dc.get_sender()
