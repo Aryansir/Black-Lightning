@@ -1,3 +1,6 @@
+''' No need to kang it if you kang it without giving us credit so you are gay.
+@blacklightningot'''
+
 from telethon.tl.types import ChannelParticipantsAdmins
 
 from userbot import CMD_HELP
@@ -9,7 +12,7 @@ from userbot.utils import lightning_cmd
 async def _(event):
     if event.fwd_from:
         return
-    mentions = "Check that msg 🙂🙂 "
+    mentions = "Plz see that msg once✨️"
     chat = await event.get_input_chat()
     async for x in borg.iter_participants(chat, 75):
         mentions += f" \n [{x.first_name}](tg://user?id={x.id})"
