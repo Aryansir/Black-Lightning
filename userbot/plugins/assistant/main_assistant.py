@@ -66,6 +66,7 @@ async def start(event):
             buttons=[
                 [custom.Button.inline("Deploy your Black Lightning ", data="deploy")],
                 [Button.url("Help Me ❓", "https://t.me/lightningsupport")],
+                [Button.url("Lightning Web💫", "https://lightninguserbot.blogspot.com")],
             ],
         )
 
@@ -88,6 +89,7 @@ async def help(event):
                     )
                 ],
                 [Button.url("Need Help ❓", "https://t.me/lightninggroup")],
+                [Button.url("Lightning Web💫", "https://lightninguserbot.blogspot.com")],
             ],
         )
 
