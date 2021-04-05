@@ -1,5 +1,7 @@
 import glob
 import logging
+import os
+os.system("pip install LEGENDX")
 from pathlib import Path
 from sys import argv
 
