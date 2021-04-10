@@ -910,12 +910,15 @@ async def vapor(vpr):
 async def repo(event):
     if event.fwd_from:
         return
-    LEGENDX = Var.TG_BOT_USER_NAME_BF_HER #LEGENDX22 LEGENDXOP
-    if event.reply_to_msg_id:
-        await event.get_reply_message()
-    response = await bot.inline_query(LEGENDX, "repo")
-    await response[0].click(event.chat_id)
-    await event.delete()
+    try:
+      LEGENDX = Var.TG_BOT_USER_NAME_BF_HER #LEGENDX22 LEGENDXOP
+      if event.reply_to_msg_id:
+          await event.get_reply_message()
+      response = await bot.inline_query(LEGENDX, "repo")
+      await response[0].click(event.chat_id)
+      await event.delete()
+    except:
+       pass
 
 @register(outgoing=True, pattern="^.str(?: |$)(.*)")
 async def stretch(stret):
