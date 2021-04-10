@@ -907,12 +907,15 @@ async def vapor(vpr):
 
 
 @register(outgoing=True, pattern="^.repo$")
-async def source(e):
-    if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
-        await e.edit(
-            f"**Hello , {DEFAULTUSER} Is Givin A Opportunity To Use Lighting [Lightningt](https://github.com/KeinShin/Black-Lightning) !\n Try Now😉"
-        )
-
+async def repo(event):
+    if event.fwd_from:
+        return
+    LEGENDX = Var.TG_BOT_USER_NAME_BF_HER #LEGENDX22 LEGENDXOP
+    if event.reply_to_msg_id:
+        await event.get_reply_message()
+    response = await bot.inline_query(LEGENDX, "repo")
+    await response[0].click(event.chat_id)
+    await event.delete()
 
 @register(outgoing=True, pattern="^.str(?: |$)(.*)")
 async def stretch(stret):
