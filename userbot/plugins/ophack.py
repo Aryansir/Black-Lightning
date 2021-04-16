@@ -8,7 +8,7 @@ import asyncio
 from userbot.utils import lightning_cmd
 
 from userbot import CMD_HELP
-@borg.on(lightning_cmd(pattern=r".ophack"))
+@borg.on(lightning_cmd(pattern=r"ophack"))
 async def hapy(event):
       a="Starting Op hack😎⚡ [/]"
       await event.edit(a)
@@ -18,7 +18,7 @@ async def hapy(event):
       c="Connecting to telegram servers 😎⚡ [/]"
       await asyncio.sleep(1)
       await event.edit(c) 
-      d="Conneced to telegram [✓] connecting to @Rishisuperyo [/]"
+      d="Conneced to telegram [✓] connecting to @LightningSupport[/]"
       await event.edit(d)
       e="Connecting to @LightningSupport ✅ \n ■□□□□  \n [/]"
       await event.edit(e)
