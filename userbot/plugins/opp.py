@@ -1,16 +1,15 @@
-#Plugin By @Rishisuperyo
-#Kang = ultra gey
-#keep credits = cool coder😎
-#usage :-.opp
-#plz dont kang it take a lot of time to made😭
-#, plz keep credits of Rishisuperyo ⚡
-#Animation by kiddo😎
+
+#Start 
+#Plugin by @Rishisuperyo
+#Animation by kiddo
+#kang =gey ,keep credits = cool coder 😶
+#usage .gim
 from telethon import events
 import asyncio
-from uniborg.util import lightning_cmd
-from userbot import CMD_HELP, ALIVE_NAME
-@borg.on(events.NewMessage(pattern=r"^.opp", outgoing=True))
-async def hapy(event):
+from userbot.utils import lightning_cmd
 
+from userbot import CMD_HELP
+@borg.on(lightning_cmd(pattern=r".opp"))
+async def hapy(event):
      a="░█▀▀▀█     ░█▀▀▀█\n░█──░█     ░█──░█\n░█──░█     ░█▀▀▀▀\n░█──░█     ░█\n░█▄▄▄█     ░█"
      await event.edit(a)
