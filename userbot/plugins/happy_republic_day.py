@@ -1,6 +1,7 @@
 #Plugin by @Rishisuperyo⚡
 #Kang = ultra gey 😂
 #keep credit= op coder bolte😎⚡
+#Last animation by @Rocky_8218 , I miss u bro Rocky😢
 #usage .hprday
 from telethon import events
 import asyncio
