@@ -7,7 +7,7 @@ import asyncio
 from userbot.utils import lightning_cmd
 
 from userbot import CMD_HELP
-@borg.on(lightning_cmd(pattern=r".hprday"))
+@borg.on(lightning_cmd(pattern=r"hprday"))
 async def hapy(event):
      a="**🥳🥳⚡🇮🇳🇮🇳HAPPY REPUBLIC DAY🇮🇳🇮🇳🥳🥳⚡⚡**"
      await event.edit(a)
