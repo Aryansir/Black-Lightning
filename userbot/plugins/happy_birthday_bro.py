@@ -8,7 +8,7 @@ import asyncio
 from userbot.utils import lightning_cmd
 
 from userbot import CMD_HELP
-@borg.on(lightning_cmd(pattern=r".hbtybro"))
+@borg.on(lightning_cmd(pattern=r"hbtybro"))
 async def hapy(event):
      a="🥳🎂🍰 🥳🎂🍰Happy Birthday🥳🥳🎂🍰"
      await event.edit (a)
