@@ -1,14 +1,13 @@
+
+#Start 
 #Plugin by @Rishisuperyo
 #Animation by kiddo
-#kang =gey ,keep credits = cool coder 😶
+#kang =gey ,keep credits = cool coder 😎⚡
 #usage .gim
 from telethon import events
 import asyncio
-from uniborg.util import lightning_cmd
-from userbot import CMD_HELP, ALIVE_NAME
-@borg.on(events.NewMessage(pattern=r"^.gim", outgoing=True))
-async def hapy(event):
+from userbot.utils import lightning_cmd
 
-     a="🎱➖✊➖➖✊➖🎱\n🌟        \         /          🌟\n⭐          \😁/            ⭐\n✨           🎽             ✨\n              /    \ \n            👟    👟"
-     await event.edit(a)
-	
+from userbot import CMD_HELP
+@borg.on(lightning_cmd(pattern=r".gim"))
+async def hapy(event):
