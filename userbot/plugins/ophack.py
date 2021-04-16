@@ -1,14 +1,14 @@
-#Plugin By @Rishisuperyo
-#Kang = ultra gey
-#keep credits = cool coder😎
-#usage :-.ophack
-#plz dint kang it take a lot of time to made😭
-#, plz keep credits of Rishisuperyo ⚡
+
+#Start 
+#Plugin by @Rishisuperyo
+#kang =gey ,keep credits = cool coder 😶
+#usage .ophack
 from telethon import events
 import asyncio
-from uniborg.util import lightning_cmd
-from userbot import CMD_HELP, ALIVE_NAME
-@borg.on(events.NewMessage(pattern=r"^.ophack", outgoing=True))
+from userbot.utils import lightning_cmd
+
+from userbot import CMD_HELP
+@borg.on(lightning_cmd(pattern=r".ophack"))
 async def hapy(event):
       a="Starting Op hack😎⚡ [/]"
       await event.edit(a)
