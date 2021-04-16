@@ -8,7 +8,7 @@ import asyncio
 from userbot.utils import lightning_cmd
 
 from userbot import CMD_HELP
-@borg.on(lightning_cmd(pattern=r^".gim"))
+@borg.on(lightning_cmd(pattern="gim"))
 async def hapy(event):
 
      a="🎱➖✊➖➖✊➖🎱\n🌟        \         /          🌟\n⭐          \😁/            ⭐\n✨           🎽             ✨\n              /    \ \n            👟    👟"
