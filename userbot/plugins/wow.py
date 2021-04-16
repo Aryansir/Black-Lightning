@@ -2,14 +2,15 @@
 #Kang = ultra gey
 #keep credits = cool coder😎
 #usage :-.wow
-#plz dint kang it take a lot of time to made😭
+#plz dont kang it take a lot of time to made😭
 #, plz keep credits of Rishisuperyo ⚡
+#usage .wow
 from telethon import events
 import asyncio
-from uniborg.util import lightning_cmd
-from userbot import CMD_HELP, ALIVE_NAME
-@borg.on(events.NewMessage(pattern=r"^.wow", outgoing=True))
-async def hapy(event):
+from userbot.utils import lightning_cmd
 
+from userbot import CMD_HELP
+@borg.on(lightning_cmd(pattern=r".gim"))
+async def hapy(event):
      a="░█──░█ ░█▀▀▀█ ░█──░█ \n░█░█░█ ░█──░█ ░█░█░█ \n░█▄▀▄█ ░█▄▄▄█ ░█▄▀▄█"
      await event.edit(a)
