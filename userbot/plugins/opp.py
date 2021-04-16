@@ -1,9 +1,9 @@
 
 #Start 
 #Plugin by @Rishisuperyo
-#Animation by kiddo
+#Animation by kiddo 
 #kang =gey ,keep credits = cool coder 😶
-#usage .gim
+#usage .opp
 from telethon import events
 import asyncio
 from userbot.utils import lightning_cmd
