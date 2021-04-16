@@ -2,10 +2,14 @@
 #kang= gey, keep credits= cool coder😎⚡
 
 
+#usage .hbtybro
 from telethon import events
 import asyncio
-@borg.on(events.NewMessage(pattern=r"^.hbtybro", outgoing=True))
-async def _(event):
+from userbot.utils import lightning_cmd
+
+from userbot import CMD_HELP
+@borg.on(lightning_cmd(pattern=r".hbtybro"))
+async def hapy(event):
      a="🥳🎂🍰 🥳🎂🍰Happy Birthday🥳🥳🎂🍰"
      await event.edit (a)
      await asyncio.sleep(2)
