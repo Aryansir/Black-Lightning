@@ -10,7 +10,7 @@ import asyncio
 from userbot.utils import lightning_cmd
 
 from userbot import CMD_HELP
-@borg.on(lightning_cmd(pattern=r".wow"))
+@borg.on(lightning_cmd(pattern=r"wow"))
 async def hapy(event):
      a="░█──░█ ░█▀▀▀█ ░█──░█ \n░█░█░█ ░█──░█ ░█░█░█ \n░█▄▀▄█ ░█▄▄▄█ ░█▄▀▄█"
      await event.edit(a)
