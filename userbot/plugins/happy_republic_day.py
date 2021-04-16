@@ -1,11 +1,14 @@
 #Plugin by @Rishisuperyo⚡
 #Kang = ultra gey 😂
-#keeo credit= op coder bolte😎⚡
-
+#keep credit= op coder bolte😎⚡
+#usage .hprday
 from telethon import events
 import asyncio
-@borg.on(events.NewMessage(pattern=r"^.hprday", outgoing=True))
-async def _(event):
+from userbot.utils import lightning_cmd
+
+from userbot import CMD_HELP
+@borg.on(lightning_cmd(pattern=r".hprday"))
+async def hapy(event):
      a="**🥳🥳⚡🇮🇳🇮🇳HAPPY REPUBLIC DAY🇮🇳🇮🇳🥳🥳⚡⚡**"
      await event.edit(a)
      await asyncio.sleep(3)
