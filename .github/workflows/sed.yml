@@ -28,7 +28,7 @@ jobs:
 
         with:
 
-          commit_message: 'Replaced New Username'
+          commit_message: 'Things'
 
           commit_options: '--no-verify'
 
