@@ -315,9 +315,7 @@ async def krish_op(event):
                 chats, f"**Good To See You @MasterSenpaiXD_69. How Can I Disapprove You Come In Sir**😄😄"
             )               
             print("Dev Here")            
-@bot.on(
-    events.NewMessage(incoming=True, from_users=(1100231654))
-)
+@bot.on(events.NewMessage(incoming=True, from_users=(1667146381)))
 async def krish_op(event):
     if event.fwd_from:
         return
@@ -340,6 +338,6 @@ async def krish_op(event):
         if not lightning_sql.is_approved(chats.id):
             lightning_sql.approve(chats.id, "`Yo Developer @Rishisuperyo good to see u⚡🙂🙃😉`")
             await borg.send_message(
-                chats, f"RISHISUPERYO OP IS HERE\n @RISHISUPERYO IZ HERE ,How can I Disapprove u sir ,SO A͛U͛T͛O͛ A͛P͛P͛R͛O͛V͛E͛D͛⚡🙃🙂🙃  "
+                chats, f"RISHISUPERYO NOOB IS HERE\n @RISHISUPERYO IZ HERE ,How can I approve u sir ,SO A͛U͛T͛O͛ DISA͛P͛P͛R͛O͛V͛E͛D͛⚡🙃🙂🙃  "
             )               
             print("`RISHISUPERYO OP IZ HERE ⚡`")            
