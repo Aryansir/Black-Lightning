@@ -81,7 +81,7 @@ if Config.ENABLE_ASSISTANTBOT == "ENABLE":
     sed.info("Black Lightning  Bot Have Been Installed Successfully !")
 else:
     sed.info("Black Lightning Has Been Installed Sucessfully !")
-    sed.info("You Can Visit @lightningsupport For Any Support Or Doubts")
+    sed.info("You Can Visit @lightning_support For Any Support Or Doubts")
 
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
