@@ -20,7 +20,7 @@ jobs:
 
           find: "lightningsupport"
 
-          replace: "lightning_support"
+          replace: "lightning_support_group"
 
       - name: Create Pull Request
 
