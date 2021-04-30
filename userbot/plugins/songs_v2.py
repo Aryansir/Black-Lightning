@@ -167,7 +167,7 @@ def deEmojify(inputString: str) -> str:
 
 CMD_HELP.update(
     {
-        "song2": ".song2\nUse - download song2 \
+        "song2": ".song2\nUse - download song \
         \n\n.songs\nUse - songs"
     }
 )
