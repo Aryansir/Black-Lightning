@@ -33,7 +33,7 @@
 
 
 # Support
-<a href="https://t.me/lightning_Support_Channel"><img src="https://img.shields.io/badge/Join-Support%20Channel-red.svg?style=for-the-badge&logo=Telegram"></a>
+<a href="https://t.me/Black_lightning_Channel"><img src="https://img.shields.io/badge/Join-Support%20Channel-red.svg?style=for-the-badge&logo=Telegram"></a>
 <a href="https://t.me/lightning_support_group"><img src="https://img.shields.io/badge/Join-Support%20Group-blue.svg?style=for-the-badge&logo=Telegram"></a>
 
 ## Total Commands = CMDS Are More Than 470 :D
