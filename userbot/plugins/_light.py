@@ -6,7 +6,7 @@ from userbot.utils import lightning_cmd
 import asyncio
 from var import Var
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Pls Go To Heroku Vars Then in  `ALIVE_NAME`place You Telegram `Username` "
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Pls Go To Heroku Vars Then in  `ALIVE_NAME`place You Telegram `Your Desired Name` "
     
             
 
@@ -42,7 +42,7 @@ async def cmd_list(event):
                 await asyncio.sleep(2)
                 await event.edit(input_str + "  ☹️ is not a valid plugin😞😞!")
         else:
-            light_help_strin = """**Black Lightning Heres With The Detailed Help For CMDs** 😉😉 !\n If Faced Any Bug Please Give The Feed Back at @lightningsupport:"""
+            light_help_strin = """**Black Lightning Heres With The Detailed Help For CMDs** 😉😉 !\n If Faced Any Bug Please Give The Feed Back at [Lightning Support](https://t.me/lightning_support_group):"""
             results = await bot.inline_query(  # pylint:disable=E0602
             lightningusername, light_help_strin
             )
