@@ -40,7 +40,7 @@ def bruh(name):
 # @register(outgoing=True, pattern="^.netase(?: |$)(.*)")
 
 
-@borg.on(lightning_cmd("song ?(.*)"))
+@borg.on(lightning_cmd("song2 ?(.*)"))
 async def WooMai(netase):
 
     if netase.fwd_from:
@@ -167,7 +167,7 @@ def deEmojify(inputString: str) -> str:
 
 CMD_HELP.update(
     {
-        "song": ".song\nUse - download song \
+        "song2": ".song2\nUse - download song2 \
         \n\n.songs\nUse - songs"
     }
 )
