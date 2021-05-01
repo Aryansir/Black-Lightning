@@ -304,7 +304,7 @@ async def lightning_pugins_query_hndlr(lightning):
 ) # Thanks To Friday Userbot
 async def lightning_pugins_query_hndlr(lightning):
     if not lightning.query.user_id == bot.uid:
-        how = "Not For  Bitch.🖕( ͡❛ ͜ʖ ͡❛)"
+        how = "Get Your own Lightning Userbot \n Don't Touch mine( ͡❛ ͜ʖ ͡❛)"
         await lightning.answer(how, cache_time=0, alert=True)
         return
     light_pulu_name = lightning.data_match.group(1).decode("UTF-8")
@@ -564,7 +564,7 @@ async def hmm(lightning):
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"krish")))
 async def hmm(lightning):
     if lightning.query.user_id == bot.uid:
-        text = ".xnxx\n.picx\n.les\n🙄🙄🙄🙄"
+        text = "Bot Alright Master if in case of any Problems reach out to support group;)"
         await lightning.answer(text, alert=True)
     else:
         txt = f"For {LIGHTNINGUSER} Not For You :)"
@@ -590,7 +590,7 @@ async def ho(event):
     # This Is Copy of Above Code. (C) @SpEcHiDe
     buttons = lightnings_menu_for_help(0, CMD_LIST, "helpme")
     ho = f"""Black Lightning Is Here With Stunning Help !\n
-In Case Any Problem @lightningsupport \nTottal Plugs( ͡🔥 ͜ʖ ͡🔥): {len(CMD_LIST)}"""
+In Case Any Problem @lightning_support_group \nTottal Plugs( ͡🔥 ͜ʖ ͡🔥): {len(CMD_LIST)}"""
     await event.edit(message=ho, buttons=buttons)
 
 
