@@ -184,7 +184,7 @@ async def _(event):
 
 BOT_MSG = os.environ.get("BOT_MSG", None)
 if BOT_MSG is None:
-    BOT_LIT = f"Hello Sir MySelf Black Lightning Here For  {LIGHTNINGUSER}'s Protection "
+    BOT_LIT = f"Hey! This is adavanced PM Protection by [BL](https://t.me/lightning_support_group). "
 else:
     BOT_LIT = BOT_MSG   
 
@@ -193,18 +193,18 @@ LIGHTNING_WARN = os.environ.get("LIGHTNING_WARN", None)
 if LIGHTNING_WARN is None:
     WARNING = (
     f"**{BOT_LIT}"
-    f"** Im Here To Protect {LIGHTNINGUSER} Dont Under Estimate Me 😂😂  **\n\n"
-    f"**My Master {LIGHTNINGUSER} is Busy Right Now !** \n"
-    f"{LIGHTNINGUSER} Is Very Busy Why Came Please Lemme Know Choose Your Deasired Reason"
-    f"**Btw Dont Spam Or Get Banned** 😂 \n\n"
-    f"**Choose Any Reason Then Get Lost**\n"
+    f"** I'm here to protect {LIGHTNINGUSER}'s PM from spamming.**\n\n"
+    f"**My master {LIGHTNINGUSER} is busy right now !** \n"
+    f"Please let me know why you came here. "
+    f"**Choose your desired reason from below.**  \n\n"
+    f"**But don't spam otherwise you will be blocked**\n"
 )
 else:
     WARNING = LIGHTNING_WARN
 
 LIGHTNING_BOT_PIC = os.environ.get("LIGHTNING_BOT_PIC", None)
 if LIGHTNING_BOT_PIC is None:
-    LIGHTNING_WARNING = "https://telegra.ph/file/07d55d71944a852ac6d5e.jpg"
+    LIGHTNING_WARNING = "https://telegra.ph/file/ff90ed0b44221a7b438b7.jpg"
 else:
     LIGHTNING_WARNING = LIGHTNING_BOT_PIC
 
@@ -237,13 +237,13 @@ async def inline_handler(lightning):
             text=f"**How If Face Problem \n{LIGHTNINGUSER}** \nChoose Your Problem For Help ",
             buttons=[
                 [custom.Button.inline("Help", data="what?")],
-                [Button.url("Commands Not Working🥺", "https://t.me/lightningsupport")],
+                [Button.url("Commands Not Working🥺", "https://t.me/lightning_support_group")],
                 [Button.url("Help Article 🤓", "https://app.gitbook.com/@poxsisofficial/s/help/")],
                 [
                     Button.url(
                 
                     "Want To Learn CMDS😅",
-                    "https://t.me/lightningsupport" ,
+                    "https://t.me/lightning_support_group" ,
                     )
                 ], 
             ],
@@ -400,14 +400,14 @@ async def lightning_is_better(lightning):
         return
     await lightning.get_chat()
     lightning_id = lightning.query.user_id
-    text1 = f"LOL **You Think So You Can**😂😂\n\n**[Nibba](tg://user?id={lightning_id}) Bye Goin To Block You Gay**😂😂"
+    text1 = f"LOL **You Think So You Can**😂😂\n\n**[Idiot](tg://user?id={lightning_id}) Bye I'm going to block you.**😂😂"
     await lightning.edit("Off Course Go To Hell Dude")
     await bot.send_message(lightning.query.user_id, text1)
     await bot(functions.contacts.BlockRequest(lightning.query.user_id))
-    await lightning.edit("🖕")
+    await lightning.edit("😛")
     await bot.send_message(
         LIGHT_LOGS,
-        f"Hey Master Sorry Disturb You, [Noob](tg://user?id={lightning_id}) Tryin To Spam 😂\n\n**So Blocked**.",
+        f"Hey Master Sorry Disturb You, [Noob](tg://user?id={lightning_id}) Trying To Spam 😂\n\n**So Blocked**.",
     )
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"lol_u_think_so")))
@@ -419,7 +419,7 @@ async def lightning_is_better(lightning):
     await lightning.get_chat()
     lightning_id = lightning.query.user_id
     text1 = f"LOL You Think So You Can😂😂\nGo and wait😂😂"
-    await lightning.edit("Off Course Go To Hell Dude🖕")
+    await lightning.edit("Off Course Go To Hell Dude😛")
     await bot.send_message(lightning.query.user_id, text1)
     await bot(functions.contacts.BlockRequest(lightning.query.user_id))
     await bot.send_message(
@@ -447,7 +447,7 @@ async def lightning_is_better(lightning):
         [Button.inline("Tg Causal Friend", data="tg_okay")],
         ], 
     )
-    light_text = "`Warning`- ❗️⚠️Dont Try Anything Stupid  Wait Kindly!!!❗️⚠️"
+    light_text = "`Warning`- ❗️⚠️Don't send any message now wait kindly!!!❗️⚠️"
     await bot.send_message(lightning.query.user_id, light_text)
     
     
@@ -513,7 +513,7 @@ async def lightning_is_better(lightning):
     )
 
     
-    reqws = "`Warning`- ❗️⚠️Dont Try Anything Stupid  Wait Kindly!!!❗️⚠️"
+    reqws = "`Warning`- ❗️⚠️Don't send any message now wait kindly!!!❗️⚠️"
 
 
     await bot.send_message(lightning.query.user_id, reqws)
