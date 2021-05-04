@@ -48,7 +48,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Unknown"
 
 pm_caption = "➥ **Black Lightning IS:** `ONLINE`\n\n"
 pm_caption += "➥ **SYSTEMS STATS**\n"
-pm_caption += "➥ **Telethon Version:** `1.15.0` \n"
+pm_caption += "➥ **Telethon Version:** `1.21.0` \n"
 pm_caption += "➥ **Python:** `3.7.4` \n"
 pm_caption += f"➥ **Uptime** : `{uptime}` \n"
 pm_caption += "➥ **Database Status:**  `Functional`\n"
