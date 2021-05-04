@@ -61,9 +61,9 @@ LIGHTNING_STOP_EMOJI = (
 )
 if Var.PRIVATE_GROUP_ID is not None:
     @bot.on(events.NewMessage(outgoing=True))
-    async def lightning_dm_niqq(event):  
+    async def lightning_dm_niqq(event):
         if event.fwd_from:
-            return          
+            return
         chat = await event.get_chat()
         if event.is_private:
             if not lightning_sql.is_approved(chat.id):
