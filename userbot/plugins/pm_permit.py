@@ -49,10 +49,10 @@ FUCK_OFF_WARN = f"**Blocked You As You Spammed {LIGHTNINGUSER}'s DM\n\n **IDC**"
 
 
 OVER_POWER_WARN = (
-    f"**Hello Sir Im Here To Protect {LIGHTNINGUSER} Dont Under Estimate Me 😂😂  **\n\n"
-    f"`My Master {LIGHTNINGUSER} is Busy Right Now !` \n"
-    f"{LIGHTNINGUSER} Is Very Busy Why Came Please Lemme Know Choose Your Deasired Reason"
-    f"**Btw Dont Spam Or Get Banned** 😂😂 \n\n"
+    f"**Hey! This is advanced PM protection system by [BL](https://t.me/lightning_support_group) to protect {LIGHTNINGUSER}'s PM**\n\n"
+    f"`My master is busy right now !` \n"
+    f"Please lemme know why you came here, choose your desired reason"
+    f"**Btw don't spam otherwise you will be blocked.**  \n\n"
     f"**{CUSTOM_LIGHTNING_PM_PIC}**\n"
 )
 
@@ -61,9 +61,9 @@ LIGHTNING_STOP_EMOJI = (
 )
 if Var.PRIVATE_GROUP_ID is not None:
     @bot.on(events.NewMessage(outgoing=True))
-    async def lightning_dm_niqq(event):
+    async def lightning_dm_niqq(event):  
         if event.fwd_from:
-            return
+            return          
         chat = await event.get_chat()
         if event.is_private:
             if not lightning_sql.is_approved(chat.id):
@@ -253,9 +253,9 @@ async def krish_op(event):
         if not lightning_sql.is_approved(chats.id):
             lightning_sql.approve(chats.id, "**Heya Sir**")
             await borg.send_message(
-                chats, "**Alert! My dev 𝕶𝖗𝖎𝖘𝖍𝖓𝖆😎 is here. **"
+                chats, "**Alert! My dev Krishna😎 is here. **"
             )
-            print("Krishna is here")
+            print("Dev here")
 
 
 @bot.on(
