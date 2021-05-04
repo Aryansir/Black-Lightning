@@ -23,7 +23,7 @@ else:
 
 HELL_PIC = os.environ.get("HELL_PIC", None)
 if HELL_PIC is None:
-    HELL_IMG = "https://telegra.ph/file/c828d5c695b4cf95c814e.mp4"
+    HELL_IMG = "https://telegra.ph/file/d1400b2ae30b8e5e0d24e.mp4"
 else:
     HELL_IMG = HELL_PIC
 
