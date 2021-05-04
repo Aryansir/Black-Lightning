@@ -84,7 +84,7 @@ async def updater(message):
             os.remove("change.log")
         else:
             await message.edit(message_one)
-        await message.respond(f'Do `.update now` to update 𝕭𝖑𝖆𝖈𝖐 𝕷𝖎𝖌𝖍𝖙𝖓𝖎𝖓𝖌⚡️')
+        await message.respond(f'Do "`.update now`" to update 𝕭𝖑𝖆𝖈𝖐 𝕷𝖎𝖌𝖍𝖙𝖓𝖎𝖓𝖌⚡️')
         return
     temp_upstream_remote.fetch(active_branch_name)
     repo.git.reset("--hard", "FETCH_HEAD")
