@@ -62,7 +62,8 @@ lightning_cap += f"`𝕋𝕖𝕝𝕖𝕥𝕙𝕠𝕟 𝕍𝕖𝕣𝕤𝕚𝕠�
 lightning_cap += "`ℙ𝕪𝕥𝕙𝕠𝕟 𝕍𝕖𝕣𝕤𝕚𝕠𝕟`:    3.9.0\n"
 lightning_cap += "`𓂀 𝐿𝒾𝑔𝒽𝓉𝓃𝒾𝓃𝑔 𝒞𝒽𝒶𝓃𝓃𝑒𝓁 𓂀`:   [J̳o̳i̳n̳](https://t.me/black_lightning_Channel)\n"
 lightning_cap += "`𓂀 𝐿𝒾𝑔𝒽𝓉𝓃𝒾𝓃𝑔 𝒮𝓊𝓅𝓅𝑜𝓇𝓉 𓂀`:   [J̳o̳i̳n̳](https://t.me/lightning_support_Group)\n"
-lightning_cap += "`一═デ︻ ¢σρуяιgнт ︻デ═一`:   [Raiden-Devs](https://github.com/Raiden-Devs)\n"
+lightning_cap += "`一═デ︻ ¢σρуяιgнт ︻デ═一`:   [KeinShin](https://github.com/KeinShin/)\n and [DEVS](https://github.com/KeinShin/Black-Lightning/graphs/contributors)"
+lightning_cap += "`一═デ︻ ¢σρуяιgнт ︻デ═一`:]"
 
 
 @borg.on(lightning_cmd(pattern=r"alive"))
