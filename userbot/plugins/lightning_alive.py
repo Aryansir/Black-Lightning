@@ -12,7 +12,7 @@ LIGHTNING_ALV_IMG = os.environ.get("LIGHTNING_ALV_IMG", None)
 if LIGHTNING_ALV_IMG is None:
     ALV_LIGHTNING = "https://telegra.ph/file/6f5a1f8f4559393b6ba65.mp4"
 else:
-    ALV_LIGHTNING = LIGHTNING_ALV_IMG
+    ALV_LIGHTNING = ALIVE_PIC
 
 
 version = "4.5"
