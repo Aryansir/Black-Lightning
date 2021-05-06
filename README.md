@@ -101,7 +101,7 @@ This is a userbot made for telegram. I made this userbot with help of all other 
 
 Simply clone the repository and run the main file:
 ```sh
-git clone https://github/KienShin/Black-Lightning.git
+git clone https://github/KeinShin/Black-Lightning.git
 cd Black Lightning 
 virtualenv -p /usr/bin/python3 venv
 . ./venv/bin/activate
