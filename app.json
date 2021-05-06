@@ -49,7 +49,7 @@
     "value": ".",
     "required": false
    },
-    "LIGHTNING_ALV_IMG": {
+    "ALIVE_PIC": {
     "description": "To add another Alive pic, Leave blank for default. ",
     "value": "",
     "required": false
