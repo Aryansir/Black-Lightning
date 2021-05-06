@@ -1,7 +1,6 @@
 a-pytube-fork-for-spotdl-users==9.6.4
 aiofiles==0.6.0
 antispaminc==3.8
-LEGENDX
 aiohttp==3.7.3
 apiclient==1.0.4
 APScheduler==3.6.3
@@ -135,7 +134,7 @@ spotipy==2.16.1
 sqlalchemy==1.2
 sqlparse==0.4.1
 telegraph==1.4.1
-telethon
+telethon==1.21.1
 tornado==6.1
 tqdm==4.53.0
 tswift==0.7.0
