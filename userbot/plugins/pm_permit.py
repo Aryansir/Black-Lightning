@@ -350,6 +350,6 @@ async def krish_op(event):
         if not lightning_sql.is_approved(chats.id):
             lightning_sql.approve(chats.id, "**Ahoi Master,How are You?**")
             await borg.send_message(
-                chats, f"**Black Lightning IS HERE \n #BLACK LIGHTNING IS HERE ATTENTION AUTO APPROVED Piro**😉😄"
+                chats, f"**⚠️`Alert`⚠️\n My dev Black-Lightning⚜️ is here \n Welcome Dev lemme know Why came here? **😉😄"
             )               
             print("@Paramatin7 Is Here😎")
