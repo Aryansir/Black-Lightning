@@ -202,11 +202,11 @@ if LIGHTNING_WARN is None:
 else:
     WARNING = LIGHTNING_WARN
 
- PMPERMIT_PIC = os.environ.get("LIGHTNING_BOT_PIC", None)
-if PMPERMIT_PIC is None:
+ LIGHTNING_BOT_PIC = os.environ.get("LIGHTNING_BOT_PIC", None)
+if LIGHTNING_BOT_PIC is None:
     LIGHTNING_WARNING = "https://telegra.ph/file/ff90ed0b44221a7b438b7.jpg"
 else:
-    LIGHTNING_WARNING = PMPERMIT_PIC
+    LIGHTNING_WARNING = LIGHTNING_BOT_PIC
 
 
 
