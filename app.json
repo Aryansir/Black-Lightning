@@ -162,7 +162,7 @@
     "value": "",
     "required": false
    },
-   "PMPERMIT_PIC": {
+   "LIGHTNING_BOT_PIC": {
    "description": "telegra.ph link to the image you want as pmpermit pic, leave blank for default one!",
    "value": "",
    "required": false
