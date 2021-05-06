@@ -162,13 +162,8 @@
     "value": "",
     "required": false
    },
-   "ALIVE_PIC": {
-    "description": "telegra.ph link to theimage you want as pic when you put .awake, leave blank for Default",
-    "value": "",
-    "required": false
-   },
    "PMPERMIT_PIC": {
-   "description": "telegra.ph link to theimage you want as pmpermit pic, leave blank for default one!",
+   "description": "telegra.ph link to the image you want as pmpermit pic, leave blank for default one!",
    "value": "",
    "required": false
    },
