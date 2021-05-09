@@ -493,7 +493,7 @@ T = (
 @borg.on(lightning_cmd(pattern=r"monster$"))
 @borg.on(sudo_cmd(pattern="monster$", allow_sudo=True))
 async def bluedevilmonster(monster):
-    await edit_or_reply(monster, G)
+    await reply(monster, G)
 
 
 @borg.on(lightning_cmd(pattern=r"pig$"))
