@@ -298,16 +298,12 @@ CMD_HELP.update(
         \nFor above two commands use `.bigspam` instead of spam for spamming more than 50 messages\
         \n\n**Syntax : **`.falive`\
         \n**Function : **__ Fridays's Alive.__\
-        \n\n**Syntax : **`.calive `\
-        \n**Function : **__ .CatUSerbot's Alive.__\
-        \n\n**Syntax : **`.dalive `\
-        \n**Function : **__ .DC Uerbot's Alive.__\
+        \n\n**Syntax : **`.halive `\
+        \n**Function : **__ .hell Uerbot's Alive.__\
         \n\n**Syntax : **`.alive `\
         \n**Function : **__ .Lightning Uerbot's Alive.__\
         \n\n**Syntax : **`.awake `\
         \n**Function : **__ .Awake.__\
-        \n\n**Syntax : **`.salive `\
-        \n**Function : **__ .Lightning Uerbot's Alive.__\
         \n\n\n**NOTE : All Credits To Thier Respective !!**"
     }
 )
