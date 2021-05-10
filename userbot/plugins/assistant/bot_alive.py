@@ -1,6 +1,6 @@
-from telethon import events, Button
+from telethon import events, Button, custom 
 
-from userbot import ALIVE_NAME, bot, custom 
+from userbot import ALIVE_NAME, bot 
 
 currentversion = "4.9"
 
