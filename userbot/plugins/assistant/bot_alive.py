@@ -1,4 +1,4 @@
-from telethon import events
+from telethon import events, Button
 
 from userbot import ALIVE_NAME, bot
 
