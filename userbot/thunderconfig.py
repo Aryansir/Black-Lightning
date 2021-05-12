@@ -35,9 +35,9 @@ class Config(object):
     )
     OWNER_ID = set(int(x) for x in os.environ.get("OWNER_ID", "1311769691").split())
     SUPPORT_USERS = set(
-        int(x) for x in os.environ.get("SUPPORT_USERS", "909978158").split()
+        int(x) for x in os.environ.get("SUPPORT_USERS", "1232461895").split()
     )
-    BEST_USERS = set(int(x) for x in os.environ.get("BEST_USERS", "1421068194").split())
+    BEST_USERS = set(int(x) for x in os.environ.get("BEST_USERS", "1754865180").split())
     DEVLOPERS = set(
         int(x) for x in os.environ.get("DEVLOPERS_USERS", "1311769691").split()
     )
