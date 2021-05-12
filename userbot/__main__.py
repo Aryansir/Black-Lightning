@@ -62,13 +62,7 @@ for name in files:
 print("Lightning has been deployed! ")
 
 print("Setting up Lightning")
-path = "userbot/plugins/assistant/*.py"
-files = glob.glob(path)
-for name in files:
-    with open(name) as f:
-        path1 = Path(f.name)
-        shortname = path1.stem
-        start_assistant(shortname.replace(".py", ""))
+
 
 if Config.ENABLE_ASSISTANTBOT == "ENABLE":
     path = "userbot/plugins/assistant/*.py"
