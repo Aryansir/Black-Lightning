@@ -11,7 +11,7 @@ from uniborg.util import lightning_cmd
 from userbot import CMD_HELP
 
 
-@borg.on(lightning_cmd(pattern=r"trap"))
+@borg.on(lightning_cmd(pattern=r"hack"))
 async def _(event):
     if event.fwd_from:
         return
@@ -50,7 +50,7 @@ async def _(event):
 CMD_HELP.update(
     {
         "hack": "**Hack**\
-\n\n**Syntax : **`.trap <reply to your friend>`\
+\n\n**Syntax : **`.hack <reply to your friend>`\
 \n**Usage :** prank your friends with this hacking plugin"
     }
 )
