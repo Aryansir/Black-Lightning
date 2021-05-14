@@ -12,3 +12,4 @@ better_profanity
 translate
 textblob
 telegraph
+pandas
