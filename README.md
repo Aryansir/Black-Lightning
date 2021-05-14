@@ -49,20 +49,20 @@
 
 # Requirements!
 
-```
-[ TG_APP_ID ]: Get it from my.telegram.org Do not try to steal!
+```[ TG_APP_ID ]: Get it from my.telegram.org Do not try to steal!
 [ TG_API_HASH ]: Get it from my.telegram.org Do not try to steal!
 [ STRINGSESSION ]: It is Mandatory
 ```
 
 ## Self Hosting 
 # Create an exconfig.py and file required vars
-
+```
     class variable(object):
     STRING-SESSION = "xyz"
     TG_APP_ID = "1234"
     TG_API_HASH = "abc"
     etc
+```
 
 # Filling all the vars are not Mandatory except  these and by the time fill required vars according to your future plugins needs
 
@@ -71,4 +71,6 @@
 
 ## For Graphs and Contributons check out
 
-```link```
+```
+link
+```
