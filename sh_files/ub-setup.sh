@@ -26,8 +26,7 @@ fi
 
 echo a
 cd Desktop
-
-git clone https://github.com/KeinShin/Black-Lightning -b rebirthed 
+git clone https://github.com/KeinShin/Black-Lightning -b rebirth
 
 
 cd Black-Lightning
