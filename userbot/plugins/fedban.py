@@ -5,7 +5,7 @@ from userbot.utils import lightning_cmd
 
 naam = str(ALIVE_NAME)
 
-bot = "@jarvisofficialsecuritybot"
+bot = "@Missrose_bot"
 
 
 @borg.on(lightning_cmd("fedban ?(.*)"))
@@ -24,7 +24,7 @@ async def _(event):
                 await event.delete()
             except YouBlockedUserError:
                 await event.edit(
-                    "**Error:** `unblock` @jarvisofficialsecuritybot `and retry!"
+                    "**Error:** `unblock` @Missrose_bot `and retry!"
                 )
     elif "@" in sysarg:
         async with borg.conversation(bot) as conv:
@@ -37,7 +37,7 @@ async def _(event):
                 await event.delete()
             except YouBlockedUserError:
                 await event.edit(
-                    "**Error:** `unblock` @jarvisofficialsecuritybot `and try again!"
+                    "**Error:** `unblock` @Missrose_bot `and try again!"
                 )
     elif "" in sysarg:
         async with borg.conversation(bot) as conv:
@@ -50,7 +50,7 @@ async def _(event):
                 await event.delete()
             except YouBlockedUserError:
                 await event.edit(
-                    "**Error:** `unblock` @jarvisofficialsecuritybot `and try again!"
+                    "**Error:** `unblock` @Missrose_bot `and try again!"
                 )
 
 
@@ -70,7 +70,7 @@ async def _(event):
                 await event.delete()
             except YouBlockedUserError:
                 await event.edit(
-                    "**Error:** `unblock` @jarvisofficialsecuritybot `and retry!"
+                    "**Error:** `unblock` @Missrose_bot `and retry!"
                 )
     elif "@" in sysarg:
         async with borg.conversation(bot) as conv:
@@ -83,7 +83,7 @@ async def _(event):
                 await event.delete()
             except YouBlockedUserError:
                 await event.edit(
-                    "**Error:** `unblock` @jarvisofficialsecuritybot `and try again!"
+                    "**Error:** `unblock` @Missrose_bot `and try again!"
                 )
     elif "" in sysarg:
         async with borg.conversation(bot) as conv:
@@ -96,5 +96,5 @@ async def _(event):
                 await event.delete()
             except YouBlockedUserError:
                 await event.edit(
-                    "**Error:** `unblock` @jarvisofficialsecuritybot `and try again!"
+                    "**Error:** `unblock` @Missrose_bot `and try again!"
                 )
