@@ -63,8 +63,7 @@ python3 bl_string.py```
     STRING-SESSION = "xyz"
     TG_APP_ID = "1234"
     TG_API_HASH = "abc"
-    ....
-```
+    etc```
 
 # Filling all the vars are not Mandatory except  these and by the time fill required vars according to your future plugins needs
 
