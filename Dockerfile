@@ -1,6 +1,6 @@
-FROM kalilinux/kali-rolling
-ARG DEBIAN_FRONTEND=noninteractive
-ENV TERM xterm-256color
+FROM python:3.9
+WORKDIR .
+ENV PYTHONUNBUFFERED=1
 RUN apt-get update && apt upgrade -y && apt-get install sudo -y
 
 
