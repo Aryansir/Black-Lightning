@@ -42,16 +42,21 @@
 [![Run on Repl.it](https://repl.it/badge/github/KeinShin/Black-Lightning&theme=midnight-purple)](https://repl.it/@Anmol10H/Lightning-Repl#main.py)
 
 # To get locally string if u have desktop and git installed or just run it locally 
-```python3 for linux and python for windows
-   python3 bl_string.py```
+```
+python3 for linux and python for windows
+python3 bl_string.py
+```
 
 
 
 # Requirements!
 
-```[ TG_APP_ID ]: Get it from my.telegram.org Do not try to steal!
+
+```
+[ TG_APP_ID ]: Get it from my.telegram.org Do not try to steal!
 [ TG_API_HASH ]: Get it from my.telegram.org Do not try to steal!
 [ STRINGSESSION ]: It is Mandatory
+
 ```
 
 ## Self Hosting 
