@@ -28,10 +28,10 @@ echo a
 cd Desktop
 
 git clone https://github.com/KeinShin/Black-Lightning -b rebirthed 
-cd Desktop
 
-chmod +x /usr/local/bin/*
+
 cd Black-Lightning
+chmod +x /path/to/python/scripts/system/*.py 
 
 
 python3 -m system
