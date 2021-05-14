@@ -25,4 +25,4 @@ fi
 
 
 echo a
-python3 -m zeda
+python3 -m system
