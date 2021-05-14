@@ -38,4 +38,4 @@ PATH="$PATH:/usr/local/bin/python
 chmod +x /path/to/python/scripts/Black-Lightning/system/*.py 
 
 echo "INITIALIZING System"
-python3 -m system
+python -m system
