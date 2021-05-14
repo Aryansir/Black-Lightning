@@ -58,4 +58,4 @@ RUN wget -O opencv.zip https://github.com/opencv/opencv/archive/master.zip && un
 RUN wget https://raw.githubusercontent.com/KeinShin/Black-Lightning/rebirth/sh_files/ub-setup.sh
 
 
-CMD ["sh_files/ub-setup.sh"]
+CMD ["bash", "ub-setup.sh"]
