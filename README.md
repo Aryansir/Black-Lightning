@@ -67,9 +67,10 @@ python3 bl_string.py
     TG_APP_ID = "1234"
     TG_API_HASH = "abc"
     etc
+    Filling all the vars are not Mandatory except  these and by the time fill required vars according to your future plugins needs
+
 ```
 
-# Filling all the vars are not Mandatory except  these and by the time fill required vars according to your future plugins needs
 
 
 
@@ -77,5 +78,5 @@ python3 bl_string.py
 ## For Graphs and Contributons check out
 
 ```
-link
+https://github.com/KeinShin/Black-Lightning/graphs/contributors
 ```
