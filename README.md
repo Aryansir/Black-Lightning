@@ -42,9 +42,8 @@
 [![Run on Repl.it](https://repl.it/badge/github/KeinShin/Black-Lightning&theme=midnight-purple)](https://repl.it/@Anmol10H/Lightning-Repl#main.py)
 
 # To get locally string if u have desktop and git installed or just run it locally 
-```
-python3 for linux and python for windows
-python3 bl_string.py```
+```python3 for linux and python for windows
+   python3 bl_string.py```
 
 
 
@@ -59,11 +58,11 @@ python3 bl_string.py```
 ## Self Hosting 
 # Create an exconfig.py and file required vars
 
-```class variable(object):
+    class variable(object):
     STRING-SESSION = "xyz"
     TG_APP_ID = "1234"
     TG_API_HASH = "abc"
-    etc```
+    etc
 
 # Filling all the vars are not Mandatory except  these and by the time fill required vars according to your future plugins needs
 
