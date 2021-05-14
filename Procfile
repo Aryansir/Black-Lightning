@@ -1,1 +1,1 @@
-worker: python3 amaansh1vamrun.py
+Black-Lightning-UB: python -m system
