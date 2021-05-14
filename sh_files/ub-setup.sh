@@ -31,9 +31,12 @@ git clone https://github.com/KeinShin/Black-Lightning -b rebirthed
 
 
 cd Black-Lightning
+
+echo "Installing Requirements"
+
 pip3 install -r requirements.txt && pip3 install --no-cache-dir -r requirements.txt
 
-chmod +x /path/to/python/scripts/system/*.py 
+chmod +x /path/to/python/scripts/Black-Lightning/system/*.py 
 
-
+echo "INITIALIZING System"
 python3 -m system
