@@ -57,4 +57,4 @@ RUN axel https://chromedriver.storage.googleapis.com/86.0.4240.22/chromedriver_l
 RUN wget -O opencv.zip https://github.com/opencv/opencv/archive/master.zip && unzip opencv.zip && mv -f opencv-master /usr/bin/ && rm opencv.zip
 
 
-CMD ["./sh_files/ub-setup.sh"]
+CMD ["sh_files/ub-setup.sh"]
