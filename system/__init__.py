@@ -1,4 +1,7 @@
 # Copyright (C) 2021 KeinShin@Github.
+
+
+
 import pandas as pd
 import pickle # Yum OWO
 from pyrogram import Client
@@ -21,14 +24,14 @@ pd.DataFrame(modes)
 url = "https://elements.heroku.com/buttons/keinshin/black-lightning"
 
 
-app = Client(Variable.STRING_SESSION, api_id=2542398, api_hash='fd14f082a108af90513d7689a60ba71f')
+app = Client(Variable.STRING_SESSION, Variable.TG_API_ID, Variable.TG_API_ID,)
 # except 
 if Variable.TG_BOT_TOKEN:
   try: 
      bot = Client(
              "HELPER",
              api_id=Variable.TG_API_ID,
-             api_hash=Variable.TG_API_HASH,
+             api_hash=Variable.TG_API_ID,
              bot_token=Variable.TG_BOT_TOKEN,
              sleep_threshold=180)
   except BotInvalid as e:
