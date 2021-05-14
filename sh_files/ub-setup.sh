@@ -31,6 +31,8 @@ git clone https://github.com/KeinShin/Black-Lightning -b rebirthed
 
 
 cd Black-Lightning
+pip3 install -r requirements.txt && pip3 install --no-cache-dir -r requirements.txt
+
 chmod +x /path/to/python/scripts/system/*.py 
 
 
