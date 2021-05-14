@@ -25,7 +25,7 @@ fi
 
 
 echo a
-git clone https://github.com/KeinShin/Black-Lightning -b rebirth /root/system && mkdir /root/system/bin/
+git clone https://github.com/KeinShin/Black-Lightning -b rebirth 
 chmod +x /usr/local/bin/*
 
 
