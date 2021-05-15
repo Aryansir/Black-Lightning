@@ -60,7 +60,7 @@ python3 bl_string.py
 ```
 
 ## Self Hosting 
-# Create an exconfig.py and file required vars
+# Create an exconfig.py  file with required vars
 ```
     class variable(object):
     STRING-SESSION = "xyz"
