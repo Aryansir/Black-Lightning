@@ -66,7 +66,7 @@ lightning_cap += "`一═デ︻ ¢σρуяιgнт ︻デ═一`:   [KeinShin](ht
 
 
 @borg.on(lightning_cmd(pattern = r"alive"))
-@borg.on(sudo_cmd(pattern = r"alive"", allow_sudo=True))
+@borg.on(sudo_cmd(pattern = r"alive", allow_sudo=True))
 async def lightning(alive):
     await alive.get_chat()
     """ For .alive command, check if the bot is running.  """
