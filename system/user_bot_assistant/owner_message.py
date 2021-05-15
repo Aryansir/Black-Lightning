@@ -1,8 +1,8 @@
-from Config.utils import Owner
+from system.Config.utils import Owner
 from system import app, bot
 from pyrogram import filters
 
-from Config import Variable
+from system.Config import Variable
 p = Owner()
 owner= filters.create(func=p.owner, name="Owmer")
 
