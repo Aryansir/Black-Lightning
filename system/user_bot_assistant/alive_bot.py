@@ -11,6 +11,22 @@ from system.plugins._alive_ea import ping
 
 
 
+
+import os
+from system import (OWNER,
+updates,
+ttl,
+self_hosted,
+bot,
+app,
+ASSISTANT_HELP,
+HNDLR,
+g,
+mode_type,
+ALIVE_IMG_ASSISTANT )              
+import time
+
+
 cap = f"""**υѕєявσт ιѕ αℓινє!
        🇴‌🇼‌🇳‌🇪‌🇷‌-: {OWNER}
        ᴛɪᴍᴇ: {time}
@@ -20,8 +36,6 @@ cap = f"""**υѕєявσт ιѕ αℓινє!
        ꜱᴇʟꜰ ʜᴏꜱᴛᴇᴅ: {self_hosted}
        ᴍᴏᴅᴇ: {mode_type}
        **"""
-import os
-from system import *
 
 ASSISTANT_PIC = os.environ.get("ASSISTANT_PIC", None)
 if ASSISTANT_PIC is None:
