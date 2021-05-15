@@ -1,220 +1,205 @@
-  
 # Copyright (C) 2021 KeinShin@Github.
 
 
-# ME - OK Google,
-# Google - * listens *
-# Me - Sings a song
-# Google - Abe Saale
-# XoX 
-
-
-
-import pickle
-import pandas as pd
-from typing import Dict
-import datetime
-from apscheduler.schedulers.asyncio import AsyncIOScheduler
-import random
-from pyrogram.errors.exceptions.bad_request_400 import (MessageIdInvalid,
-AboutTooLong,
-BotInlineDisabled,
-
-
-
-
-
-)
 import os
-from pyrogram.sync import wrap
-from Config import Variable
-from Config.utils import *
-ERRORS_NAME = []
-
-from pyrogram.types import Message
-from system import CMD_LIST, COMMAND_HELP, CMD_DICT, SUDO_USER_NO_OF_TIME_USED
-from pyrogram.handlers import MessageHandler
+import string
 
 
-import pyrogram
-from Config import *
-from Config.errors import *
-from system import app, ASSISTANT_LIST
+
+import io
+
+
+# with io.BytesIO(str.encode(OUTPUT)) as out_file
+            # out_file.name = "cmd_list.text"
 import logging
+import os
 
-time = datetime.datetime.now()
+import system
+from textblob import TextBlob
+from translate import Translator
 
-SUDO_USER_NO_OF_TIME_USED = {}
-s = []
-easters = []
-ASSIS_HELP = {}
- # it is test sur
-def assistant_command(command: list,
-incoming: bool = True,
-group: bool = False,
-outgoing: bool = False
+try:
 
-):
-    if incoming is False:
-         pyrogram.filters.command(command) & pyrogram.filters.outgoing
-    else:
-         pyrogram.filters.command(command) & pyrogram.filters.incoming
-    try:
-       d = " ".join(command) 
-       ASSISTANT_LIST.append(d[0:])
-    except IndexError:
-       pass
+ import heroku3
+except Exception:
+ os.system("pip3 install heroku3")
+ 
 
-    def assistant_dec(func):
-        async def wrapper(client, message):
-            
-            try:
-                await func(client, message)
-            except BaseException as e:
-                logging.error(e)
-        return wrapper
-    return assistant_dec
 
-def on_cmd(command: list,
-         sudo: bool= False,
-         sudo_id = None,
-         schedule: bool = False,
-         job = None,
-         seconds: int = 0
-): 
-    if Variable.HNDLR is None:
-        raise HNDLRERROR(f"{language('You are  not allowed to leave HNDLR None.')}")
-    if sudo is True:
+# from var import Var
+# herokuclient = heroku3.from_key(Var.HEROKU_API_KEY)
+class Variable(object):
+    TG_API_ID = os.environ.get("TG_APP_ID", None)
+    TG_API_HASH = os.environ.get("TG_API_HASH", None)
+    TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", '12344: dssdsdssd')
+    TG_BOT_USER_NAME = os.environ.get("TG_BOT_USER_NAME", None)
+    APP_NAME = os.environ.get("APP_NAME", None)
+    HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
+    HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
+    ALIVE_ASCII =  os.environ.get("ALIVE_ASCII", None)
+    if not ALIVE_ASCII is None:
+        pass
+    DATABASE_URL = os.environ.get("DATABASE_URL", None)
+    HNDLR = os.environ.get("HNDLR", ".")
+    STRING_SESSION = os.environ.get("STRING_SESSION", None)
+    NO_ROWS_HELP_MENU = os.environ.get("NO_ROWS_HELP_MENU", None)
+    if NO_ROWS_HELP_MENU is None:
+        NO_ROWS_HELP_MENU = 3
+    ENVIRONMENT = os.environ.get("ENVIRONMENT", False)
 
-        sudo_id = Variable.SUDO_IDS
-        filter = (
-            (pyrogram.filters.me | pyrogram.filters.user(sudo_id)) & pyrogram.filters.command(command, Variable.HNDLR) & ~pyrogram.filters.via_bot
-            & ~pyrogram.filters.forwarded
-        )
-    else:
-        filter = (
-            (pyrogram.filters.me | pyrogram.filters.user("self")) & pyrogram.filters.command(command, Variable.HNDLR) & ~pyrogram.filters.via_bot
-            & ~pyrogram.filters.forwarded
-        )
-    try: 
-      c = " ".join(command)
-      CMD_LIST.append(c[0:])
-    except BaseException as e:
-        logging.info(e)
-    
-    
-        def decorators(func):
-            async def wrapper(client, message):
-                try:
-                    await func(client, message)
-                    logging.info(
-                            f"**{language('Processing Command.')}**"
-                        ) 
-                except MessageIdInvalid:
-                    logging.info(f"{language('User deleted the message while processing')} {func.__module__}")
-                    pass
-                except AboutTooLong as a:
-                    logging.info(f"Demn Too long about :/, {a}")
-                    pass
-                except BotInlineDisabled:
-                    logging.info(f"{language(f'Error as inline is diabled so you can not access command {func.__module__}. Turn inline on for your bot')}: {Variable.TG_BOT_USER_NAME}")
-                
-                    pass
-                except BaseException:
-                    ok = str(func.__module__)
-                    ERRORS_NAME.append(ok)
-                kool = Owner()
-                if sudo == True:
-                    if not kool.is_self:
-
-                        for i  in sudo_id:
-                            s.append(i)
-                        SUDO_USER_NO_OF_TIME_USED.update({f"{func.__module__}": s,
-                                                            "Time": time},
-                                                         )
-                        a = pd.DataFrame(SUDO_USER_NO_OF_TIME_USED)
-
-                if ok.endswith("_ea"):
-                    eas = ok.split()
-                    for i in eas:
-                        easters.append(i)
-                    pickle.dump(easters, open("easter.dat", "wb"))
-
-          
-                app.add_handler(MessageHandler(wrapper, filter, group=0))
         
-                return wrapper
-        return decorators
+    NO_COLUMNS_HELP_MENU = os.environ.get("NO_COLUMNS_HELP_MENU", None)
+    if NO_COLUMNS_HELP_MENU is None:
+        NO_COLUMNS_HELP_MENU = 7
+    # OWNER_NAME = os.environ.get("OWNER_NAME", None)
+    OWNER_NAME = "@keinshin"
+    PM_SECURITY_MSG = os.environ.get("PM_SECURITY_MSG", None)
+    SUDO_IDS = os.environ.get("SUDO_ID", '12345').split()
+    LOGS_CHAT_ID = os.environ.get("LOGS_CHAT_ID", None)
+    if PM_SECURITY_MSG is None:
+        PM_SECURITY_MSG = (
+        f"**Hello User..**"
+        f"**{str(OWNER_NAME)} is under Black Lightning PM Security*\n\n"
+        f"**Kindly Choose the reason for whcih you came :)** "
+    )
+    else:
+        WARNING = PM_SECURITY_MSG
+    HELP_MENU_TXT = os.environ.get("HELP_MENY_TXT", None)
+    if HELP_MENU_TXT is not None:
+        HELP_MENU_TXT.split()[0]
+    else:
+        a = "**Black Lightning Help Menu for User**"
+        a = HELP_MENU_TXT
+    LANGUAGE = os.environ.get("LANGUAGE", None)
+    if LANGUAGE is None:
+        LANGUAGE = "english"
+    
 
-# pyrogram.types.User.last_online_date()
+Var = Variable
+
+class Client:
+    def __init__(self):
+     self.herokuclient = heroku3.from_key(Variable.HEROKU_API_KEY)
+# Ported From https://github.com/jaskaranSM/HerokuManagerBot
+
+    
+class HerokuHelper:
+    def __init__(self, appName, apiKey):
+        self.API_KEY = apiKey
+        self.APP_NAME = appName
+        self.herokuclient = self.getherokuclient()
+        self.app = self.herokuclient.apps()[self.APP_NAME]
+        
+    def getherokuclient(self):
+        return heroku3.from_key(self.API_KEY)
+
+    def getAccount(self):
+        return self.herokuclient.account()
+
+    def getLog(self):
+        return self.app.get_log()
+
+    def addEnvVar(self, key, value):
+        self.app.config()[key] = value
+
+    def restart(self):
+        return self.app.restart()
 
 
 
+class Owner:
+    async def __init__(self):
+         self.owner = system.app.me.id
 
-def schedule(job,
-stime:int = 0,
-time = None,
-name = None
-):
-        if time == "seconds":
-  
-            scheduler = AsyncIOScheduler()
+async def errors_s():
+    herokuHelper = HerokuHelper(Var.HEROKU_APP_NAME, Var.HEROKU_API_KEY)
+    logfuck= herokuHelper.getLog()
+    with open("logs.txt", "w") as log:
+        log.write(logfuck)
+    with open('logs.txt', 'r') as read:
+        a =  read.read()
+    log.close()
+    read.close()
+    return a
+
+async def errors2():
+    herokuHelper = HerokuHelper(Var.HEROKU_APP_NAME, Var.HEROKU_API_KEY)
+    logfuck = herokuHelper.getLog()
+    with open("logs.txt", "w") as log:
+        log.write(logfuck)
+    return 'logs.txt'
+
+    
+async def logs():
+    herokuHelper = HerokuHelper(Var.HEROKU_APP_NAME, Var.HEROKU_API_KEY)
+    logz = herokuHelper.getLog()
+    with open("logs.txt", "r") as log:
+        wah = log.readline()
+    return  wah
 
 
-            
-            scheduler.add_job(job, 'interval', seconds=int(stime), id=name)
-        if time == "minute":    
-            scheduler.add_job(job, 'interval', minute=int(stime), id=name)
-from zeda import bot
-
-# function
+def loader():
+    pass
 
 
-def owner(func):
-    async def wrapper(client, message):
-       user = await app.get_users(int(message.chat.id))
-       if user.is_self:
-           message.answer(f"{language('Only for the strangers not for the owner')}!")
-       try:
-            await func(client, message)
-       except BaseException as e:
-            logging.error(e)
-    return wrapper
 
-def inline_help_wrapprs(func):
-    async def wrapper(client, really):
-        bot = await bot.get_me()
-        i = await bot.id
-        if really.from_user.id == i:
-           really.answer(f"{language('Get Lost Retard')}", cache_time=0, show_alert=True)
+# Copyright (C) Midhun KM
+
+def get_readable_time(seconds: int) -> str:
+    count = 0
+    ping_time = ""
+    time_list = []
+    time_suffix_list = ["s", "m", "h", "days"]
+
+    while count < 4:
+        count += 1
+        if count < 3:
+            remainder, result = divmod(seconds, 60)
         else:
-            
-            try:
-                await func(client ,really)
-            except Exception as e:
-                logging.error(e)  
+            remainder, result = divmod(seconds, 24)
+        if seconds == 0 and remainder == 0:
+            break
+        time_list.append(int(result))
+        seconds = int(remainder)
 
-    return wrapper 
+    for x in range(len(time_list)):
+        time_list[x] = str(time_list[x]) + time_suffix_list[x]
+    if len(time_list) == 4:
+        ping_time += time_list.pop() + ", "
+
+    time_list.reverse()
+    ping_time += ":".join(time_list)
+
+    return ping_time
 
 
 
 
-async def scheduler(message,
-shutdown:bool =False,
-resume:bool = False):
-    scheduler = AsyncIOScheduler()
-    scheduler.pause()
-    await message.edit_message_text(f"**All! {language('scheduling task that are paused')}**.")
-    if shutdown is True:
-     try:   
-        scheduler.shutdown()
-        await message.edit_message_text(f"**{language('scheduler is shutdowned')}**")
-     except Exception as e:
-         await message.edit_message_text(e)
-    elif resume is True:
-        try:
-            scheduler.resume()
-            await  message.edit_message_text(f"**{language('All tasks are resumed')}**")
-        except Exception as e:
-           await message.edit_message_text(e)
+def language(text: str):
+    # if "**" or "__" or "~~":
+    #     a=[i for i in range(len(string)) if string.startswith('**', i)]
 
+    lang = TextBlob(text)
+    translator= Translator(from_lang=lang.detect_language(),to_lang=system.LANG)
+    translation = translator.translate(text)
+    return translation
+
+
+
+def hd_no(txt: str):
+    contains_digit = False
+    
+    
+    for character in txt:
+    
+        if character.isdigit():
+    
+            contains_digit = True
+    
+    return contains_digit
+
+
+
+class user:
+    async def user(self, id):
+        self.user_=await system.app.get_users(int(id))
