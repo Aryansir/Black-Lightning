@@ -1,7 +1,7 @@
 #    Copyright (C) 2021 KeinShin
 
 
-from system import *
+from system import app, bot, OWNER
 ALIVE_NAME = OWNER
 
 from sqlalchemy.orm import sessionmaker

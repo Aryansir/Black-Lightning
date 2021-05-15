@@ -1,19 +1,19 @@
 # Copyright (C) 2021 KeinShin@Github.
-
-
-
 import pandas as pd
+
+
+import sys
 import pickle # Yum OWO
 from pyrogram import Client
 from pyrogram.errors import BotInvalid, AccessTokenExpired, AccessTokenInvalid
-from Config import *
+from Config import Variable, Path
 import logging
 import os
 import requests
 import datetime
 from Config.utils import language
-from Config.errors import *
-# try:
+from Config.errors import BotTokenError
+
 
 
 modes = {

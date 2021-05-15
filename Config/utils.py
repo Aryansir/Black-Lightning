@@ -17,6 +17,8 @@ import os
 from system import LANG, app
 from textblob import TextBlob
 from translate import Translator
+from dotenv import load_dotenv
+
 try:
 
  import heroku3

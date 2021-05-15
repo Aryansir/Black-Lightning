@@ -11,12 +11,25 @@
 # 
 # Learning is the key OWO
 
+
+import logging
 from git import Repo
 import git
 import asyncio 
 import os
-from Config import *
-from system import *
+from Config import Variable
+from Config.utils import Client
+from system import (  app,
+  g,
+  bot,
+  a,
+  language,
+  HNDLR,
+  COMMAND_HELP,
+  REPO,
+  API_KEY
+  ,APP_NAME,
+  BRANCH )
 import io
 import sys
 from system.decorators import on_cmd

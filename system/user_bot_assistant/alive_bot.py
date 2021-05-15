@@ -1,4 +1,4 @@
-from pyrogram import *
+from pyrogram import filters
 from pyrogram.types import (   InlineKeyboardButton,
     InlineQueryResultArticle,
     InputTextMessageContent,

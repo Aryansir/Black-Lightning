@@ -2,9 +2,9 @@
 
 import asyncio
 
-from pyrogram import *
+from pyrogram import filters
 
-from system import *
+from system import bot, ASSISTANT_HELP, HNDLR
 @bot.on_message(filters.command(["hack"]) & filters.incoming & filters.group)
 async def _(event):
     if event.fwd_from:

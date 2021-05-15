@@ -4,7 +4,13 @@
 
 from system.decorators import on_cmd
 from Config import Variable
-from system import *
+from system import (
+  app,
+  g,
+  bot,
+  a,
+  language
+)
 
 
 from pyrogram import filters

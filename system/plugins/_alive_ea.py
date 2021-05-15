@@ -6,8 +6,8 @@
 
 
 from system.decorators import on_cmd
-from Config import *
-from Config.utils import *
+from Config import Variable
+from Config.utils import  get_readable_time
 ping = get_readable_time((time.time() - last_up))
 from system import *              # Easter OwO
 @on_cmd(["alive", "black", "alv", f"{OWNER}"], sudo=True, sudo_id=Variable.SUDO_IDS)

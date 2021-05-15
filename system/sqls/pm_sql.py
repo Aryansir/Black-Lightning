@@ -2,7 +2,7 @@
 
 
 
-from . import *
+from . import BASE, SESSION
 from sqlalchemy import Column, String, Integer, text
 # from sqlalchemy.orm import selectinload
 

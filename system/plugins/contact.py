@@ -3,8 +3,18 @@
 
 
 
-from system import *
-from system.decorators import *
+from system import (
+
+  app,
+  g,
+  bot,
+  a,
+  language,
+  HNDLR,
+  COMMAND_HELP
+
+)
+from system.decorators import on_cmd
 
 @on_cmd(["send contact"])
 async def contact(client, message):

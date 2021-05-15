@@ -2,8 +2,11 @@
 
 from art import *
 from system.decorators import on_cmd
-from system import *
-from Config.utils import *
+from system import app, HNDLR, COMMAND_HELP
+from Config.utils import language
+from Config import Variable
+
+
 
 
 

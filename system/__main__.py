@@ -1,5 +1,6 @@
 # Copyright (C) 2021 KeinShin@Github.
-from subprocess import *
+import subprocess
+
 import os.path
 import sys
 
@@ -10,12 +11,10 @@ import logging
 
 import schedule
 
-from system.decorators import easters
 import pyrogram
 
 
 from pyrogram.raw.types import BotCommand
-from setup.importer import *
 logging.basicConfig(level=logging.INFO)
 logging.basicConfig(level=logging.ERROR)
 import holidays
@@ -31,10 +30,10 @@ plugin =  logging.getLogger("PLUG-ERROR")
 bot_lod =  logging.getLogger("BOT-ERROR")
 
 
-from system import app, bot, ASSISTANT_LIST
+from system import app, bot
 
-from system.user_bot_assistant import ASSISTANT_HELP
-from Config import *
+from Config import Variable
+
 
 chet = Variable.LOGS_CHAT_ID
 
