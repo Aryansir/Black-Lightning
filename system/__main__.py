@@ -89,4 +89,4 @@ async def start():
 
 
 app.loop.run_until_complete(start()) 
-bot.loop.run_until_complete(add_bot_to_logg_grup())
+app.loop.run_until_complete(add_bot_to_logg_grup())
