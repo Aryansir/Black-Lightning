@@ -64,6 +64,8 @@ class Variable(object):
     else:
         WARNING = PM_SECURITY_MSG
     HELP_MENU_TXT = os.environ.get("HELP_MENY_TXT", None)
+            
+    COUNTRY = os.environ.get("COUNTRY", None)
     if HELP_MENU_TXT is not None:
         HELP_MENU_TXT.split()[0]
     else:
