@@ -15,7 +15,7 @@
 import asyncio
 import heroku3
 from pyrogram.types.bots_and_keyboards import reply_keyboard_markup
-from Config import *
+from system.Config import Variable as Var
 from system import OWNER, bot, app, ASSISTANT_HELP
 from pyrogram.types import (   InlineKeyboardButton,
     InlineQueryResultArticle,
@@ -29,7 +29,6 @@ from pyrogram.types import (   InlineKeyboardButton,
 from pyrogram import *
 from math import ceil
 
-from Config  import Variable as Var
 
 import coffeehouse
 
