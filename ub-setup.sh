@@ -1,8 +1,7 @@
 #!/bin/bash
 
 # Copyright (C) 2021 KeinShin@Github.
-path = "sh_files/load.sh"
-path2 = "sh_files/assist.sh"
+
 
 if [ -e exconfig.py  ]
 then
@@ -32,8 +31,6 @@ echo a
 
 
 
-echo "Loading Plugins"
-bash "$path"
 
 
 
@@ -41,5 +38,4 @@ bash "$path"
 
 
 
-echo "Loading Assistant"
-bash "$path2"
+
