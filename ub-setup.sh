@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # Copyright (C) 2021 KeinShin@Github.
+path = "sh_files/load.sh"
+path2 = "sh_files/assist.sh"
 
 if [ -e exconfig.py  ]
 then
@@ -30,7 +32,8 @@ echo a
 
 
 
-echo "Installing Requirements"
+echo "Loading Plugins"
+bash "$path"
 
 
 
@@ -38,5 +41,5 @@ echo "Installing Requirements"
 
 
 
-
-echo "INITIALIZING System"
+echo "Loading Assistant"
+base "$path2"
