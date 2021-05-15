@@ -35,7 +35,6 @@ bot_lod =  logging.getLogger("BOT-ERROR")
 
 from system.__init__ import app, bot
 
-from system.Config import Variable
 
 
 chet = Variable.LOGS_CHAT_ID
