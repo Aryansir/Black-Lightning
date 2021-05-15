@@ -42,4 +42,4 @@ bash "$path"
 
 
 echo "Loading Assistant"
-base "$path2"
+bash "$path2"
