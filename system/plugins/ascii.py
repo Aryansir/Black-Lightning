@@ -3,8 +3,8 @@
 from art import *
 from system.decorators import on_cmd
 from system import app, HNDLR, COMMAND_HELP
-from Config.utils import language
-from Config import Variable
+from system.Config.utils import language
+from system.Config import Variable
 
 
 

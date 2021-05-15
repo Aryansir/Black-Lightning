@@ -17,8 +17,8 @@ from git import Repo
 import git
 import asyncio 
 import os
-from Config import Variable
-from Config.utils import Client
+from system.Config import Variable
+from system.Config.utils import Client
 from system import (  app,
   g,
   bot,
