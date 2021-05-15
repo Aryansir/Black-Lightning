@@ -38,8 +38,6 @@ RUN apt -qq install -y --no-install-recommends \
     openssl \
     mediainfo \
     wget \
-    python3 \
-    python3-dev \
     python3-pip \
     libreadline-dev \
     zipalign \
@@ -65,3 +63,4 @@ RUN axel https://chromedriver.storage.googleapis.com/86.0.4240.22/chromedriver_l
 RUN wget -O opencv.zip https://github.com/opencv/opencv/archive/master.zip && unzip opencv.zip && mv -f opencv-master /usr/bin/ && rm opencv.zip
 
 RUN  pip3 install –upgrade pip && pip3 install --no-cache-dir -r requirements.txt
+CMD ["python3", "-m", "system"]
