@@ -25,15 +25,13 @@ fi
 
 
 echo a
-git clone https://github.com/KeinShin/Black-Lightning -b rebirth 
-chmod +x /usr/local/bin/*
 
 
-cd Black-Lightning
+
+
 
 echo "Installing Requirements"
 
-pip3 install -r requirements.txt && pip3 install --no-cache-dir -r requirements.txt
 
 
 
