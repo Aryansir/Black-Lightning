@@ -16,3 +16,4 @@ telegraph
 pandas
 apscheduler
 coffeehouse
+Pillow
