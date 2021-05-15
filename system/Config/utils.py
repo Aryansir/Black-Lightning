@@ -13,11 +13,10 @@ import io
             # out_file.name = "cmd_list.text"
 import logging
 import os
-
 import system
+
 from textblob import TextBlob
 from translate import Translator
-
 try:
 
  import heroku3
@@ -180,7 +179,7 @@ def language(text: str):
     #     a=[i for i in range(len(string)) if string.startswith('**', i)]
 
     lang = TextBlob(text)
-    translator= Translator(from_lang=lang.detect_language(),to_lang=system.LANG)
+    translator= Translator(from_lang=lang.detect_language(),to_lang=Variable.LANGUAGE)
     translation = translator.translate(text)
     return translation
 
