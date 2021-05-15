@@ -93,13 +93,15 @@ if self_hosted:
 else:
       self_hosted = "False"
 
-
-accha = open("updates.txt")
-if "Nope" in accha:
-
- updates =  'NO-UPDATES XoX' # XoX
+if not Path("updates.txt").is_file():
+    updates = "NO-UPDATES"
 else:
- updates= 'UPDATES AVAILABLE!'
+   accha = open("updates.txt")
+   if "Nope" in accha:
+   
+    updates =  'NO-UPDATES XoX' # XoX
+   else:
+    updates= 'UPDATES AVAILABLE!'
 
 
 
