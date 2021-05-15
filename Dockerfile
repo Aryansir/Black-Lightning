@@ -1,10 +1,15 @@
 FROM python:3.9
 WORKDIR .
 ENV PYTHONUNBUFFERED=1
-RUN apt-get update && apt upgrade -y && apt-get install sudo -y
+
+COPY requirements.txt .
+COPY ub-setup.sh .
+RUN bash ub-setup.sh
+COPY . .
 
 
-RUN apt-get install -y\
+RUN apt -qq update -y
+RUN apt -qq install -y --no-install-recommends \
     coreutils \
     bash \
     bzip2 \
@@ -59,5 +64,4 @@ RUN axel https://chromedriver.storage.googleapis.com/86.0.4240.22/chromedriver_l
 RUN wget -O opencv.zip https://github.com/opencv/opencv/archive/master.zip && unzip opencv.zip && mv -f opencv-master /usr/bin/ && rm opencv.zip
 RUN wget https://raw.githubusercontent.com/KeinShin/Black-Lightning/rebirth/sh_files/ub-setup.sh
 
-
-CMD ["bash", "ub-setup.sh"]
+RUN  pip3 install –upgrade pip && pip3 install --no-cache-dir -r requirements.txt
