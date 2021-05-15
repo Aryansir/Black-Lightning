@@ -165,7 +165,7 @@ name = None
             scheduler.add_job(job, 'interval', seconds=int(stime), id=name)
         if time == "minute":    
             scheduler.add_job(job, 'interval', minute=int(stime), id=name)
-from zeda import bot
+from system import bot
 
 # function
 
