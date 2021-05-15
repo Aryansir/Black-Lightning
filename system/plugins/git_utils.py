@@ -18,17 +18,16 @@ import git
 import asyncio 
 import os
 from system.Config import Variable
-from system.Config.utils import Client
+from system.Config.utils import Client, language
 from system import (  app,
   g,
   bot,
   a,
-  language,
   HNDLR,
   COMMAND_HELP,
   REPO,
-  API_KEY
-  ,APP_NAME,
+  API_KEY,
+  APP_NAME,
   BRANCH )
 import io
 import sys
