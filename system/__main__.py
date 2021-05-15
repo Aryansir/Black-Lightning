@@ -76,10 +76,10 @@ import importlib
 async def start():
 
         await app.start()
-        os.system("chmod +x sh_files/load.sh)
-        os.system("chmod +x sh_files/assist.sh)
-        os.system("sh_files/load.sh")
-        os.system("sh_files/assist.sh")
+#         os.system("chmod +x sh_files/load.sh)
+#         os.system("chmod +x sh_files/assist.sh)
+#         os.system("sh_files/load.sh")
+#         os.system("sh_files/assist.sh")
         info = f"Everything is loaded, Black Lightning is Online check your saved message and bot is added to LOG CHANNEL "
         
         logging.info(info)
