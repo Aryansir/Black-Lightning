@@ -2,12 +2,6 @@
 # Copyright (C) 2021 KeinShin@Github.
 
 
-# ME - OK Google,
-# Google - * listens *
-# Me - Sings a song
-# Google - Abe Saale
-# XoX 
-
 
 
 import pickle
@@ -32,46 +26,14 @@ from Config.utils import *
 ERRORS_NAME = []
 
 from pyrogram.types import Message
-from zeda import CMD_LIST, COMMAND_HELP, CMD_DICT, SUDO_USER_NO_OF_TIME_USED
+from system import CMD_LIST, COMMAND_HELP, CMD_DICT, SUDO_USER_NO_OF_TIME_USED
 from pyrogram.handlers import MessageHandler
 
-# # sechodu
-
-# RANDOM_IDS = ("sechoduling_task"
-#               "sechoduling_ta",
-#               "sechoduli",
-#               "sechoduli",
-#               "sechoduling",
-#               "sechoduling_",
-#               "ssechoduling_",
-#               "sechoduling_",
-#               "secdsdsshoduling_",
-#               "dsdsd",
-#               "sechasdadsaddasd",
-#               "sechodsadasdasduling_",
-#               "sechsdasdasdsaoduling_",
-#               "sechasdadasdaoduling_",
-#               "dad",
-#               "sechodsadadasdasduling_",
-#               "dasd",
-#               "sechodasdasdadsuling_",
-#               "sechodasdasdasdaduling_",
-#               "sechodaasdasdasdduling_",
-#               "seasdadasdachoduling_",
-#               "sd",
-#               "sechodadadasdauling_",
-#               "sechoaddasdadauasdasdadling_",
-#               "sechoadasdadduling_",
-#               "sechadadoaadadadduling_",
-#               "sechadadadodadadaduling_",
-#               "sechadadadoduling_",
-#               "sechdasdsadaoduling_",
-#               "sechadadadoduling_t")
 
 import pyrogram
 from Config import *
 from Config.errors import *
-from zeda import app, ASSISTANT_LIST
+from system import app, ASSISTANT_LIST
 import logging
 
 time = datetime.datetime.now()
@@ -107,7 +69,7 @@ outgoing: bool = False
         return wrapper
     return assistant_dec
 
-def zeda_cmd(command: list,
+def on_cmd(command: list,
          sudo: bool= False,
          sudo_id = None,
          schedule: bool = False,
