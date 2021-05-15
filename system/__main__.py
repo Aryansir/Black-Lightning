@@ -88,6 +88,6 @@ async def start():
         await  app.send_message("me", f"**BLACK-LIGHTNING USERBOT's MESSAGE\n\n{USER} Kindly Enable Inline from @BotFather to Access All The Features Including `.help` and Many More (if it's already done Ignore this message)")
 
 
+app.loop.run_until_complete(add_bot_to_logg_grup())
 
 app.loop.run_until_complete(start()) 
-app.loop.run_until_complete(add_bot_to_logg_grup())
