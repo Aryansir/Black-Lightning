@@ -2,12 +2,12 @@
 # If you steal this without credits You will be the geyest gey ever in the world that you will suck cat's dick.
 import asyncio
 from system import *
-from system.decorators import zeda_cmd as zeda
+from system.decorators import on_cmd
 
 
 
 
-@zeda(["hpny"])
+@on_cmd(["hpny"])
 async def _(client, event):
 
     anmation_interval = 4

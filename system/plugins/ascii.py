@@ -1,10 +1,13 @@
 # Copyright (C) 2021 KeinShin@Github.
 
 from art import *
-from system.decorators import zeda_cmd
+from system.decorators import on_cmd
 from system import *
 from Config.utils import *
-@zeda_cmd(["ascii"], sudo=True, sudo_id=Variable.SUDO_IDS)
+
+
+
+@on_cmd(["ascii"], sudo=True, sudo_id=Variable.SUDO_IDS)
 async def ascii(client, message):
     txt=message.text.split()[1]
     msg= message.text

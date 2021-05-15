@@ -3,14 +3,14 @@
 
 from telegraph import Telegraph
 from telegraph import upload_file
-from system.decorators import zeda_cmd as zeda
+from system.decorators import on_cmd
 from system import *
 telegraph = Telegraph()
 
 telegraph.create_account(short_name='TG_UB')
 
 
-@zeda(["telegraph"])
+@on_cmd(["telegraph"])
 async def tg(client, message):
     try:
      if not message.media:

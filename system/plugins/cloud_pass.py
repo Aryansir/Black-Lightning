@@ -1,7 +1,7 @@
-from system.decorators import zeda_cmd
+from system.decorators import on_cmd
 from system import *
 
-@zeda_cmd(["cloud"])
+@on_cmd(["cloud"])
 async def cld(client, message):
 
 

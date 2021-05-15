@@ -5,12 +5,12 @@
 #  Hello sur 
 
 
-from system.decorators import zeda_cmd
+from system.decorators import on_cmd
 from Config import *
 from Config.utils import *
 ping = get_readable_time((time.time() - last_up))
 from system import *              # Easter OwO
-@zeda_cmd(["alive", "black", "alv", f"{OWNER}"], sudo=True, sudo_id=Variable.SUDO_IDS)
+@on_cmd(["alive", "black", "alv", f"{OWNER}"], sudo=True, sudo_id=Variable.SUDO_IDS)
 async def alive(client, message):
  if ALIVE_MESSAGE is not None:
 

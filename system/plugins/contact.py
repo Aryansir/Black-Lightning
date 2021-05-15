@@ -6,7 +6,7 @@
 from system import *
 from system.decorators import *
 
-@zeda_cmd(["send contact"])
+@on_cmd(["send contact"])
 async def contact(client, message):
     no  = message.text.split(" ")[2]
     name = message.text.split(" ")[3]
@@ -19,7 +19,7 @@ async def contact(client, message):
 
 
 
-@zeda_cmd(["add contact"])
+@on_cmd(["add contact"])
 async def app(client, message):
     o = message.text.split()[2]
     o1 = message.text.split()[3]
@@ -31,7 +31,7 @@ async def app(client, message):
     
     await message.delete()
 
-@zeda_cmd(["del contact"])
+@on_cmd(["del contact"])
 async def app(client, message):
     o = message.text.split()[2]
     if message.text.split()>1:

@@ -1,11 +1,11 @@
 # Copyright (C) 2021 KeinShin@Github.
 
 from Config.utils import Variable
-from system.decorators import zeda_cmd
+from system.decorators import on_cmd
 
 
 from system import *
-@zeda_cmd(["send"], sudo=True, sudo_id=Variable.SUDO_IDS)
+@on_cmd(["send"], sudo=True, sudo_id=Variable.SUDO_IDS)
 async def send(client, message):
     if not " " in message.text:
         await message.edit_message_text(f"**Syntax**: __{HNDLR}send (file name)__\n\n@lightning_support_grup")

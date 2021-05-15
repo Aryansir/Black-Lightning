@@ -19,8 +19,8 @@ from Config import *
 from system import *
 import io
 import sys
-from system.decorators import zeda_cmd
-@zeda_cmd(["update", "update now", "upd", "u"])
+from system.decorators import on_cmd
+@on_cmd(["update", "update now", "upd", "u"])
 async def updater(client, message):
     try:
         repo = git.Repo()

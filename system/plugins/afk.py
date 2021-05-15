@@ -2,7 +2,7 @@
 
 
 
-from system.decorators import zeda_cmd as zeda
+from system.decorators import on_cmd
 from Config import Variable
 from system import *
 
@@ -19,7 +19,7 @@ else:
 
 
 
-@zeda(["afk"], sudo=True, sudo_ids = Variable.SUDO_IDS)
+@on_cmd(["afk"], sudo=True, sudo_ids = Variable.SUDO_IDS)
 async def _(client, message):
   new_file_content = ""
   for line in reading_file:

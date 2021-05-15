@@ -10,7 +10,7 @@
 # import sys
 # import os
 # from sys import path
-# dir_path = "/absolute/path/to/E:\Zeda-UserBot"
+# dir_path = "/absolute/path/to/E:\on_cmd-UserBot"
 # sys.path.insert(0, dir_path)
 # sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from pyrogram.methods import messages
@@ -18,7 +18,7 @@ from pyrogram.methods import messages
 
 import Config
 from Config import Variable
-from system.decorators import ERRORS_NAME, zeda_cmd as zeda
+from system.decorators import ERRORS_NAME, on_cmd
 from system import CMD_LIST, COMMAND_HELP, bot, app, SUDO_USER_NO_OF_TIME_USED
 from pyrogram.errors import BotInlineDisabled
 import logging
@@ -29,7 +29,7 @@ HNDLR = str(Variable.HNDLR)
 g =  Variable.TG_BOT_USER_NAME
 string = ""
 # unofficial_or_no_help = 0
-@zeda(["help"], sudo=True, sudo_id=Variable.SUDO_IDS)
+@on_cmd(["help"], sudo=True, sudo_id=Variable.SUDO_IDS)
 async def helper(client, message):
         count = 0
 
@@ -67,7 +67,7 @@ async def helper(client, message):
              await  message.edit_message_text(f"**ERROR** - `{a}`\n\n**Occured while  opening help menu try doing** __@{g} Help Menu__\n\n**if help not appears contact @lightning_support_grup**")
     
 
-@zeda(["errorcmds"], sudo=True, sudo_id=Variable.SUDO_IDS)
+@on_cmd(["errorcmds"], sudo=True, sudo_id=Variable.SUDO_IDS)
 async def error(client, message):    
   error_cmd = ""
   cou = 0
@@ -82,7 +82,7 @@ async def error(client, message):
 a = pd.DataFrame(SUDO_USER_NO_OF_TIME_USED)
 
 
-@zeda(['sudo'])
+@on_cmd(['sudo'])
 async def used(client, message):
 
 
