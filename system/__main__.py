@@ -23,7 +23,7 @@ if Variable.COUNTRY:
     
    hol  = holidays.CountryHoliday(Variable.COUNTRY)
 else:
-   hol = holidays.CountryHoliday("IN", prov="AS')
+   hol = holidays.CountryHoliday("IN", prov="AS")
 a = date.today()
 p  =hol.get(a)
 
