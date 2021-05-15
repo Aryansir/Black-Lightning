@@ -4,7 +4,7 @@
 count=0
 for f in system/user_bot_assistant/*.py
 do 
-   echo "Loading assistant!"
+ 
    python "$f"
    echo "LOADDED -  " +  $f
    count+=1
