@@ -3,7 +3,7 @@ from system import app, bot
 from pyrogram import filters
 
 from system.Config import Variable
-owner= filters.create(func=p.owner, name="Owmer")
+# owner= filters.create(func=p.owner, name="Owmer")
 
 
 
@@ -15,5 +15,6 @@ owner= filters.create(func=p.owner, name="Owmer")
     & ~filters.edited
 )
 async def owner(client, message):
-    p = await Owner()
+    pass
+    
 
