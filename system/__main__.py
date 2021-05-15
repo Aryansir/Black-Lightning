@@ -30,9 +30,9 @@ plugin =  logging.getLogger("PLUG-ERROR")
 bot_lod =  logging.getLogger("BOT-ERROR")
 
 
-from system import app, bot
+from system.__init__ import app, bot
 
-from Config import Variable
+from system.Config import Variable
 
 
 chet = Variable.LOGS_CHAT_ID
