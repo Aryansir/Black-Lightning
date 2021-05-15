@@ -40,4 +40,3 @@ echo "Installing Requirements"
 
 
 echo "INITIALIZING System"
-python3 -m system
