@@ -9,6 +9,7 @@ holidays
 schedule
 pycountry
 better_profanity
+sqlalchemy
 translate
 textblob
 telegraph
