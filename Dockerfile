@@ -9,6 +9,7 @@ COPY . .
 
 
 RUN apt -qq update -y
+
 RUN apt -qq install -y --no-install-recommends \
     coreutils \
     bash \
