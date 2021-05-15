@@ -11,7 +11,7 @@ import logging
 import os
 import requests
 import datetime
-from system.Config.utils import language
+
 from system.Config.errors import BotTokenError
 
 
@@ -45,7 +45,7 @@ else:
     raise BotTokenError('Error. Bot Token not found!')
 g =  Variable.TG_BOT_USER_NAME
 
-OWNER = language(Variable.OWNER_NAME)
+OWNER = Variable.OWNER_NAME
 chet = Variable.LOGS_CHAT_ID
 time = datetime.datetime.now()
 CMD_LIST = []
@@ -67,7 +67,7 @@ last_up = time.time()
 
 
 # LANG = Variable.LANGUAGE
-LANG = "english"
+LANG = Variable.LANGUAGE
 ALIVE_MESSAGE = os.environ.get("ALIVE_MESSAGE", None)
 ALIVE_IMG = os.environ.get("ALIVE_IMG", None)
 PM_LIMIT = os.environ.get("PM_LIMIT", None)
@@ -82,24 +82,24 @@ if ALIVE_IMG is None:
 
 MODE = os.environ.get("MODE", None)
 if MODE is None:
-   a=language('Friendly')
+   a= "Friendly"
    MODE = f"**{a}**" # :P
 else:
    mode_type = MODE
 self_hosted = Path('exconfig.py').is_file()
 if self_hosted:
 
-      self_hosted = language("True")
+      self_hosted = "True"
 else:
-      self_hosted = language('False')
+      self_hosted = "False"
 
 
 accha = open("updates.txt")
 if "Nope" in accha:
 
- updates =  language('NO-UPDATES') + 'XoX' # XoX
+ updates =  'NO-UPDATES XoX' # XoX
 else:
- updates=language('UPDATES AVAILABLE!')
+ updates= 'UPDATES AVAILABLE!'
 
 
 
