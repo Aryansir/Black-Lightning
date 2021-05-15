@@ -13,7 +13,7 @@ import schedule
 
 import pyrogram
 
-
+from system.Config.utils import Variable
 from pyrogram.raw.types import BotCommand
 logging.basicConfig(level=logging.INFO)
 logging.basicConfig(level=logging.ERROR)
