@@ -19,8 +19,11 @@ logging.basicConfig(level=logging.INFO)
 logging.basicConfig(level=logging.ERROR)
 import holidays
 from datetime import date, datetime
-
-hol  = holidays.CountryHoliday('IN', prov="AS")
+if Variable.COUNTRY:
+    
+   hol  = holidays.CountryHoliday(Variable.COUNTRY)
+else:
+   hol = holidays.CountryHoliday("IN", prov="AS')
 a = date.today()
 p  =hol.get(a)
 
