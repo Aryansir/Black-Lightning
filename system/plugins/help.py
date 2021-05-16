@@ -29,7 +29,7 @@ g =  Variable.TG_BOT_USER_NAME
 string = ""
 # unofficial_or_no_help = 0
 @on_cmd(["help"])
-@on_cmd(["help"], sudo=True, sudo_id=Variable.SUDO_IDS)
+@on_cmd(["help"], sudo=True, sudo_ids=Variable.SUDO_IDS)
 async def helper(client, message):
         count = 0
 
