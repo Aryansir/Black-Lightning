@@ -10,7 +10,7 @@ from system.decorators import on_cmd
 from system.Config import Variable
 from system.Config.utils import  get_readable_time
 ping = get_readable_time((t.time() - t.time()))
-from system import (ALIVE_IMG, app, ALIVE_MESSAGE, OWNER, time, ttl, updates, self_hosted, mode_type,      
+from system import (ALIVE_IMG, app, ALIVE_MESSAGE, OWNER, time, ttl, updates, self_hosted, MODE,      
 ALIVE_IMG
 )        # Easter OwO
 
