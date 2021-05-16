@@ -106,6 +106,5 @@ async def finnalise():
         bot.add_handler(MessageHandler(add_bot_to_logg_grup))
 
 
-app.loop.run_until_complete(add_bot_to_logg_grup())
 
 app.loop.run_until_complete(finnalise()) 
