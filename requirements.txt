@@ -17,3 +17,4 @@ pandas
 apscheduler
 coffeehouse
 Pillow
+PyDictionary 
