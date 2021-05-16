@@ -15,7 +15,7 @@ class Start:
 
     
 
-    def start(self):
+    def  boot(self):
           for i in self.x:
               importlib.import_module(f"{self.path}{i}")
               logging.info(f"IMPORTED - {i}")
