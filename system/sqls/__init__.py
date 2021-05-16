@@ -1,4 +1,4 @@
-from Config import Variable
+from system.Config import Variable
 import os
 import logging
 from sqlalchemy import create_engine
