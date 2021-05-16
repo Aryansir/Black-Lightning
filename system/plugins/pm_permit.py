@@ -1,7 +1,7 @@
 # Copyright (C) 2021 KeinShin@Github.
 import pandas as pd
 
-from Config.utils import hd_no
+from system.Config.utils import hd_no
 import re
 from pyrogram import filters
 from system import  *
