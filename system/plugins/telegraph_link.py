@@ -30,5 +30,5 @@ async def tg(client, message):
 
 COMMAND_HELP.update(
     {"telegram_link": f"{HNDLR}telegrah",
-    "telegraph_link's help": f"Creates telegraph link for the given media can image or video"}
+    "telegraph_link's help": f"Creates telegraph link for the given media can be image or video"}
 )
