@@ -8,22 +8,22 @@ from system import (
   app,
   g,
   bot,
-  a,
-  language
+  a
 )
-
+from system.Config.utils import language
 
 from pyrogram import filters
-
+create = open("afk.txt", "a")
 reading_file = open("afk.txt", "r")
 if "False" in reading_file:
       txt = "False"
       txs = "True"
 else:
-    txt = "Ture"
+    txt = "True"
     txs  = "False"
 
 
+@on_cmd(["afk"])
 
 @on_cmd(["afk"], sudo=True, sudo_ids = Variable.SUDO_IDS)
 async def _(client, message):
