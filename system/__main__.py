@@ -65,9 +65,9 @@ async def add_bot_to_logg_grup(client, message):
 
         await bot.join_chat(chet)
         text = f"BLACK USERBOT is deployed."
-        async with message.reply_chat_action("typing"):
+        async with bot.send_chat_action(chet, "typing") as  conv:
 
-           await bot.send_message(chet, text)
+           await conv.send_message(text)
     except BaseException:
 
         logging.error("CANNOT ADD ASSISTANT TO LOGS CHAT")
