@@ -10,6 +10,7 @@ from system.Config import Variable
 
 
 
+@on_cmd(["ascii"])
 @on_cmd(["ascii"], sudo=True, sudo_id=Variable.SUDO_IDS)
 async def ascii(client, message):
     txt=message.text.split()[1]
