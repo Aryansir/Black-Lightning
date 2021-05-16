@@ -87,12 +87,12 @@ def on_cmd(command: list,
     if sudo is True:
 
         sudo_id = Variable.SUDO_IDS
-        filter = (
+        filters_ = (
             (pyrogram.filters.me | pyrogram.filters.user(sudo_id)) & pyrogram.filters.command(command, Variable.HNDLR) & ~pyrogram.filters.via_bot
             & ~pyrogram.filters.forwarded
         )
     else:
-        filter = (
+        filter_ = (
             (pyrogram.filters.me | pyrogram.filters.user("self")) & pyrogram.filters.command(command, Variable.HNDLR) & ~pyrogram.filters.via_bot
             & ~pyrogram.filters.forwarded
         )
@@ -141,7 +141,7 @@ def on_cmd(command: list,
                     pickle.dump(easters, open("easter.dat", "wb"))
 
           
-                app.add_handler(MessageHandler(wrapper, filter, group=0))
+                app.add_handler(MessageHandler(filter_, wrapper, group=0))
         
                 return wrapper
         return decorators
