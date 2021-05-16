@@ -77,7 +77,7 @@ outgoing: bool = False
 
 def on_cmd(command: list,
          sudo: bool= False,
-         sudo_id = None,
+         sudo_ids = None,
          schedule: bool = False,
          job = None,
          seconds: int = 0
