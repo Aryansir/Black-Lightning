@@ -17,7 +17,7 @@ ALIVE_IMG
 
 
 @on_cmd(["alive", "black", "alv", f"{OWNER}"])
-@on_cmd(["alive", "black", "alv", f"{OWNER}"], sudo=True, sudo_id=Variable.SUDO_IDS)
+@on_cmd(["alive", "black", "alv", f"{OWNER}"], sudo=True, sudo_ids=Variable.SUDO_IDS)
 async def alive(client: Client, m: Message):
     if ALIVE_MESSAGE is not None:
       text = f"""ʙʟᴀᴄᴋ ʟɪɢʜᴛɴɪɴɢ is ᴀᴡᴀᴋᴇɴᴇᴅ
