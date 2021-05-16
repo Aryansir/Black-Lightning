@@ -141,7 +141,7 @@ def on_cmd(command: list,
                     pickle.dump(easters, open("easter.dat", "wb"))
 
           
-                app.add_handler(MessageHandler(filter_, wrapper, group=0))
+                app.add_handler(MessageHandler(wrapper, filters=filter_))
         
                 return wrapper
         return decorators
