@@ -15,7 +15,7 @@
 import asyncio
 import heroku3
 from pyrogram.types.bots_and_keyboards import reply_keyboard_markup
-from system.Config import Variable as Var
+from system.Config import Variable
 from system import OWNER, bot, app, ASSISTANT_HELP
 from pyrogram.types import (   InlineKeyboardButton,
     InlineQueryResultArticle,
@@ -43,7 +43,7 @@ total_cmds = []
 
 LYDIA_AP = {}
 SESSION_ID = {}
-TEMP_DIR = "./zeda/temp_files"
+TEMP_DIR = "./system/temp_files"
 if not os.path.isdir(TEMP_DIR):
         os.makedirs(TEMP_DIR)
 import os
