@@ -6,7 +6,7 @@ import re
 from pyrogram import filters
 from system import  *
 from better_profanity import profanity
-from system.decorators import on_cmd
+from system.decorators import light
 from system.sqls.pm_sql import *
 
 SPAMMERS = []
@@ -61,7 +61,7 @@ async def pm(client, message):
            )
 
 
-@on_cmd(["a","ap", "approve"])
+@light.on(["a","ap", "approve"])
 async def ap(client, message):
     try:
        if hd_no(message.text):
@@ -87,7 +87,7 @@ def user_abused(txt):
 
 
 
-@on_cmd(["da", "disap", "disapprove"])
+@light.on(["da", "disap", "disapprove"])
 async def dis(client, message):
     if hd_no(message.text):
       id = message.text.split()[1]
@@ -100,7 +100,7 @@ async def dis(client, message):
 
 
 
-@on_cmd(["listapprovd"])
+@light.on(["listapprovd"])
 async def list(client, message):
     
     noice=get_approve()
