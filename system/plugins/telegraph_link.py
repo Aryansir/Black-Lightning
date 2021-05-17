@@ -10,7 +10,7 @@ telegraph = Telegraph()
 telegraph.create_account(short_name='TG_UB')
 
 
-@on_cmd(["telegraph"])
+@light.on(["telegraph"])
 async def tg(client, message):
     try:
      if not message.media:
