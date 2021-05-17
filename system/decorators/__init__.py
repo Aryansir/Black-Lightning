@@ -2,6 +2,12 @@
 # Copyright (C) 2021 KeinShin@Github.
 
 
+# ME - OK Google,
+# Google - * listens *
+# Me - Sings a song
+# Google - Abe Saale
+# XoX 
+
 
 
 import pickle
@@ -118,8 +124,9 @@ def on_cmd(command: list,
                     ok = str(func.__module__)
                     ERRORS_NAME.append(ok)
                 kool = Owner()
+                o = kool.owner
                 if sudo == True:
-                    if not kool.is_self:
+                    if not o.is_self:
 
                         for i  in sudo_id:
                             s.append(i)
@@ -138,7 +145,7 @@ def on_cmd(command: list,
                 app.add_handler(MessageHandler(wrapper, filters=filter_))
         
                 return wrapper
-        return decorators
+    return decorators
 
 # pyrogram.types.User.last_online_date()
 
