@@ -2,7 +2,7 @@
 # If you steal this without credits You will be the geyest gey ever in the world that you will suck cat's dick.
 import asyncio
 from system import *
-from system.decorators import light
+from system.plugins import light
 
 
 
