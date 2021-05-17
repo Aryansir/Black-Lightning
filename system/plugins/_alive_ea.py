@@ -16,8 +16,8 @@ ALIVE_IMG
 
 
 
-@light.on(["alive", "black", "alv", f"{OWNER}"], sudo_ids=Variable.SUDO_IDS)
-async def alive(client: Client, m: Message):
+@light.on(["alive", "black", "alv", f"{OWNER}"], sudo_ids=Variable.SUDO_IDS, file = "_alive_ea")
+async def alive(client, m):
     if ALIVE_MESSAGE is not None:
       text = f"""ʙʟᴀᴄᴋ ʟɪɢʜᴛɴɪɴɢ is ᴀᴡᴀᴋᴇɴᴇᴅ
       🇴‌🇼‌🇳‌🇪‌🇷‌-: {OWNER}
