@@ -32,7 +32,7 @@ from system import (  app,
 import io
 import sys
 from system.decorators import light
-@light(["update", "update now", "upd", "u"])
+@light.on(["update", "update now", "upd", "u"])
 async def updater(client, message):
     try:
         repo = git.Repo()
