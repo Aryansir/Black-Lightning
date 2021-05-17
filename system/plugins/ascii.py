@@ -1,7 +1,7 @@
 # Copyright (C) 2021 KeinShin@Github.
 
 from art import *
-from system.decorators import light
+from system.plugins import light
 from system import app, HNDLR, COMMAND_HELP
 from system.Config.utils import language
 from system.Config import Variable
