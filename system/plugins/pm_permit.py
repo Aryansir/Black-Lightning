@@ -6,7 +6,7 @@ import re
 from pyrogram import filters
 from system import  *
 from better_profanity import profanity
-from system.decorators import light
+from system.plugins import light
 from system.sqls.pm_sql import *
 
 SPAMMERS = []
