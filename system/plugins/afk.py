@@ -2,7 +2,7 @@
 
 
 
-from system.decorators import on_cmd
+from system.decorators import light
 from system.Config import Variable
 from system import (
   app,
@@ -23,9 +23,8 @@ else:
     txs  = "False"
 
 
-@on_cmd(["afk"])
 
-@on_cmd(["afk"], sudo=True, sudo_ids = Variable.SUDO_IDS)
+@light.on(["afk"], sudo_ids = Variable.SUDO_IDS)
 async def _(client, message):
   new_file_content = ""
   for line in reading_file:
