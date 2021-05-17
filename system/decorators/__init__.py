@@ -58,35 +58,38 @@ ASSIS_HELP = {}
 class light:
 
      def on(self, cmd, sudo_ids  = None,  file: str = None):
-        self.command = cmd
-        self.id = sudo_ids
-        self.hndlr = HNDLR
-        if Variable.HNDLR is None:
-              raise HNDLRERROR(f"{language('You are  not allowed to leave HNDLR None.')}")
-        if file.endswith("_ea"):
-            eas = file.split()
-        for i in eas:
-            easters.append(i)
-        pickle.dump(easters, open("easter.dat", "wb"))
+            self.command = cmd
+            self.id = sudo_ids
+            self.hndlr = HNDLR
+            if Variable.HNDLR is None:
+                  raise HNDLRERROR(f"{language('You are  not allowed to leave HNDLR None.')}")
+            if file:
+                if file.endswith("_ea"):
+                    eas = file.split()
+                for i in eas:
+                    easters.append(i)
+                pickle.dump(easters, open("easter.dat", "wb"))
+    
+    
 
+            if not sudo_ids:
+              self.filter = filters.me & filters.forwarded & filters.incoming & filters.via_bot & filters.command(self.hndlr, self.command)
+            else:
+              self.filter = (filters.me |  filters.user(self.id))   & filters.forwarded & filters.incoming & filters.via_bot & filters.command(self.hndlr, self.command)
+            app.add_handler(MessageHandler(self.filter))
+            try: 
+             c = " ".join(self.command)
+             CMD_LIST.append(c[0:])
+            except BaseException as e:
+             logging.info(e)
+            def handle(function):
 
-
-        if not sudo_ids:
-          self.filter = filters.me & filters.forwarded & filters.incoming & filters.via_bot & filters.command(self.hndlr, self.command)
-        else:
-          self.filter = (filters.me |  filters.user(self.id))   & filters.forwarded & filters.incoming & filters.via_bot & filters.command(self.hndlr, self.command)
-        app.add_handler(MessageHandler(self.filter))
-        try: 
-         c = " ".join(self.cmd)
-         CMD_LIST.append(c[0:])
-        except BaseException as e:
-         logging.info(e)
-
-         def handle(function): # basic help taken from Friday 
-            async def call(client, message):
-                await function(client,message)
-            return call
-         return handle
+                   async def call(client, message): # off course basic help fron friday 
+                     await function(client, message)
+                     app.add_handler(MessageHandler(self.filter))
+  
+                   return call
+            return handle
      
 
 
