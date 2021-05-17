@@ -2,7 +2,7 @@
 
 
 
-from system.decorators import light
+from system.plugins import light
 from system.Config import Variable
 from system import (
   app,
