@@ -2,12 +2,12 @@
 # If you steal this without credits You will be the geyest gey ever in the world that you will suck cat's dick.
 import asyncio
 from system import *
-from system.decorators import on_cmd
+from system.decorators import light
 
 
 
 
-@on_cmd(["hpny"])
+@light.on(["hpny"])
 async def _(client, event):
 
     anmation_interval = 4
