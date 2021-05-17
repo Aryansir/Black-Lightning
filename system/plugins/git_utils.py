@@ -31,7 +31,7 @@ from system import (  app,
   BRANCH )
 import io
 import sys
-from system.decorators import light
+from system.plugins import light
 @light.on(["update", "update now", "upd", "u"])
 async def updater(client, message):
     try:
