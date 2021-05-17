@@ -220,7 +220,7 @@ async def spammer(e):
     await e.delete()
     for i in range(1, counter):
         await e.respond(spam_message)
-        await sleep(spamDelay)
+        await asyncio.sleep(spamDelay)
     if LOGGER:
         await e.client.send_message(
             LOGGER_GROUP, "#DelaySPAM\n" "DelaySpam was executed successfully"
