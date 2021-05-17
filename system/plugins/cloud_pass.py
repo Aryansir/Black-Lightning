@@ -1,4 +1,4 @@
-from system.decorators import light
+from system.plugins import light
 from system import app, HNDLR, COMMAND_HELP
 
 @light.on(["cloud"])
