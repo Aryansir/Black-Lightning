@@ -1,7 +1,7 @@
 # Copyright (C) 2021 KeinShin@Github.
 
 from art import *
-from system.decorators import on_cmd
+from system.decorators import light
 from system import app, HNDLR, COMMAND_HELP
 from system.Config.utils import language
 from system.Config import Variable
@@ -10,8 +10,7 @@ from system.Config import Variable
 
 
 
-@on_cmd(["ascii"])
-@on_cmd(["ascii"], sudo=True, sudo_ids=Variable.SUDO_IDS)
+@light.on(["ascii"], sudo_ids=Variable.SUDO_IDS)
 async def ascii(client, message):
     txt=message.text.split()[1]
     msg= message.text
