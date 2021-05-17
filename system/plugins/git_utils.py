@@ -31,8 +31,8 @@ from system import (  app,
   BRANCH )
 import io
 import sys
-from system.decorators import on_cmd
-@on_cmd(["update", "update now", "upd", "u"])
+from system.decorators import light
+@light(["update", "update now", "upd", "u"])
 async def updater(client, message):
     try:
         repo = git.Repo()
