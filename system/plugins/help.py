@@ -17,7 +17,9 @@ from pyrogram.methods import messages
 
 
 from system.Config import Variable
-from system.decorators import ERRORS_NAME, on_cmd
+from system.decorators import ERRORS_NAME
+from system.plugins import light
+
 from system import CMD_LIST, COMMAND_HELP, bot, app, SUDO_USER_NO_OF_TIME_USED
 from pyrogram.errors import BotInlineDisabled
 import logging
