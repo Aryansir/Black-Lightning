@@ -1,3 +1,3 @@
-from system.decorator import light
+from system.decorators import light
 
 light = light()
