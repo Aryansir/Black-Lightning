@@ -29,7 +29,7 @@ g =  Variable.TG_BOT_USER_NAME
 string = ""
 # unofficial_or_no_help = 0
 @on_cmd(["help"])
-@on_cmd(["help"], sudo=True, sudo_ids=Variable.SUDO_IDS)
+@light.on(["help"], sudo_ids=Variable.SUDO_IDS)
 async def helper(client, message):
         count = 0
 
@@ -79,39 +79,39 @@ async def error(client, message):
 
 
 
-a = pd.DataFrame(SUDO_USER_NO_OF_TIME_USED)
+# a = pd.DataFrame(SUDO_USER_NO_OF_TIME_USED)
 
 
-@on_cmd(['sudo'])
-async def used(client, message):
+# @light.on(['sudo'])
+# async def used(client, message):
 
 
-  horny_man = await message.text
-  if  await message.text is None:
-    await message.edit_message_text("**Gib some input :/**")
-    return
-  if " " in await  message.text:
-    messagec = await  message.text.replace("sudo", "")
-    text = messagec.split(",")
-    name=text[1] 
-    # text =  message.text.split()[1
-    used = ""
-    # a = pd.DataFrame(SUDO_USER_NO_OF_TIME_USED)
-    s=a.loc[:, ['{}'.format(name), 'Time']]
-    k=s.to_string(index=False)
-    b = a[text]
-    await app.send_message(message.chat_id, "**Number ids who have used or using** __{}__ **are**\n\n`{}`".format(name, k))
-  elif "," in horny_man:
-    messagec = await message.text.replace(f"{HNDLR}sudo", "")
-    text = await messagec.split(",")
-    name=text[0] 
-    id = text[1]
-    module_name=text[2]
-    user =  await app.get_users(int(id))
-    sed_user = a.loc["{}".format(module_name) == id]
-    await app.send_message(message.chat_id, f"SUDO USER {user.first_name}]({id})\n{sed_user}")
-  else:
-    await message.edit_message_text(f"Gib some module name and user id  to check :/\n\n**Syntax: __{HNDLR}sudo_cmds id,name ( dont forget that ',' )")
+#   horny_man = await message.text
+#   if  await message.text is None:
+#     await message.edit_message_text("**Gib some input :/**")
+#     return
+#   if " " in await  message.text:
+#     messagec = await  message.text.replace("sudo", "")
+#     text = messagec.split(",")
+#     name=text[1] 
+#     # text =  message.text.split()[1
+#     used = ""
+#     # a = pd.DataFrame(SUDO_USER_NO_OF_TIME_USED)
+#     s=a.loc[:, ['{}'.format(name), 'Time']]
+#     k=s.to_string(index=False)
+#     b = a[text]
+#     await app.send_message(message.chat_id, "**Number ids who have used or using** __{}__ **are**\n\n`{}`".format(name, k))
+#   elif "," in horny_man:
+#     messagec = await message.text.replace(f"{HNDLR}sudo", "")
+#     text = await messagec.split(",")
+#     name=text[0] 
+#     id = text[1]
+#     module_name=text[2]
+#     user =  await app.get_users(int(id))
+#     sed_user = a.loc["{}".format(module_name) == id]
+#     await app.send_message(message.chat_id, f"SUDO USER {user.first_name}]({id})\n{sed_user}")
+#   else:
+#     await message.edit_message_text(f"Gib some module name and user id  to check :/\n\n**Syntax: __{HNDLR}sudo_cmds id,name ( dont forget that ',' )")
 
 
 
