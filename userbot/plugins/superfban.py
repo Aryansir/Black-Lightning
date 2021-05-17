@@ -1,10 +1,12 @@
 import asyncio
 from userbot import ALIVE_NAME
 from userbot import CMD_HELP
-from userbot.utils import lightning_cmd, sudo_cmd
-from userbot import bot
+from userbot.utils import lightning_cmd
+from userbot import bot 
+from userbot.thunderconfig import Config
+from var import Var 
 lightning = ALIVE_NAME
-@bot.on(lightning_cmd("superfban ?(.*)"))
+@borg.on(lightning_cmd("superfban ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -46,15 +48,16 @@ async def _(event):
             REASON = " #fban "
     try:
         int(FBAN)
+# Dear kanger if you remove id or username which is given below so this plugin will not work...
         if int(FBAN) == 1232461895 or int(FBAN) == 1754865180 or int(FBAN) == 1311769691 :     
-            await event.edit("Sorry Dear but you are trying to ban GOD.")
+            await event.edit("Sorry dear but you are trying to ban GOD....")
             return
     except BaseException:
         if FBAN == "@hacker11000" or FBAN == "@paramatin7" or FBAN == "@keinshin" :
-            await event.edit("Sorry Dear but you are trying to ban God")
+            await event.edit("Sorry Dear but you are trying to ban God....")
             return
-    if Config.PM_PERMIT_GROUP_ID :
-        chat = Config.PM_PERMIT_GROUP_ID 
+    if Config.PM_LOGGR_BOT_API_ID  :
+        chat = Config.PM_LOGGR_BOT_API_ID
     else:
         chat = await event.get_chat()
     if not len(fedList):
@@ -132,25 +135,25 @@ async def _(event):
         await bot.send_message(chat, f"/fban {FBAN} {REASON}")
         await asyncio.sleep(3)
     await event.edit(
-        f"Sᴜᴘᴇʀғʙᴀɴ Cᴏᴍᴘʟᴇᴛᴇᴅ, Aғғᴇᴄᴛᴇᴅ Iɴ **{len(fedList) - exCount}** Fᴇᴅs.\n\n#UltraX Userbot"
+        f"Superfban completed, Affected **{len(fedList) - exCount}** feds.\n\n#Lightning_Userbot"
     )
 
 
 
 
-@bot.on(lightning_cmd("superunfban ?(.*)"))
+@borg.on(lightning_cmd("superunfban ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
-    await event.edit(f"**Bl unfban you ijn order of {lightning}**...")
+    await event.edit(f"**Bl unfban you in order of {lightning}**...")
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()
         FBAN = previous_message.sender_id
     else:
         FBAN = event.pattern_match.group(1)
 
-    if Config.PM_PERMIT_GROUP_ID :
-        chat = Config.PM_PERMIT_GROUP_ID 
+    if Config.PM_LOGGR_BOT_API_ID  :
+        chat = Config.PM_LOGGR_BOT_API_ID  
     else:
         chat = await event.get_chat()
     fedList = []
@@ -208,7 +211,7 @@ async def _(event):
         await asyncio.sleep(5)
         await bot.send_message(chat, f"/unfban {FBAN}")
         await asyncio.sleep(5)
-    await event.edit(f"Superfban cmpleted Affected {len(fedList)} Feds by {lightning}.\n")
+    await event.edit(f"Superfban cmpleted Affected {len(fedList)} Feds by {lightning}.\n\n #Lightning_userbot")
 
 
 
