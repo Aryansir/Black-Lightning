@@ -14,9 +14,9 @@ from system import (
   COMMAND_HELP
 
 )
-from system.decorators import on_cmd
+from system.decorators import light
 
-@on_cmd(["send contact"])
+@light.on(["send contact"])
 async def contact(client, message):
     no  = message.text.split(" ")[2]
     name = message.text.split(" ")[3]
@@ -29,7 +29,7 @@ async def contact(client, message):
 
 
 
-@on_cmd(["add contact"])
+@light.on(["add contact"])
 async def app(client, message):
     o = message.text.split()[2]
     o1 = message.text.split()[3]
@@ -41,7 +41,7 @@ async def app(client, message):
     
     await message.delete()
 
-@on_cmd(["del contact"])
+@light.on(["del contact"])
 async def app(client, message):
     o = message.text.split()[2]
     if message.text.split()>1:
