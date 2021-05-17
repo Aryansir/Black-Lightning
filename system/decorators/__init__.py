@@ -2,12 +2,6 @@
 # Copyright (C) 2021 KeinShin@Github.
 
 
-# ME - OK Google,
-# Google - * listens *
-# Me - Sings a song
-# Google - Abe Saale
-# XoX 
-
 
 
 import pickle
