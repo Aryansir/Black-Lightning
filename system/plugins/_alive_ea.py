@@ -6,7 +6,7 @@
 import time as t
 
 
-from system.decorators import on_cmd
+from system.decorators import light
 from system.Config import Variable
 from system.Config.utils import  get_readable_time
 ping = get_readable_time((t.time() - t.time()))
@@ -16,8 +16,7 @@ ALIVE_IMG
 
 
 
-@on_cmd(["alive", "black", "alv", f"{OWNER}"])
-@on_cmd(["alive", "black", "alv", f"{OWNER}"], sudo=True, sudo_ids=Variable.SUDO_IDS)
+@light.on(["alive", "black", "alv", f"{OWNER}"], sudo_ids=Variable.SUDO_IDS)
 async def alive(client: Client, m: Message):
     if ALIVE_MESSAGE is not None:
       text = f"""ʙʟᴀᴄᴋ ʟɪɢʜᴛɴɪɴɢ is ᴀᴡᴀᴋᴇɴᴇᴅ
