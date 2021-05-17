@@ -3,7 +3,7 @@
 
 from telegraph import Telegraph
 from telegraph import upload_file
-from system.decorators import on_cmd
+from system.plugins import light
 from system import *
 telegraph = Telegraph()
 
