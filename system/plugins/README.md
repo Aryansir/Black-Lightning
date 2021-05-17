@@ -1,13 +1,12 @@
 ## Way to create your plug by fork
 
 ``` 
-from system.decorators import on_cmd 
+from system.decorators import light 
 from system import *
 from system.Config import Variable
 
 
-@on_cmd(["xyz plug"])
-@on_cmd(["xyz plug", sudo=True ( if you want sudo access ), sudo_ids=Variable.SUDO_IDS ( if sudo is true else leave both)])
+@light.on(["xyz plug", sudo_ids=Variable.SUDO_IDS ( if sudo is true else leave both)])
 async def command(client, message):
    await message.reply("Hello Sur!)
    
