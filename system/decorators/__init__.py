@@ -70,77 +70,77 @@ outgoing: bool = False
         return wrapper
     return assistant_dec
 
-def on_cmd(command: list,
-         sudo: bool= False,
-         sudo_ids = None,
-         schedule: bool = False,
-         job = None,
-         seconds: int = 0
-): 
-    if Variable.HNDLR is None:
-        raise HNDLRERROR(f"{language('You are  not allowed to leave HNDLR None.')}")
-    if sudo is True:
+# def on_cmd(command: list,
+#          sudo: bool= False,
+#          sudo_ids = None,
+#          schedule: bool = False,
+#          job = None,
+#          seconds: int = 0
+# ): 
+#     if Variable.HNDLR is None:
+#         raise HNDLRERROR(f"{language('You are  not allowed to leave HNDLR None.')}")
+#     if sudo is True:
 
-        sudo_id = Variable.SUDO_IDS
-        filters_ = (
-            (pyrogram.filters.me | pyrogram.filters.user(sudo_id)) & pyrogram.filters.command(command, Variable.HNDLR) & ~pyrogram.filters.via_bot
-            & ~pyrogram.filters.forwarded
-        )
-    else:
-        filter_ = (
-            (pyrogram.filters.me | pyrogram.filters.user("self")) & pyrogram.filters.command(command, Variable.HNDLR) & ~pyrogram.filters.via_bot
-            & ~pyrogram.filters.forwarded
-        )
-    try: 
-      c = " ".join(command)
-      CMD_LIST.append(c[0:])
-    except BaseException as e:
-        logging.info(e)
+#         sudo_id = Variable.SUDO_IDS
+#         filters_ = (
+#             (pyrogram.filters.me | pyrogram.filters.user(sudo_id)) & pyrogram.filters.command(command, Variable.HNDLR) & ~pyrogram.filters.via_bot
+#             & ~pyrogram.filters.forwarded
+#         )
+#     else:
+#         filter_ = (
+#             (pyrogram.filters.me | pyrogram.filters.user("self")) & pyrogram.filters.command(command, Variable.HNDLR) & ~pyrogram.filters.via_bot
+#             & ~pyrogram.filters.forwarded
+#         )
+#     try: 
+#       c = " ".join(command)
+#       CMD_LIST.append(c[0:])
+#     except BaseException as e:
+#         logging.info(e)
     
     
-    def decorators(func):
-            async def wrapper(client, message):
-                try:
-                    await func(client, message)
-                    logging.info(
-                            f"**{language('Processing Command.')}**"
-                        ) 
-                except MessageIdInvalid:
-                    logging.info(f"{language('User deleted the message while processing')} {func.__module__}")
-                    pass
-                except AboutTooLong as a:
-                    logging.info(f"Demn Too long about :/, {a}")
-                    pass
-                except BotInlineDisabled:
-                    logging.info(f"{language(f'Error as inline is diabled so you can not access command {func.__module__}. Turn inline on for your bot')}: {Variable.TG_BOT_USER_NAME}")
+#     def decorators(func):
+#             async def wrapper(client, message):
+#                 try:
+#                     await func(client, message)
+#                     logging.info(
+#                             f"**{language('Processing Command.')}**"
+#                         ) 
+#                 except MessageIdInvalid:
+#                     logging.info(f"{language('User deleted the message while processing')} {func.__module__}")
+#                     pass
+#                 except AboutTooLong as a:
+#                     logging.info(f"Demn Too long about :/, {a}")
+#                     pass
+#                 except BotInlineDisabled:
+#                     logging.info(f"{language(f'Error as inline is diabled so you can not access command {func.__module__}. Turn inline on for your bot')}: {Variable.TG_BOT_USER_NAME}")
                 
-                    pass
-                except BaseException:
-                    ok = str(func.__module__)
-                    ERRORS_NAME.append(ok)
-                kool = Owner()
-                o = kool.owner
-                if sudo == True:
-                    if not o.is_self:
+#                     pass
+#                 except BaseException:
+#                     ok = str(func.__module__)
+#                     ERRORS_NAME.append(ok)
+#                 kool = Owner()
+#                 o = kool.owner
+#                 if sudo == True:
+#                     if not o.is_self:
 
-                        for i  in sudo_id:
-                            s.append(i)
-                        SUDO_USER_NO_OF_TIME_USED.update({f"{func.__module__}": s,
-                                                            "Time": time},
-                                                         )
-                        a = pd.DataFrame(SUDO_USER_NO_OF_TIME_USED)
+#                         for i  in sudo_id:
+#                             s.append(i)
+#                         SUDO_USER_NO_OF_TIME_USED.update({f"{func.__module__}": s,
+#                                                             "Time": time},
+#                                                          )
+#                         a = pd.DataFrame(SUDO_USER_NO_OF_TIME_USED)
 
-                if ok.endswith("_ea"):
-                    eas = ok.split()
-                    for i in eas:
-                        easters.append(i)
-                    pickle.dump(easters, open("easter.dat", "wb"))
+#                 if ok.endswith("_ea"):
+#                     eas = ok.split()
+#                     for i in eas:
+#                         easters.append(i)
+#                     pickle.dump(easters, open("easter.dat", "wb"))
 
           
-                app.add_handler(MessageHandler(wrapper, filters=filter_))
+#                 app.add_handler(MessageHandler(wrapper, filters=filter_))
         
-                return wrapper
-    return decorators
+#                 return wrapper
+#     return decorators
 
 # pyrogram.types.User.last_online_date()
 
