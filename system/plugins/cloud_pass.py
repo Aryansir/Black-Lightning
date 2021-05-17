@@ -1,7 +1,7 @@
-from system.decorators import on_cmd
+from system.decorators import light
 from system import app, HNDLR, COMMAND_HELP
 
-@on_cmd(["cloud"])
+@light.on(["cloud"])
 async def cld(client, message):
 
 
