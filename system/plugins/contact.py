@@ -9,11 +9,12 @@ from system import (
   g,
   bot,
   a,
-  language,
+
   HNDLR,
   COMMAND_HELP
 
 )
+from system.Config.utils import language
 from system.plugins import light
 
 @light.on(["send contact"])
