@@ -30,7 +30,6 @@ HNDLR = str(Variable.HNDLR)
 g =  Variable.TG_BOT_USER_NAME
 string = ""
 # unofficial_or_no_help = 0
-@on_cmd(["help"])
 @light.on(["help"], sudo_ids=Variable.SUDO_IDS)
 async def helper(client, message):
         count = 0
@@ -69,7 +68,7 @@ async def helper(client, message):
              await  message.edit_message_text(f"**ERROR** - `{a}`\n\n**Occured while  opening help menu try doing** __@{g} Help Menu__\n\n**if help not appears contact @lightning_support_grup**")
     
 
-@on_cmd(["errorcmds"], sudo=True, sudo_id=Variable.SUDO_IDS)
+@light.on(["errorcmds"],sudo_ids=Variable.SUDO_IDS)
 async def error(client, message):    
   error_cmd = ""
   cou = 0
