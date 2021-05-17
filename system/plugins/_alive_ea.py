@@ -6,7 +6,7 @@
 import time as t
 
 
-from system.decorators import light
+from system.plugins import light
 from system.Config import Variable
 from system.Config.utils import  get_readable_time
 ping = get_readable_time((t.time() - t.time()))
