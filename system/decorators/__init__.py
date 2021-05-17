@@ -2,11 +2,6 @@
 # Copyright (C) 2021 KeinShin@Github.
 
 
-# ME - OK Google,
-# Google - * listens *
-# Me - Sings a song
-# Google - Abe Saale
-# XoX 
 
 
 
@@ -49,7 +44,7 @@ s = []
 easters = []
 ASSIS_HELP = {}
  # it is test sur
-def assistant_command(command: list,
+def assistant_command(command: list, # not yet done this dec.
 incoming: bool = True,
 group: bool = False,
 outgoing: bool = False
