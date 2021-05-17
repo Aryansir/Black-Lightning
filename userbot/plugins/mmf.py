@@ -14,7 +14,7 @@ from var import Var
 client = borg
 
 
-@borg.on(lightning_cmd("memify ?(.*)"))
+@borg.on(lightning_cmd("mmf ?(.*)"))
 async def handler(event):
     if event.fwd_from:
         return
