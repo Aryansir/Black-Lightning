@@ -1,7 +1,7 @@
 from system.Config.utils import Variable
 from PyDictionary import PyDictionary
 
-from system.decorators import on_cmd
+from system.decorators import light.on
 from system import (
     app,
     COMMAND_HELP,
@@ -10,8 +10,7 @@ from system import (
 
 mean = ""
 
-@on_cmd(["dict", "define", "meaning"])
-@on_cmd(["dict", "define", "meaning"], sudo=True, sudo_ids=Variable.SUDO_IDS)
+@light.on(["dict", "define", "meaning"], sudo_ids=Variable.SUDO_IDS)
 async def dc(client, message):
     if  not message.text:
         await message.edit_message_text("**How could i define nothing?**")
