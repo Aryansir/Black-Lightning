@@ -98,7 +98,7 @@ def on_cmd(command: list,
         logging.info(e)
     
     
-        def decorators(func):
+    def decorators(func):
             async def wrapper(client, message):
                 try:
                     await func(client, message)
