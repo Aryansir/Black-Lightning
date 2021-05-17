@@ -1,7 +1,7 @@
 # Copyright (C) 2021 KeinShin@Github.
 
 from system.Config.utils import Variable
-from system.decorators import light
+from system.plugins import light
 
 
 from system import *
