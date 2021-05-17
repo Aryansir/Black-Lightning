@@ -14,7 +14,7 @@ from system import (
   COMMAND_HELP
 
 )
-from system.decorators import light
+from system.plugins import light
 
 @light.on(["send contact"])
 async def contact(client, message):
