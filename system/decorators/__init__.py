@@ -76,7 +76,6 @@ class light:
               self.filter = filters.me & filters.forwarded & filters.incoming & filters.via_bot & filters.command(self.hndlr, self.command)
             else:
               self.filter = (filters.me |  filters.user(self.id))   & filters.forwarded & filters.incoming & filters.via_bot & filters.command(self.hndlr, self.command)
-            app.add_handler(MessageHandler(self.filter))
             try: 
              c = " ".join(self.command)
              CMD_LIST.append(c[0:])
@@ -84,9 +83,9 @@ class light:
              logging.info(e)
             def handle(function):
 
-                   async def call(client, message): # off course basic help fron friday 
+                   async def call(client, message): # off course basic help fron friday  for decorator.
                      await function(client, message)
-                     app.add_handler(MessageHandler(self.filter))
+                     app.add_handler(MessageHandler(call, self.filter))
   
                    return call
             return handle
