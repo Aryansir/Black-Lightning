@@ -95,9 +95,10 @@ def finnalise():
         b = Start("system/user_bot_assistant/")
         b.boot()
         logging.info(info)
-        idle()
         app.send_message("me", f"**BLACK-LIGHTNING USERBOT's MESSAGE\n\n{USER} Kindly Enable Inline from @BotFather to Access All The Features Including `.help` and Many More (if it's already done Ignore this message)")
-        bot.add_handler(MessageHandler(add_bot_to_logg_grup()))
+        
+        idle()
+
 if __name__ == "__main__":
     finnalise()
 
