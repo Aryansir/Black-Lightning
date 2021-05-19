@@ -1,18 +1,16 @@
 # By @keinshin for Black Lightning
 # If you steal this without credits You will be the geyest gey ever in the world that you will suck cat's dick.
 import asyncio
-from system import *
-from system.plugins import light
+from system import OWNER
 
 
-
-
+from system import light
 @light.on(["hpny"])
-async def _(client, event):
+async def _(client, message):
 
     anmation_interval = 4
     ttl = range(0, 29)
-    await event.edit_message_text("Wishing  a Happy new year...")
+    await message.edit("Wishing  a Happy new year...")
     chars = [
         f"** Happy new year...!👋❤️❤️**",
         "**Happy New Year To All❤️❤️❤️❤️❤️❤️**",
@@ -48,6 +46,6 @@ async def _(client, event):
     for i in ttl:  
 
         await asyncio.sleep(anmation_interval)
-        await event.edit_message_text(
+        await message.edit_message_text(
             chars[i % 29], link_preview=True
         )  
