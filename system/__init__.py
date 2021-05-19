@@ -84,6 +84,11 @@ MODE = os.environ.get("MODE", None)
 if MODE is None:
    a= "Friendly"
    MODE = f"**{a}**" # :P
+else:
+   mode_type = MODE
+
+
+
 
 self_hosted = Path('exconfig.py').is_file()
 if self_hosted:
