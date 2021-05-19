@@ -2,8 +2,7 @@ name: KeinShin
 
 on:
   push:
-    branches:
-    - rebirth
+    branches: [ rebirth ]
 
 
 jobs:
