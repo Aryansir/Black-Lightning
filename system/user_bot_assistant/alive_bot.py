@@ -54,7 +54,7 @@ else:
 async def _(client, event):
     await event.delete()
 
-    await bot.send_document(event.chat_id,
+    await bot.send_document(event.chat.id,
             document=PIC,
             caption=cap,
     )
@@ -73,7 +73,7 @@ async def help(client, message):
        InlineKeyboardButton("Help Menu", callback_data="help")
 
        )
-       await bot.send_document(message.chat_id, document=ALIVE_IMG_ASSISTANT, reply_markup=wah)
+       await bot.send_document(message.chat.id, document=ALIVE_IMG_ASSISTANT, reply_markup=wah)
 
 
 
@@ -82,7 +82,7 @@ async def help(client, message):
 async def hrlp(client, message):
        bot_results = client.get_inline_bot_results(f"{g}", "Assistant Menu")
        await bot.send_inline_bot_result(
-               message.chat_id,
+               message.chat.id,
                bot_results.query_id,
                bot_results.results[0].id
            )
