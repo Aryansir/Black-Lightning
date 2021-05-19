@@ -15,7 +15,7 @@
 import asyncio
 import heroku3
 from pyrogram.types.bots_and_keyboards import reply_keyboard_markup
-from system.Config import Variable
+from system.Config import *
 from system import OWNER, bot, app, ASSISTANT_HELP
 from pyrogram.types import (   InlineKeyboardButton,
     InlineQueryResultArticle,
@@ -29,6 +29,7 @@ from pyrogram.types import (   InlineKeyboardButton,
 from pyrogram import *
 from math import ceil
 
+from system.Config  import Variable as Var
 
 import coffeehouse
 
@@ -97,7 +98,7 @@ async def send_welcome(client, message):
       co = await app.get_me()
 
       
-      if message.chat_id == co.id:
+      if message.chat.id == co.id:
             txt = "**Hi! I'm Your Assistant Master\n\nAny One Can Contact You Via Me\n\nI'll Get users messages to you**\n\n[Feat. by ʙʟᴀᴄᴋ ʟɪɢʜᴛɴɪɴɢ ᴜsᴇʀʙᴏᴛ](https://github.com/KeinShin/Black-Lightning)"
      
             mrkup = InlineKeyboardMarkup([
@@ -109,7 +110,7 @@ async def send_welcome(client, message):
             ) 
  #    pis = pic()
             await bot.send_message(
-                 message.chat_id,
+                 message.chat.id,
                  PIC,
                  txt,
                  reply_markup=mrkup)
@@ -119,11 +120,11 @@ async def send_welcome(client, message):
                 [InlineKeyboardButton(text="Help!", url="@lightning_support_grup")]
                 ]
                 )
-             user = await app.get_users(int(message.chat_id))
+             user = await app.get_users(int(message.chat.id))
              owner = str(Variable.OWNER_NAME)
              kok = f"**Hello {user.first_name }!\n\n Thanks for Contacting {owner}\n\nI'm assisting  {owner} Kindly Leave Your Message**\n\nFeatured By [ʙʟᴀᴄᴋ ʟɪɢʜᴛɴɪɴɢ ᴜsᴇʀʙᴏᴛ](https://github.com/KeinShin/Black-Lightning)"
              await bot.send_message(
-                 message.chat_id,
+                 message.chat.id,
                  PIC,
                  kok,
                  reply_markup=mkp)
@@ -206,7 +207,7 @@ from system.sqls.bot_sql import *
 async def d(client ,message):
     with io.BytesIO(str.encode(get_ids())) as out_file:
         out_file.name = "cmd_list.txt"
-    await bot.send_document(message.chat_id, document=out_file)
+    await bot.send_document(message.chat.id, document=out_file)
 
 @bot.on_callback_query(filters.regex(pattern="help_nexte\((.+?)\)"))
   
@@ -274,7 +275,7 @@ def assitant_help(b_lac_krish, lightning_plugs, lightning_lol):
 @bot.on_message(filters.command("!", ["ask"]) & filters.incoming)
 
 async def ask(client, message):
-    user = await app.get_users(int(message.chat_id))
+    user = await app.get_users(int(message.chat.id))
     if user.id == app.me.id:
      username=Var.OWNER_NAME
      await tgbot.send_message(f"Hi Dear,\n\nNow you can ask your question i'll send it to {username}")
@@ -287,16 +288,16 @@ async def ask(client, message):
 @bot.on_callback_query(filters.regex(pattern="chat_bot"))
 async def commands(client, message):
 
-   co = await app.get_users(int(message.chat_id))
+   co = await app.get_users(int(message.chat.id))
 
    if CHAT_BOT == "ENABLE":
-    tgbot.send_message(message.chat_id,  
+    tgbot.send_message(message.chat.id,  
     "Chat Bot Already Enabled",)
     buttons=InlineKeyboardButton(text="Deactivate", callback_data="lol_nvm")
 
    else:
     kok = f"**What Chat Bot Does?**\n\n**Answer - Chatbot Will Activate Artificial intelligence Of Your Bot\nIn Short Bot Will Chat With The User Like a Human**"
-    await tgbot.send_message(message.chat_id,  
+    await tgbot.send_message(message.chat.id,  
     kok)
     buttons=InlineKeyboardButton(text="Deactivate", callback_data="activate")
 
@@ -306,16 +307,16 @@ async def chatboot(client, message):
     var=app.config()
     var[CHAT_BOT] = 'ENABLE'
     me = await app.get_me()
-    await tgbot.send_message(message.chat_id, "Chat Bot Activated")
+    await tgbot.send_message(message.chat.id, "Chat Bot Activated")
     apps = Heroku.app(Var.HEROKU_APP_NAME)
 
     kek = await message.sender_id
-    id = await bot.get_users(int(message.chat_id))
+    id = await bot.get_users(int(message.chat.id))
     session = Lydia.create_session()
     session_id = session.id
-    LYDIA_AP.update({str(message.chat_id) + " " + str(id.from_id): session})
+    LYDIA_AP.update({str(message.chat.id) + " " + str(id.from_id): session})
     SESSION_ID.update(
-            {str(message.chat_id) + " " + str(id.from_id): session_id}
+            {str(message.chat.id) + " " + str(id.from_id): session_id}
         )
 @bot.on_callback_query(filters.regex(pattern="lol_nvm"))
 async def chatboot(client, message):
@@ -324,42 +325,42 @@ async def chatboot(client, message):
     heroku_var[CHAT_BOT] = 'DISABLE'
     me = await bot.get_me()
     
-    await tgbot.send_message(message.chat_id, "Chat Bot Deactivated")
+    await tgbot.send_message(message.chat.id, "Chat Bot Deactivated")
 
     kek = await message.get_reply_message()
-    id = await bot.get_users(int(message.chat_id))
+    id = await bot.get_users(int(message.chat.id))
     session = Lydia.create_session()
     session_id = session.id
-    LYDIA_AP.update({str(message.chat_id) + " " + str(id.from_id): session})
+    LYDIA_AP.update({str(message.chat.id) + " " + str(id.from_id): session})
     SESSION_ID.update(
-            {str(message.chat_id) + " " + str(id.from_id): session_id}
+            {str(message.chat.id) + " " + str(id.from_id): session_id}
         )
 
 
-@bot.on_message()
-async def user(client, ai):
+@bot.on_message(filters.incoming & filters.group)
+async def user(client, message):
 
-    ai.text
+    message.text
     if CHAT_BOT == "DISABLE":
         return
-    if ai.raw_text.startswith("!ask"): 
+    if message.text.startswith("!ask"): 
      return
     try:
-        session = LYDIA_AP[str(ai.chat_id) + " " + str(ai.from_id)]
-        session_id = SESSION_ID[str(ai.chat_id) + " " + str(ai.from_id)]
-        messages = ai.text
-        async with ai.client.action(ai.chat_id, "Typing"):
+        session = LYDIA_AP[str(message.chat.id) + " " + str(message.from_id)]
+        session_id = SESSION_ID[str(message.chat.id) + " " + str(message.from_id)]
+        messages = message.text
+        async with message.reply_chat_action("typing"):
             text = session.think_thought((session_id, messages))
             wait_time = 0
             for i in range(len(text)):
                 wait_time = wait_time + 0.1
             await asyncio.sleep(wait_time)
-            await ai.reply(text)
+            await message.reply(text)
     except KeyError:
         return
 
 
-@bot.on_message(filters.user & filters.command(["Hi"]))
+@bot.on_message(filters.command("^", ["Hi"]) & filters.incoming)
 async def send_welcome(client, message):
       if CHAT_BOT == 'ENABLE':
           return
@@ -367,27 +368,8 @@ async def send_welcome(client, message):
       ko=await bot.get_me()
       
       if ssendr == ko.id :
-       await tgbot.send_message(message.chat_id, "**Hi! Master If You Want That I Talk!**\n\n**Kindly Enable Chatbot**\n\n**You Can Chat With Me :)**")
+       await tgbot.send_message(message.chat.id, "**Hi! Master If You Want That I Talk!**\n\n**Kindly Enable Chatbot**\n\n**You Can Chat With Me :)**")
       
       else:
-       await tgbot.send_message(message.chat_id, "**Hi! How Can I Help?**\n\n**Kindly Leave The Message**\n\n**You Can ask my master by doin !ask :)**")
-
-
-
-# @tgbot.on(messages.NewMessage(pattern="^Help"))
-# async def send_welcome(event):
-#     if CHAT_BOT == 'ENABLE':
-#      return
-#     user =OWNER # U s k a B a s  c h a l e  t o  s a r a d a r i y a  p i i  j a y e, a a e k h u d a  t u  b o l d e   t e r e   b a d l o  k o 
-    
-#     sendr = event.sender_id
-#     from userbot import bot
-    
-#     owner=await bot.get_me()
-      
-#     if sendr == owner.id :
-#        await tgbot.send_message(event.chat_id, "**Hi! Master If You Want That I Talk!**\n\n**Kindly Enable Chatbot Then, You Can Chat With Me :)**")
-#     else:
-#        await tgbot.send_message(event.chat_id, f"**Kindly Leave The Message**\n\n**I Will Pass It To {user}**")
-
+       await tgbot.send_message(message.chat.id, "**Hi! How Can I Help?**\n\n**Kindly Leave The Message**\n\n**You Can ask my master by doin !ask :)**")
 
