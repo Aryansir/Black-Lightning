@@ -1,7 +1,7 @@
 # Copyright (C) 2021 KeinShin@Github.
 import pandas as pd
 
-from system.Config.utils import hd_no
+from system.Config.utils import hd_no, language
 import re
 from pyrogram import filters
 from system import  *
@@ -15,7 +15,7 @@ SPAM_LIMIT = []
 
 
 
-@app.on(filters.incoming & filters.private & ~filters.edited & ~filters.me)
+@app.on_message(filters.incoming & filters.private & ~filters.edited & ~filters.me)
 async def pm(client, message):
     mister = await app.get_users(int(message.chat_id))
     sed_user = get_id(mister.id)
@@ -66,19 +66,19 @@ async def ap(client, message):
     try:
        if hd_no(message.text):
          id = message.text.split()[1]
-         await message.edit_message_text(f"{language('APPROVED! USER')} USER - {id}")
+         await message.edit(f"{language('APPROVED! USER')} USER - {id}")
          approve_(id)
        elif message.text is None:
          ok= await app.get_users(int(message.chat_id))
-         await message.edit_message_text(f"{language('APPROVED! USER')} USER - {ok.first_name}")
+         await message.edit(f"{language('APPROVED! USER')} USER - {ok.first_name}")
          approve_(ok.id)
        else:
          name = message.text.split()[1]
-         await message.edit_message_text(f"{language('APPROVED! USER')} - NAME {name}")
+         await message.edit(f"{language('APPROVED! USER')} - NAME {name}")
    
          approve_(name)
     except BaseException as e:
-        await message.edit_message_text(e)
+        await message.edit(e)
 
 
 
@@ -91,11 +91,11 @@ def user_abused(txt):
 async def dis(client, message):
     if hd_no(message.text):
       id = message.text.split()[1]
-      await message.edit_message_text(f"{language('DISAPPROVED USER - ')} {id}")
+      await message.edit(f"{language('DISAPPROVED USER - ')} {id}")
       dispprove(id)
     else:
       name = message.text.split()[1]
-      await message.edit_message_text(f"{language('DISAPPROVED USER - ')} {name}")
+      await message.edit(f"{language('DISAPPROVED USER - ')} {name}")
       dispprove(name=name)
 
 
