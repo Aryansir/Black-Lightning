@@ -4,7 +4,7 @@
 from telegraph import Telegraph
 from telegraph import upload_file
 from system.plugins import light
-from system import app
+from system import app, COMMAND_HELP
 telegraph = Telegraph()
 
 telegraph.create_account(short_name='TG_UB')
