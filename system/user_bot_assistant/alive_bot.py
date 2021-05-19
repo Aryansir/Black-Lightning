@@ -13,7 +13,8 @@ from system.plugins._alive_ea import ping
 
 
 import os
-from system import (OWNER,
+from system import (
+OWNER,
 updates,
 ttl,
 self_hosted,
@@ -22,7 +23,7 @@ app,
 ASSISTANT_HELP,
 HNDLR,
 g,
-mode_type,
+MODE,
 ALIVE_IMG_ASSISTANT )              
 import time
 
