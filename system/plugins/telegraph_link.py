@@ -3,8 +3,8 @@
 
 from telegraph import Telegraph
 from telegraph import upload_file
-from system import light
-from system import *
+from system.plugins import light
+from system import app
 telegraph = Telegraph()
 
 telegraph.create_account(short_name='TG_UB')
@@ -23,9 +23,9 @@ async def tg(client, message):
          a=upload_file(a)
  
          o = 'http://telegra.ph/{}'.format(a)
-         await app.send_message(message.chat_id, f"__YOUR LINK SIR__\n\n{o}")
+         await app.send_message(message.chat.id, f"__YOUR LINK SIR__\n\n{o}")
     except Exception as e:
-        await app.send_message(message.chat_id,e)
+        await app.send_message(message.chat.id,e)
 
 
 COMMAND_HELP.update(
