@@ -27,7 +27,7 @@ from system.Config.utils import *
 ERRORS_NAME = []
 
 from pyrogram.types import Message
-from system import CMD_LIST, COMMAND_HELP, CMD_DICT, HNDLR, SUDO_USER_NO_OF_TIME_USED
+import system
 from pyrogram.handlers import MessageHandler
 
 import inspect
@@ -35,7 +35,6 @@ from pyrogram import filters
 
 from system.Config import *
 from system.Config.errors import *
-from system import app, ASSISTANT_LIST
 import logging
 
 time = datetime.datetime.now()
@@ -57,36 +56,44 @@ ASSIS_HELP = {}
 
 class light:
 
+
+
      def on(self, cmd, sudo_ids  = None,  file: str = None):
             self.command = cmd
+            print("DOING")
             self.id = sudo_ids
-            self.hndlr = HNDLR
+            self.hndlr = system.HNDLR
+            self.file = file
             if Variable.HNDLR is None:
                   raise HNDLRERROR(f"{language('You are  not allowed to leave HNDLR None.')}")
-            if file:
-                if file.endswith("_ea"):
-                    eas = file.split()
+            if self.file:
+                if self.file.endswith("_ea"):
+                    eas = self.file.split()
                 for i in eas:
                     easters.append(i)
                 pickle.dump(easters, open("easter.dat", "wb"))
     
-    
+            print("ALLMOST")
 
-            if not sudo_ids:
-              self.filter = filters.me & filters.forwarded & filters.incoming & filters.via_bot & filters.command(self.hndlr, self.command)
+
+            if not self.id:
+              self.filter = ((filters.me | filters.user(self.id)) & filters.command("dict", '.') & ~filters.via_bot & ~filters.forwarded)
             else:
-              self.filter = (filters.me |  filters.user(self.id))   & filters.forwarded & filters.incoming & filters.via_bot & filters.command(self.hndlr, self.command)
+              self.filter =       (filters.me & filters.command("dict", '.') & ~filters.via_bot & ~filters.forwarded)
+    
             try: 
              c = " ".join(self.command)
-             CMD_LIST.append(c[0:])
+             system.CMD_LIST.append(c[0:])
             except BaseException as e:
              logging.info(e)
             def handle(function):
 
                    async def call(client, message): # off course basic help fron friday  for decorator.
-                     await function(client, message)
-                     app.add_handler(MessageHandler(call, self.filter))
-  
+                       await function(client, message)
+                    
+                    
+                   system.app.add_handler(MessageHandler(call, filters=self.filter), group=0) # sorry TwT
+
                    return call
             return handle
      
@@ -132,7 +139,7 @@ class light:
 
 def owner(func):
    async def wrapper(client, message):
-       user = await app.get_users(int(message.chat.id))
+       user = await system.app.get_users(int(message.chat.id))
        if user.is_self:
            await message.answer(f"{language('Only for the strangers not for the owner')}!")
        try:
@@ -140,7 +147,6 @@ def owner(func):
        except BaseException as e:
             logging.error(e)
    return wrapper
-from system import bot
 
 # function
 
@@ -149,7 +155,7 @@ from system import bot
 
 def inline_help_wrapprs(func):
     async def wrapper(client, really):
-        bot = await bot.get_me()
+        bot = await system.bot.get_me()
         i = await bot.id
         if really.from_user.id == i:
            really.answer(f"{language('Get Lost Retard')}", cache_time=0, show_alert=True)
