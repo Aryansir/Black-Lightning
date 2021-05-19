@@ -32,7 +32,7 @@ async def _(event):
                 REASON = arg[2]
             else:
                 FBAN = arg[1]
-                REASON = " #fban "
+                REASON = " #Superfban_Lightning_Userbot"
         else:
             FBAN = previous_message.sender_id
             REASON = event.text.split(" ", maxsplit=1)[1]
@@ -45,7 +45,7 @@ async def _(event):
             REASON = arg[2]
         else:
             FBAN = arg[1]
-            REASON = " #fban "
+            REASON = " #Superfban_Lightning_Userbot "
     try:
         int(FBAN)
 # Dear kanger if you remove id or username which is given below so this plugin will not work...
@@ -117,7 +117,7 @@ async def _(event):
     try:
         await bot.send_message(chat, f"/start")
     except BaseException:
-        await event.edit("PM_PERMIT_GROUP_ID  is incorrect.")
+        await event.edit("PM_LOGGR_BOT_API_ID  is incorrect.")
         return
     await asyncio.sleep(3)
     if Config.EXCLUDE_FED:
@@ -203,7 +203,7 @@ async def _(event):
     try:
         await bot.send_message(chat, f"/start")
     except BaseException:
-        await event.edit("PM_PERMIT_GROUP_ID  is incorrect.")
+        await event.edit("PM_LOGGR_BOT_API_ID  is incorrect.")
         return
     await asyncio.sleep(5)
     for fed in fedList:
