@@ -10,8 +10,6 @@ from system import (
 
 import logging
 
-logging.basicConfig(level=logging.INFO)
-logging.basicConfig(level=logging.ERROR)
 
 mean = ""
 @light.on(["dic", "define", "dictonary"])
