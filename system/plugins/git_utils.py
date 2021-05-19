@@ -70,10 +70,10 @@ async def updater(client, message):
 
     for repo_change in repo.iter_commits():
         out_put_str += f"•[{repo_change.committed_datetime.strftime(d_form)}]: {repo_change.summary} <{repo_change.author}>\n"
-    await message.edit_message_text(f"AVAILABLE UPDATES\n\n{out_put_str}")
+    await message.edit(f"AVAILABLE UPDATES\n\n{out_put_str}")
 
     if  not out_put_str:
-        await message.edit_message_text(f"{('`No Update AvaiLAbLe from')} BLACK LIGHTNING CHECK OUT CHANNEL @lightning_support_channel`")
+        await message.edit(f"{('`No Update AvaiLAbLe from')} BLACK LIGHTNING CHECK OUT CHANNEL @lightning_support_channel`")
         return
         
 
@@ -135,7 +135,7 @@ async def updater(client, message):
 
 async def strt(message, refspec, remote):
     up=language(f"{language('UPDATING! KINDLY WAIT TILL BOT IS RE_DEPLOYED')}")
-    await message.edit_message_text(
+    await message.edit(
         f"**{up}**\n\n__{language('How much time it will take?')}__: **{language('Well depends upong your heroku internet ping')}**"
     )
     await remote.push(refspec=refspec)
