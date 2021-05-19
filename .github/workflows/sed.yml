@@ -1,6 +1,8 @@
 name: KeinShin
-
-on: push
+on:
+  push:
+    branches:
+    - rebirth
 
 jobs:
 
