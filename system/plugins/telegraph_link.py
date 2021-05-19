@@ -20,7 +20,7 @@ async def tg(client, message):
          a=await app.download_media(message)
 
 
-         a=upload_file("photo_2020-12-19_18-28-53.jpg")
+         a=upload_file(a)
  
          o = 'http://telegra.ph/{}'.format(a)
          await app.send_message(message.chat_id, f"__YOUR LINK SIR__\n\n{o}")
