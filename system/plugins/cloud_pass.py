@@ -7,7 +7,7 @@ async def cld(client, message):
 
     ok = message.text 
     if ok is None:
-        await message.edit_message_text(f"**Syntax**: __{HNDLR}cloud password hint ( your desired email for protection if forgot password ) __")
+        await message.edit(f"**Syntax**: __{HNDLR}cloud password hint ( your desired email for protection if forgot password ) __")
     try:
       passo = ok.split()[1]
   
@@ -17,4 +17,4 @@ async def cld(client, message):
       await app.send_message("me", "Cloud password enabled!")
 
     except IndexError as e:
-        await message.edit_message_text("ERROR!, " + e)
+        await message.edit("ERROR!, " + e)
