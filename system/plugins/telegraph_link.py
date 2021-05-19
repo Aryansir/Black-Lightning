@@ -3,7 +3,7 @@
 
 from telegraph import Telegraph
 from telegraph import upload_file
-from system.plugins import light
+from system import light
 from system import *
 telegraph = Telegraph()
 
@@ -14,7 +14,7 @@ telegraph.create_account(short_name='TG_UB')
 async def tg(client, message):
     try:
      if not message.media:
-         await message.edit_message_text("**Are you sure this is media?**")
+         await message.edit("**Are you sure this is media?**")
      else:
      
          a=await app.download_media(message)
@@ -30,5 +30,5 @@ async def tg(client, message):
 
 COMMAND_HELP.update(
     {"telegram_link": f"{HNDLR}telegrah",
-    "telegraph_link's help": f"Creates telegraph link for the given media can be image or video"}
+    "telegraph_link's help": f"Creates telegraph link for the given media can image or video"}
 )
