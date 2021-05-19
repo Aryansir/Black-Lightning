@@ -37,7 +37,7 @@ async def _(client, message):
   writing_file.close()
 
 
-@app.on(filters.me | filters.user & filters.mentioned & filters.all & filters.outgoing)
+@app.on_message(filters.me  & filters.mentioned & filters.all & filters.outgoing)
 async def n(client, message):
   if "False" in reading_file:
     return
