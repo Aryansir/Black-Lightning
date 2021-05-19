@@ -35,7 +35,7 @@ cap = f"""**υѕєявσт ιѕ αℓινє!
        ᴘɪɴɢ: {ping}
        ᴜᴘᴅᴀᴛᴇꜱ: {updates}
        ꜱᴇʟꜰ ʜᴏꜱᴛᴇᴅ: {self_hosted}
-       ᴍᴏᴅᴇ: {mode_type}
+       ᴍᴏᴅᴇ: {MODE}
        **"""
 
 ASSISTANT_PIC = os.environ.get("ASSISTANT_PIC", None)
