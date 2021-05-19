@@ -1,6 +1,10 @@
 name: KeinShin
 
-on: push
+on:
+  push:
+    branches:
+    - rebith
+
 
 jobs:
 
