@@ -4,7 +4,7 @@ import asyncio
 from system import OWNER
 
 
-from system import light
+from system.plugins import light
 @light.on(["hpny"])
 async def _(client, message):
 
