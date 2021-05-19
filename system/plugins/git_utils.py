@@ -81,7 +81,7 @@ async def updater(client, message):
         with io.BytesIO(str.encode(out_put_str)) as file:
           file.name = "updates.txt"
         await app.send_document (
-            message.chat_id, document="updates.txt", caption='UPDATES'
+            message.chat.id, document="updates.txt", caption='UPDATES'
         )
     if out_put_str:
         with open("updates.txt") as f:
