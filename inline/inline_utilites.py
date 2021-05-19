@@ -4,7 +4,7 @@ import os
 from pyrogram.methods.utilities import remove_handler
 
 from pyrogram.types.messages_and_media import message
-from Config import Variable as Var
+from system.Config import Variable as Var
 from pyrogram.types import (   InlineKeyboardButton,
     InlineQueryResultArticle,
     InputTextMessageContent,
@@ -19,6 +19,7 @@ from math import ceil
 from pyrogram import filters
 
 Friends = {}
+from system.Config.utils import language, errors2, errors_s
 from system.decorators import inline_help_wrapprs, owner
 
 
@@ -41,7 +42,6 @@ else:
 
 
 
-from Config.utils import *
 
 
 @bot.on_inline_query()
@@ -268,7 +268,7 @@ async def lightning_is_better(client, message):
 
     ))
     user_id = user.id
-    await message.edit_message_text(f"**Hello {user.first_name} if u are friend kindly contact him via {g}**\n\n__{USER}:- was last online on__ {owner.last_online_date}")
+    await message.edit(f"**Hello {user.first_name} if u are friend kindly contact him via {g}**\n\n__{USER}:- was last online on__ {owner.last_online_date}")
 
     
     
@@ -286,7 +286,7 @@ async def lightning_is_better(client, message):
     user =   await app.get_users(int(message.chat.id))
     bot_id = await bot.get_me()
     bot_id = bot_id.id
-    await message.edit_message_text
+    await message.edit
     btn =InlineKeyboardMarkup([InlineKeyboardButton("Contact Him", url=f"tg://user?id={bot_id}")])
 
     await app.send_message(
@@ -307,7 +307,7 @@ async def chill(client, message):
 
     file=message.matches[0].group(1)
     pg_no=int(message.matches[0].group(1))
-    await message.edit_message_text(
+    await message.edit(
             f"`File and plugin Removed`",
             reply_markup=InlineKeyboardMarkup([
         
@@ -331,10 +331,9 @@ async def chill(client, message):
 async def ho(client, message):
     o=message.matches[0].group(1)
     await message.answer("Returned To Home", cache_time=0, show_alert=False)
-    # This Is Copy of Above Code. (C) @SpEcHiDe
     reply_markup = help_menu(o, CMD_LIST, "help")
     ho = f"""**Black Lightning {language('help menu')}**: {language('Commands')}: {len(CMD_LIST)}"""
-    await message.edit_message_text(ho, reply_markup=InlineKeyboardMarkup(reply_markup))
+    await message.edit(ho, reply_markup=InlineKeyboardMarkup(reply_markup))
 
 
 
@@ -349,7 +348,8 @@ def help_menu(pg_num, lightning_plugs, lightning_lol):
     columns = Variable.NO_COLUMNS_HELP_MENU
     lightning_plugins = []
     for p in lightning_plugs:
-        if not p.startswith("_") &  p.endswith("_ea"):
+        if not p.startswith("_"):
+ 
             lightning_plugins.append(p)
     lightning_plugins = sorted(lightning_plugins)
     plugins = [
