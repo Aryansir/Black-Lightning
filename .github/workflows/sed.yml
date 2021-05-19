@@ -18,9 +18,9 @@ jobs:
 
         with:
 
-          find: "shenron"
+          find: "edit_message_text"
 
-          replace: "userbot"
+          replace: "edit"
 
       - name: Create Pull Request
 
