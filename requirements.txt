@@ -18,3 +18,4 @@ coffeehouse
 Pillow
 PyDictionary 
 sqlalchemy==1.2
+psycopg2
