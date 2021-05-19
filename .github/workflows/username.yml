@@ -18,9 +18,9 @@ jobs:
 
         with:
 
-          find: "blasters"
+          find: "chat_id"
 
-          replace: "plugins"
+          replace: "chat.id"
 
       - name: Create Pull Request
 
