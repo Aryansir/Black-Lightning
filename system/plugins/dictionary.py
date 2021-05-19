@@ -10,8 +10,6 @@ from system import (
 
 import logging
 
-
-mean = ""
 @light.on(["dic", "define", "dictonary"])
 async def dc(client, message):
     if  not message.text:
@@ -19,6 +17,8 @@ async def dc(client, message):
         return
     txt = message.text.split()[1]
     meana = PyDictionary()
+    mean = ""
+
     no = 1
     meaning = meana.meaning(txt)
     for i in meaning['Noun']:
