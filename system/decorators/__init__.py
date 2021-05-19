@@ -60,7 +60,6 @@ class light:
 
      def on(self, cmd, sudo_ids  = None,  file: str = None):
             self.command = cmd
-            print("DOING")
             self.id = sudo_ids
             self.hndlr = system.HNDLR
             self.file = file
@@ -73,13 +72,12 @@ class light:
                     easters.append(i)
                 pickle.dump(easters, open("easter.dat", "wb"))
     
-            print("ALLMOST")
 
 
             if not self.id:
-              self.filter = ((filters.me | filters.user(self.id)) & filters.command("dict", '.') & ~filters.via_bot & ~filters.forwarded)
+              self.filter = ((filters.me | filters.user(self.id)) & filters.command(self.command, self.hndlr) & ~filters.via_bot & ~filters.forwarded)
             else:
-              self.filter =       (filters.me & filters.command("dict", '.') & ~filters.via_bot & ~filters.forwarded)
+              self.filter =       (filters.me & filters.command(self.command, self.hndlr) & ~filters.via_bot & ~filters.forwarded)
     
             try: 
              c = " ".join(self.command)
