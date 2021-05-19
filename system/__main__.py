@@ -12,8 +12,7 @@ import logging
 import schedule
 from pyrogram.handlers import MessageHandler
 
-import pyrogram
-
+from pyrogram import idle
 from system.Config.utils import Variable
 from pyrogram.raw.types import BotCommand
 logging.basicConfig(level=logging.INFO)
@@ -65,9 +64,9 @@ async def add_bot_to_logg_grup(client, message):
 
         await bot.join_chat(chet)
         text = f"BLACK USERBOT is deployed."
-        async with bot.send_chat_action(chet, "typing") as  conv:
+        async with message.reply_chat_action("typing"):
 
-           await conv.send_message(text)
+           await bot.send_message(chet, text)
     except BaseException:
 
         logging.error("CANNOT ADD ASSISTANT TO LOGS CHAT")
@@ -78,33 +77,28 @@ async def add_bot_to_logg_grup(client, message):
 import glob
 import importlib
 
-async def finnalise():
+def finnalise():
         
+
+
+
+
+        info = f"Everything is loaded, starting userbot and adding  bot  to LOG CHANNEL "
         try:
-         await app.start()
+         app.start()
+         bot.start()
         except Exception as e:
          logging.error(f"CANNOT LOAD USER DUE TO {e}")
          exit()
         a  = Start("system/plugins/")
         a.boot()
-        try:
-            await bot.start()
-        except Exception as e:
-            logging.error(f"CANNOT start assistant due to {e}")
-            exit()
-
         b = Start("system/user_bot_assistant/")
         b.boot()
-
-
-        info = f"Everything is loaded, Black Lightning is Online check your saved message and bot is added to LOG CHANNEL "
-        
         logging.info(info)
-        
-        await pyrogram.idle()
-        await  app.send_message("me", f"**BLACK-LIGHTNING USERBOT's MESSAGE\n\n{USER} Kindly Enable Inline from @BotFather to Access All The Features Including `.help` and Many More (if it's already done Ignore this message)")
-        bot.add_handler(MessageHandler(add_bot_to_logg_grup))
+        idle()
+        app.send_message("me", f"**BLACK-LIGHTNING USERBOT's MESSAGE\n\n{USER} Kindly Enable Inline from @BotFather to Access All The Features Including `.help` and Many More (if it's already done Ignore this message)")
+        bot.add_handler(MessageHandler(add_bot_to_logg_grup()))
+if __name__ == "__main__":
+    finnalise()
 
 
-
-app.loop.run_until_complete(finnalise()) 
