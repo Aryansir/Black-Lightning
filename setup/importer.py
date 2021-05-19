@@ -4,6 +4,8 @@
 import logging
 import os
 import importlib
+from system import app
+
 
 class Start:
     def __init__(self, name: str):
@@ -12,10 +14,10 @@ class Start:
         self.path = ".".join(path)
         
         self.x= [x for x in os.listdir(self.name) if x.endswith(".py") and not x.startswith("__")]    
-
     
 
-    def  boot(self):
+    def boot(self):
           for i in self.x:
-              importlib.import_module(f"{self.path}{i}")
+              a=f"{self.path}{i.replace('.py', '')}"
+              importlib.import_module(a)
               logging.info(f"IMPORTED - {i}")
