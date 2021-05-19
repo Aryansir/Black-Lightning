@@ -1,7 +1,7 @@
 from system.Config.utils import Variable
 from PyDictionary import PyDictionary
 from pyrogram import filters
-from system import light
+from system.plugins import light
 from system import (
     app,
     COMMAND_HELP,
