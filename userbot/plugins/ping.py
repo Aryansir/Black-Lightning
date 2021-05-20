@@ -4,7 +4,7 @@ from datetime import datetime
 from .. import ALIVE_NAME, CMD_HELP
 from ..utils import lightning_cmd, edit_or_reply, sudo_cmd
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Black Lightning"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "ℓιgнтηιηg мαѕтєя"
 
 
 @borg.on(lightning_cmd(pattern=f"pingy$", outgoing=True))
