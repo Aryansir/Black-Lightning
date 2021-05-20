@@ -92,13 +92,14 @@ def finnalise():
         for  i in a.x:
              a.pat = i.replace(".py", "")   
              a.boot()
-        bot.run()
+             logging.info("IMPORTED ASISSTANT- {}".format(i))
         try:
+         bot.start()
 
          app.run()
         except BaseException as e:
             logging.error("ERROR - {}".format(e))
-        logging.info("IMPORTED ASISSTANT- {}".format(i))
+        
         app.send_message("me", f"**BLACK-LIGHTNING USERBOT's MESSAGE\n\n{USER} Kindly Enable Inline from @BotFather to Access All The Features Including `.help` and Many More (if it's already done Ignore this message)")
         
 
