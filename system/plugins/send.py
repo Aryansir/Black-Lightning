@@ -33,7 +33,7 @@ async def send(client, message):
         path = f"{txt}.txt"
         await app.send_document(message.chat.id, document=path, caption=f"**REQUIREMENTS-FILE** - __{txt}__\n\n@lightning_support_grup", force_document=True)
     else:
-        await message.edit("**{} does not exsists! (make sure name it is correct :/)**".format(txt))
+        await message.edit("**{} does not exsists! (make sure name  is correct :/)**".format(txt))
 
 
 COMMAND_HELP.update({
