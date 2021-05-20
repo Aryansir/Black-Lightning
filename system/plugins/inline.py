@@ -301,7 +301,7 @@ async def lightning_is_better(client, message):
 
 
 
-@bot.on_callback_query(filters.regex(pattern="krish_(.*))"))
+@bot.on_callback_query(filters.regex(pattern="krish_(.*)"))
 @inline_help_wrapprs
 async def chill(client, message):
 
