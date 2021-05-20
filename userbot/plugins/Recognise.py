@@ -7,7 +7,7 @@ from userbot import CMD_HELP
 from userbot.utils import lightning_cmd
 
 
-@borg.on(lightning_cmd(pattern="recognize ?(.*)"))
+@borg.on(lightning_cmd(pattern="recgnz ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -49,7 +49,7 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "recognize": "`.recognize` reply this to any media file\
+        "recognize": "`.recgnz` reply this to any media file\
     \nUSAGE : Get information about an image using AWS Rekognition.\
     \nFind out information including detected labels, faces. text and moderation tags."
     }
