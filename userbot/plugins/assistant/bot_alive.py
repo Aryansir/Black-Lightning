@@ -17,7 +17,7 @@ else:
      PM_IMG = ASSIS_PIC
 
 
-pm_caption = "➤ **ASSISTANT IS:** `ONLINE`\n\n"
+pm_caption = " **BLACK LIGHTNING IS:** `ONLINE`\n\n"
 pm_caption += "➤ **SYSTEMS STATS**\n"
 pm_caption += "➤ **Telethon Version:** `1.15.0` \n"
 pm_caption += f"➤ **Assistant Version** : `{currentversion}`\n"
