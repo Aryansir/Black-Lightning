@@ -26,6 +26,6 @@ pm_caption += "➤ **License** : [GNU General Public License v3.0](https://githu
 pm_caption += "➤ **Copyright** : [Black Lighting](GitHub.com/keinshin/Black-Lightning)\n"
 light = [[Button.url("✧Repos✧", "https://github.com/KeinShin/Black-Lightning"), Button.url("✧Support✧", "https://t.me/lightning_support_group")]]
 light +=[[custom.Button.inline("✧Help✧", data="gibcmd")]]
-@tgbot.on(events.NewMessage(pattern="^/alive", func=lambda e: e.sender_id == bot.uid))
+@tgbot.on(events.NewMessage(pattern="^/alive"))
 async def _(event):
     await tgbot.send_file(event.chat_id, PM_IMG, caption=pm_caption, buttons=light)
