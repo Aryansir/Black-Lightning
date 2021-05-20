@@ -14,6 +14,21 @@ from pyrogram.types import (   InlineKeyboardButton,
 
 )
 
+ASISTANT_CMD_ROWS = os.environ.get("ASISTANT_CMD_ROWS", None)
+if ASISTANT_CMD_ROWS is None:
+   number_of_rows_in_commands = 6
+
+
+
+
+
+
+
+ASISTANT_CMD_COLUMNS = os.environ.get("ASISTANT_CMD_COLUMNS", None)
+if ASISTANT_CMD_COLUMNS is None:
+
+   number_of_columns_in_commands = 3
+
 from system import *
 from math import ceil
 from pyrogram import filters
@@ -22,7 +37,8 @@ Friends = {}
 from system.Config.utils import language, errors2, errors_s
 from system.decorators import inline_help_wrapprs, owner
 
-
+plugs = []
+tgbot = bot
 g = Variable.TG_BOT_USER_NAME
 USER = str(Var.OWNER_NAME)
 
@@ -49,22 +65,29 @@ async def inline_handler(client, inline_query):
     fuking_sucking = await app.get_me()
     a = fuking_sucking.id
     text = inline_query.query
-    if text == "Help Menu" and fuking_sucking.id == inline_query.from_user.id:
+    if text == "Help Menu":
         content = InputTextMessageContent("**Black Lightning Help Menu for User** [{}]({})".format(USER[1:],  f"tg://user?id={fuking_sucking.id}"))
-        await inline_query.answer(result=[
-        InlineQueryResultArticle(
-                    
-                    title="Help Menu",
-                    input_message_content=content,
-                    description="Help for command",
-                    reply_markup=InlineKeyboardMarkup(help_menu(0, CMD_LIST, "help")),
-        )],
-        cache_time=0)
+        await client.answer_inline_query(
+            inline_query.id,
+            results=[
+                (
+                    InlineQueryResultArticle(
+                        title="Menu",
+                        reply_markup=InlineKeyboardMarkup(help_menu(0, CMD_LIST, 'help')),
+                        input_message_content=content,
+                    )
+                )
+            ],
+            cache_time=0
+
+        )
 
 
-    elif inline_query.from_user.id == a and text.lower() == "help" and "Traceback" in errors_s():
+    elif inline_query.from_user.id == a and text.lower() == "need" and "Traceback" in errors_s():
        
-        await inline_query.answer(result = InlineQueryResultArticle(
+        await client.answer_inline_query(inline_query.id,
+            cache_time=0,
+            results = InlineQueryResultArticle(
         
  
               "Click for the help",
@@ -101,15 +124,29 @@ async def inline_handler(client, inline_query):
                         
                     ]]
   
-        await inline_query.answer(
-            title=Variable.PM_SECURITY_MSG,
-            input_message_content=Variable.PM_SECURITY_MSG,
-            thumb_url=PM_SECURITY_IMG,
-            reply_markup=InlineKeyboardMarkup(mrkup)
+        await client.answer_inline_query(
+            inline_query.id,
+            cache_time=1,
+            results=InlineKeyboardMarkup(mrkup)
 
         
         )
-    
+    elif  text == "Assistant Menu":
+        fucking_sucking = await bot.get_me()
+        text = inline_query.query
+
+        content = InputTextMessageContent("**Black Lightning ASSISTANT Help Menu for User** [{}]({})".format(USER[1:],  fucking_sucking.id))
+        await inline_query.answer(result=[
+        InlineQueryResultArticle(
+                    
+                    title="Help Menu",
+                    input_message_content=content,
+                    description="Help for command",
+                    reply_markup=InlineKeyboardMarkup(assitant_help(0, ASSISTANT_HELP, "help")),
+        )],
+        cache_time=1)
+
+
 blocked =[]
 def blocked_user(name):
     blocked.append(name)
@@ -342,40 +379,153 @@ async def ho(client, message):
         
 
 
-    
-def help_menu(pg_num, lightning_plugs, lightning_lol):
-    rows = Variable.NO_ROWS_HELP_MENU
-    columns = Variable.NO_COLUMNS_HELP_MENU
-    lightning_plugins = []
-    for p in lightning_plugs:
+def help_menu(pg_num, setv, prefix):
+    rows = 7
+    columns = 3
+    helpable_modules = []
+    for p in setv:
         if not p.startswith("_"):
- 
-            lightning_plugins.append(p)
-    lightning_plugins = sorted(lightning_plugins)
-    plugins = [
+            helpable_modules.append(p)
+    helpable_modules = sorted(helpable_modules)
+    modules = [
         InlineKeyboardButton(
-            "{} {} {}".format("⨵", x, "⨵"), callback_data="_lightning_plugins_{}".format(x)
+            text="{} {} {}".format("⨵", x, "⨵"),
+            callback_data="_lightning_plugins_{}".format(x, pg_num),
         )
-        for x in lightning_plugins
+        for x in helpable_modules
     ]
-    pairs = list(zip(plugins[::columns], plugins[1::columns]))
-    if len(plugins) % columns == 1:
-        pairs.append((plugins[-1],))
-    max_fix = ceil(len(pairs) / rows)
-    lightning_plugins_pages = pg_num % max_fix
+    pairs = list(zip(modules[::columns], modules[1::columns]))
+    if len(modules) % columns == 1:
+        pairs.append((modules[-1],))
+    max_num_pages = ceil(len(pairs) / rows)
+    page = pg_num % max_num_pages
     if len(pairs) > rows:
         pairs = pairs[
-            lightning_plugins_pages * rows : rows * (lightning_plugins_pages + 1)
+            page * rows : rows * (page + 1)
         ] + [
             (
                 InlineKeyboardButton(
-                    f"{language('Previous')}", callback_data="{}_prev({})".format(lightning_lol, lightning_plugins_pages)
+                    text="Previous",
+                    callback_data="{}_prev({})".format(prefix, pg_num),),
+                InlineKeyboardButton(
+                    text="Next",
+                    callback_data="{}_next({})".format(prefix, setv),
                 ),
-               
-               InlineKeyboardButton(
-                    f"{language('Next')}", callback_data="{}_next({})".format(lightning_lol, lightning_plugins_pages)
-                ),
-                
             )
         ]
     return pairs
+
+
+@bot.on_message(filters.command(["Commands"]) & filters.incoming)
+async def command(client ,event):
+    for i in ASSISTANT_HELP:
+        if i.startswith('_'):
+            return
+        plugs.append(i)
+    des = sorted(plugs)
+    
+    buttons = assitant_help(0, ASSISTANT_HELP, 'help')
+    if des in ASSISTANT_HELP:
+
+     await event.edit_message_reply_markup(reply_markup =buttons)
+
+@bot.on_callback_query(filters.regex(pattern="_cmd_data_(.*)"))
+
+async def lightning_pugins_query_hndlr(client ,event):
+    command = ASSISTANT_HELP['Command']
+    cmd = event.matches[0].group(1)
+    type = ASSISTANT_HELP[f"{cmd}'s Type"]
+    try:
+    
+     if cmd in ASSISTANT_HELP:
+        assistant_help_strin = f"**✡ Type : {type} ✡**"
+        assistant_help_strin  += f"**🔺 COMMAND 🔺 :** `{cmd}` \n\n{command}"
+        
+        assistant_buttons = assistant_help_strin 
+        assistant_buttons += "\n\n**In Case Any Problem @lightning_support_grup**".format(cmd)
+        await event.edit(assistant_buttons)
+    
+    except KeyError:
+        await event.answer("The command isn't displayable", cache_time=0, alert=True)
+
+
+@bot.on_callback_query(filters.regex(pattern="help_preve\((.+?)\)"))
+
+async def lightning_pugins_query_hndlr(client, lightning):
+    
+        lightning_page = int(lightning.matches[0].group(1))
+        buttons = assitant_help(
+            lightning_page - 1, ASSISTANT_HELP, "help"  # pylint:disable=E0602
+        )
+        await lightning.edit_message_reply_markup(reply_markup=buttons)
+
+import io
+# from system.sqls.bot_sql import *
+
+# @bot.on_callback_query(filters.regex(pattern="users"))
+
+
+# async def d(client ,message):
+#     with io.BytesIO(str.encode(get_ids())) as out_file:
+#         out_file.name = "cmd_list.txt"
+#     await bot.send_document(message.chat.id, document=out_file)
+
+@bot.on_callback_query(filters.regex(pattern="help_nexte\((.+?)\)"))
+  
+async def ass_pugins_query_hndlr(client, lightning):
+        await lightning.delete()
+        lightning_page = int(lightning.matches[0].group(1))
+        
+        buttons = assitant_help(
+            lightning_page + 1, ASSISTANT_HELP, "help"  # pylint:disable=E0602
+        )
+        await lightning.edit_message_reply_markup(reply_markup=buttons)
+
+
+
+#    Copyright (C) 2020 Telebot
+
+def assitant_help(b_lac_krish, lists, lightning_lol):
+
+ total_cmds = []
+ for p in list:
+     if not p.startswith("_"):
+         total_cmds.append(p)
+ total_cmds = sorted(total_cmds)
+ plugins = [
+     InlineKeyboardButton(
+         "{}".format( x), callback_data="_cmd_data_{}".format(x)
+     )
+     for x in total_cmds
+ ]
+ pairs = list(zip(plugins[::number_of_columns_in_commands], plugins[1::number_of_columns_in_commands]))
+ if len(plugins) % number_of_columns_in_commands == 1:
+     pairs.append((plugins[-1],))
+ max_fix = ceil(len(pairs) / number_of_rows_in_commands)
+ total_cmds_pages = b_lac_krish % max_fix
+ 
+ if len(pairs) > number_of_rows_in_commands:
+   
+
+     pairs = pairs[
+         total_cmds_pages * number_of_rows_in_commands : number_of_rows_in_commands * (total_cmds_pages + 1)
+     ] + [
+         (
+             InlineKeyboardButton(
+                 "Previous", callback_data="{}_prev({})".format(lightning_lol, total_cmds_pages)
+             ),
+            
+            InlineKeyboardButton(
+                 "Next", callback_data="{}_next({})".format(lightning_lol, total_cmds_pages)
+             ),
+             
+         )
+     ]
+ else:
+   pairs = pairs[
+       total_cmds_pages * number_of_rows_in_commands : number_of_columns_in_commands * (total_cmds_pages + 1)
+   
+   ]
+
+ return pairs
+
