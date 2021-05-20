@@ -26,18 +26,18 @@ from system.decorators import inline_help_wrapprs, owner
 g = Variable.TG_BOT_USER_NAME
 USER = str(Var.OWNER_NAME)
 
-BOT_MSG = os.environ.get("BOT_MSG", None)
-if BOT_MSG is None:
+PM_MSG = os.environ.get("PM_MSG", None)
+if PM_MSG is None:
     BOT_LIT = f"Hello Sir MySelf Black Lightning Here For  {USER}'s Protection "
 else:
-    BOT_LIT = BOT_MSG   
+    BOT_LIT = PM_MSG   
 
 
-LIGHTNING_BOT_PIC = os.environ.get("LIGHTNING_BOT_PIC", None)
-if LIGHTNING_BOT_PIC is None:
+PM_PIC = os.environ.get("PM_PIC", None)
+if PM_PIC is None:
     PM_SECURITY_IMG = "https://telegra.ph/file/07d55d71944a852ac6d5e.jpg"
 else:
-    PM_SECURITY_IMG = LIGHTNING_BOT_PIC
+    PM_SECURITY_IMG = PM_PIC
 
 
 
