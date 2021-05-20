@@ -83,21 +83,24 @@ def finnalise():
 
 
 
-        info = f"Everything is loaded, starting userbot and adding  bot  to LOG CHANNEL "
+        a = Start("system/plugins/")
+        for  i in a.x:
+             a.pat = i.replace(".py", "")   
+             a.boot()
+             logging.info("IMPORTED - {}".format(i))
+        a = Start("system/user_bot_assistant/")
+        for  i in a.x:
+             a.pat = i.replace(".py", "")   
+             a.boot()
+        bot.run()
         try:
-         app.start()
-         bot.start()
-        except Exception as e:
-         logging.error(f"CANNOT LOAD USER DUE TO {e}")
-         exit()
-        a  = Start("system/plugins/")
-        a.boot()
-        b = Start("system/user_bot_assistant/")
-        b.boot()
-        logging.info(info)
+
+         app.run()
+        except BaseException as e:
+            logging.error("ERROR - {}".format(e))
+        logging.info("IMPORTED ASISSTANT- {}".format(i))
         app.send_message("me", f"**BLACK-LIGHTNING USERBOT's MESSAGE\n\n{USER} Kindly Enable Inline from @BotFather to Access All The Features Including `.help` and Many More (if it's already done Ignore this message)")
         
-        idle()
 
 if __name__ == "__main__":
     finnalise()
