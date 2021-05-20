@@ -80,7 +80,7 @@ class light:
               self.filter =       (filters.me &    & ~filters.forwarded  # Not messages that were forwarded
                                   & filters.incoming  # Messages this session received
                                   & ~filters.via_bot  # No "via @samplebot" (ie no inline bots)
-                                  & filters.command(".", ["dict", "define", "meaning"]
+                                  & filters.command(self.hndlr, self.command)
     
             try: 
              c = " ".join(self.command)
