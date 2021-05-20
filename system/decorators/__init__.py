@@ -77,7 +77,10 @@ class light:
             if not self.id:
               self.filter = ((filters.me | filters.user(self.id)) & filters.command(self.command, self.hndlr) & filters.via_bot & ~filters.forwarded)
             else:
-              self.filter =       (filters.me & filters.command(self.command, self.hndlr) & filters.via_bot & ~filters.forwarded)
+              self.filter =       (filters.me &    & ~filters.forwarded  # Not messages that were forwarded
+                                  & filters.incoming  # Messages this session received
+                                  & ~filters.via_bot  # No "via @samplebot" (ie no inline bots)
+                                  & filters.command(".", ["dict", "define", "meaning"]
     
             try: 
              c = " ".join(self.command)
