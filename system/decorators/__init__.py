@@ -75,9 +75,9 @@ class light:
 
 
             if not self.id:
-              self.filter = ((filters.me | filters.user(self.id)) & filters.command(self.command, '.') & ~filters.via_bot & ~filters.forwarded)
+              self.filter = ((filters.me | filters.user(self.id)) & filters.command(self.command, self.hndlr) & ~filters.via_bot & ~filters.forwarded)
             else:
-              self.filter =       (filters.me & filters.command(self.command, '.') & ~filters.via_bot & ~filters.forwarded)
+              self.filter =       (filters.me & filters.command(self.command, self.hndlr) & ~filters.via_bot & ~filters.forwarded)
     
             try: 
              c = " ".join(self.command)
