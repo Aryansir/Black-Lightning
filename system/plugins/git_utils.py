@@ -40,11 +40,11 @@ async def updater(client, message):
         repo = git.Repo.init()
         origin = repo.create_remote('ub', REPO)
         origin.fetch()
-        repo.create_head('master', origin.refs.master)
-        repo.heads.master.checkout(True)
+        repo.create_head('rebirth', origin.refs.rebirth)
+        repo.heads.rebirth.checkout(True)
 
     active_branch_name = repo.active_branch.name
-    if active_branch_name != 'master':
+    if active_branch_name != 'rebirth':
         await message.edit(
             f"**{language('You are using custom branch fill')} {BRANCH} name {language('if u want updates')}!".format(branch_name=active_branch_name)
         )
@@ -99,7 +99,7 @@ async def updater(client, message):
         writing_file.close()
     else:
     
-       upstream.fetch('master')
+       upstream.fetch('rebirth')
        repo.git.reset("--hard", "FETCH_HEAD")
     hel = Client()
     heroku_applications = hel.herokuclient
@@ -119,7 +119,7 @@ async def updater(client, message):
             else:
                 #  remote = repo.create_remote("heroku", heroku_git_url)
                 asyncio.get_event_loop(
-                    strt(message, "HEAD:refs/heads/master",  remote)
+                    strt(message, "HEAD:refs/heads/rebirth",  remote)
             )
        
             
