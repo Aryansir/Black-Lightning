@@ -8,7 +8,8 @@ from system.Config import Variable as Var
 from pyrogram.types import (   InlineKeyboardButton,
     InlineQueryResultArticle,
     InputTextMessageContent,
-    InlineKeyboardMarkup
+    InlineKeyboardMarkup,
+    InlineQuery
 
 
 
@@ -59,30 +60,47 @@ else:
 
 
 
+LIST = []
+
+a = [x for x in os.listdir("system/plugins/") if x.endswith(".py") and not x.startswith("__")]
+for i in a:
+
+  LIST.append(i)
+
+sa = [x for x in os.listdir("system/user_bot_assistant/") if x.endswith(".py") and not x.startswith("__")]
+for i in sa:
+
+  ASSISTANT_LIST.append(i)
 
 @bot.on_inline_query()
-async def inline_handler(client, inline_query):
+
+
+
+
+async def inline_handler(client, inline_query: InlineQuery):
     fuking_sucking = await app.get_me()
     a = fuking_sucking.id
     text = inline_query.query
-    if text == "Help Menu":
+    if text == "Menu":
         content = InputTextMessageContent("**Black Lightning Help Menu for User** [{}]({})".format(USER[1:],  f"tg://user?id={fuking_sucking.id}"))
+
+
+
         await client.answer_inline_query(
-            inline_query.id,
-            results=[
-                (
-                    InlineQueryResultArticle(
-                        title="Menu",
-                        reply_markup=InlineKeyboardMarkup(help_menu(0, CMD_LIST, 'help')),
-                        input_message_content=content,
+                inline_query.id,
+                cache_time=1,
+                results=[
+                    (
+                        InlineQueryResultArticle(
+                            title="Help",
+                            input_message_content=InputTextMessageContent(
+                                f"**Black Lightning Help Menu: COMMANDS: {len(LIST)}**"
+                            ),
+                            reply_markup=InlineKeyboardMarkup(help_menu(0, LIST, "help")),
+                        )
                     )
-                )
-            ],
-            cache_time=0
-
-        )
-
-
+                ],
+            )
     elif inline_query.from_user.id == a and text.lower() == "need" and "Traceback" in errors_s():
        
         await client.answer_inline_query(inline_query.id,
@@ -108,8 +126,8 @@ async def inline_handler(client, inline_query):
               
               
 
-    elif inline_query.from_user.id == a and text == "**Black":
-        mrkup=[
+    elif text == "**Black":
+        mrkup=[(
 
                 [   InlineKeyboardButton(
                         f"{language('My Friend')}❤️❤️",
@@ -122,7 +140,8 @@ async def inline_handler(client, inline_query):
                         f"{language('Urgent')}", 
                         callback_data ="urgent",)
                         
-                    ]]
+          ],)
+          ]
   
         await client.answer_inline_query(
             inline_query.id,
@@ -131,20 +150,19 @@ async def inline_handler(client, inline_query):
 
         
         )
-    elif  text == "Assistant Menu":
-        fucking_sucking = await bot.get_me()
-        text = inline_query.query
-
-        content = InputTextMessageContent("**Black Lightning ASSISTANT Help Menu for User** [{}]({})".format(USER[1:],  fucking_sucking.id))
-        await inline_query.answer(result=[
-        InlineQueryResultArticle(
+    # elif  text == "Assistant Menu":
+    #     fucking_sucking = await bot.get_me()
+    #     text = inline_query.query
+    #     content = InputTextMessageContent("**Black Lightning ASSISTANT Help Menu for User** [{}]({})".format(USER[1:],  fucking_sucking.id))
+        # await inline_query.answer(result=[
+        # InlineQueryResultArticle(
                     
-                    title="Help Menu",
-                    input_message_content=content,
-                    description="Help for command",
-                    reply_markup=InlineKeyboardMarkup(assitant_help(0, ASSISTANT_HELP, "help")),
-        )],
-        cache_time=1)
+        #             title="Help Menu",
+        #             input_message_content=content,
+        #             description="Help for command",
+        #             reply_markup=InlineKeyboardMarkup(help_menu(0, ASSISTANT_HELP, "help")),
+        # )],
+        # cache_time=1)
 
 
 blocked =[]
@@ -152,6 +170,40 @@ def blocked_user(name):
     blocked.append(name)
 
     
+@bot.on_message(filters.command(["alive"]) & filters.group & filters.incoming)
+async def alive(client, message):
+
+       cap = f"""
+**υѕєявσт ιѕ αℓινє!
+**Owner**‌-: __{OWNER}__
+**Time**: __{time}__
+**Commands**: __{ttl}__
+**Ping**: __12__
+**Updates**: __{updates}__
+**Self Hosted**: __{self_hosted}__
+**Mode**: __{MODE}__
+**"""
+
+       wh = [
+            [
+                InlineKeyboardButton(
+                    text="Help Menu", callback_data="sed_help_{}".format(message.chat.id)
+                )
+            ],
+        ]
+       await bot.send_document(message.chat.id, ALIVE_IMG_ASSISTANT, caption = cap ,
+       reply_markup=InlineKeyboardMarkup(wh))
+ 
+
+
+
+
+@bot.on_callback_query(filters.regex(pattern="sed_help_(.*)"))
+
+async def detailed(client, query):
+    o = query.matches[0].group(1)
+
+    await bot.send_document(o ,document=ALIVE_IMG_ASSISTANT, caption="ASSISTANT HELP MENU", reply_markup=InlineKeyboardMarkup(help_menu(0, ASSISTANT_LIST, "help", alive = False)))
 
 
 @bot.on_callback_query(filters.regex(pattern="help_next\((.+?)\)"))
@@ -161,7 +213,7 @@ async def query_hndr(client, message):
     if message.from_user.id  == b.id:  # pylint:disable=E0602
         client_page = int(message.matches[0].group(1))
         reply_markup = help_menu(
-            client_page + 1, CMD_LIST, "help"  # pylint:disable=E0602
+            client_page + 1, LIST, "help"  # pylint:disable=E0602
         )
         await message.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup(reply_markup))
     else:
@@ -172,24 +224,32 @@ async def query_hndr(client, message):
 
 
             # Thanks To Friday For This Deatiled Idea of detail button
-@bot.on_callback_query(filters.regex(pattern="detailed_(.*)"))
+@bot.on_callback_query(filters.regex(pattern="detailed_(.*)(assistant|normal)"))
 
 async def detailed(client, message):
 
     light_pulu_name = message.matches[0].group(1)
+    typea = message.matches[0].group(2)
     aa = f"{light_pulu_name}'s help"
     try:
             if light_pulu_name in COMMAND_HELP:
                     lightning_help_strin = f"{language('Commands found in')} {light_pulu_name}:\n"
-                    lightning_help_strin += f"**🔺 NAME 🔺 :** `{light_pulu_name}` \n\n `{COMMAND_HELP[aa]}"
+                    lightning_help_strin += f"**🔺 NAME 🔺 :** {light_pulu_name} \n\n {COMMAND_HELP[aa]}"
                     lightning_help_strin += "\n    " + light_pulu_name
                     lightning_help_strin += "\n"
-                    o  = [
-                        [InlineKeyboardButton("ᴅᴇʟᴇᴛᴇ", callback_data ="krish_{}".format(light_pulu_name)
-                )],
-                        [InlineKeyboardButton("нσмє 💢", callback_data ="back_(.*)")],
-              ],
-                    await message.edit_message_reply_markup(
+                    o  =  [
+            [
+                InlineKeyboardButton(
+                    text="Delete", callback_data=f"krish_{light_pulu_name}"
+                )
+            ],
+            [
+             InlineKeyboardButton(
+                    text="Back", callback_data=f"back_{light_pulu_name}{typea}"
+                )
+            ],
+        ]
+                    await message.edit_message_text(
                     text=lightning_help_strin,
                     reply_markup=InlineKeyboardMarkup(o)
                 
@@ -203,46 +263,60 @@ async def detailed(client, message):
               
         
     except KeyError:
-           await message.answer(f"{language('No Details')} U_U", cache_time=0, show_alert=False)
+           await message.answer(f"{language('No Details')} U_U", cache_time=0, show_alert=True)
     
  
                 
-@bot.on_callback_query(filters.regex(pattern="_lightning_plugins_(.*)"))
+@bot.on_callback_query(filters.regex(pattern="lightning_plugins_(.*)(assistant|normal)"))
 
-@inline_help_wrapprs
 
 async def query_hndr(client, message):
+        a = 0
+        me = await app.get_me()
+        if not  message.from_user.id ==  me.id:
+               await message.answer("OwO, U cannot use anything.")
+        else:
 
-    light_pulu_name = message.matches[0].group(1)
-    pg_no = int(message.matches[0].group(1))
+           light_pulu_name = message.matches[0].group(1)
+           type_ = message.matches[0].group(2)
+           pg_no = message.matches[0].group(1)
+        # if light_pulu_name in  str(COMMAND_HELP[light_pulu_name]):
+           
+           hlp_str  = f"**🔺 NAME 🔺 :** `{light_pulu_name}` \n\n{COMMAND_HELP[light_pulu_name]}"
+           
+           hlp_str += "\n\n**In Case Any Problem @lightning_support_grup** ".format(light_pulu_name)
+           mkp = [
+            [
+                InlineKeyboardButton(
+                    text="Details", callback_data=f"detailed_{pg_no}{type_}"
+                )
+            ],
+            [
+             InlineKeyboardButton(
+                    text="Back", callback_data=f"back_{a}{type_}"
+                )
+            ],
+        ]
+         
     
-    if light_pulu_name in COMMAND_HELP:
-       
-       client_help_strin  = f"**🔺 NAME 🔺 :** `{light_pulu_name}` \n\n{COMMAND_HELP[light_pulu_name]}"
-       client_is_best = client_help_strin 
-       client_is_best += "\n\n**In Case Any Problem @lightning_support_grup** ".format(light_pulu_name)
     
+           await message.edit_message_text(
+             hlp_str,
+            reply_markup=InlineKeyboardMarkup(mkp)
+           )
+@bot.on_callback_query(filters.regex(pattern="help_prev\((.+?)\)"))
 
-
-    await message.edit_message_reply_markup(
-         client_help_strin,
-         reply_markup=InlineKeyboardMarkup([
-          [InlineKeyboardButton("ᗪETᗩIᒪEᗪ", callback_data="detailed_{}".format(light_pulu_name)
-          )],
-          [InlineKeyboardButton("Ⴆαƈƙ 💢", callback_data="back_{}".format(pg_no))],
-      ],
-        )
-
-    
-@bot.on_callback_query(filters.regex(pattern="help_prev\((.+?)\)")))
-
-@inline_help_wrapprs
 async def query_hndr(client, message): 
-    lightning_page = message.matches[0].group(1)
-    reply_markup = help_menu(
-        lightning_page - 1, CMD_LIST, "help"  # pylint:disable=E0602
-    )
-    await message.edit_message_reply_markup(reply_markup=reply_markup)
+    me = await app.get_me()
+    if not  message.from_user.id ==  me.id:
+               await message.answer("I said you cannot use anything. ఠ_ఠ", show_alert=True)
+    else:
+
+        lightning_page = int(message.matches[0].group(1))
+        reply_markup = help_menu(
+             lightning_page - 1, LIST, "help"  # pylint:disable=E0602
+        )
+        await message.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup(reply_markup))
 
 
 
@@ -255,7 +329,7 @@ async def lightning_is_better(client, message):
     text1 = f"**Byy👋**!\n**You've been blocked have fun\n\n**If you think this is a mistake contact master via {g}**"
     app.block_user(user.id)
     blocked_user(user.first_name)
-    await app.send_message(message.chat_id, text1)
+    await app.send_message(message.chat.id, text1)
 
 
 urgent = []
@@ -282,9 +356,9 @@ async def lightning_is_better(client, message):
     name = user.first_name
     bhat = user.status  
     text1 = "**Hello User {},  master was last online on {}**\n**Kindly wait for him to be online :)** ".format(name, bhat)
-    await app.send_message(message.chat_id, text1)
+    await app.send_message(message.chat.id, text1)
     await app.send_message(
-        Variable.LOGS_CHAT_ID,
+        Variable.LOGS_chat.id,
         f"**Hello {USER}, [{name}]({user.id}) wants to dicuss something important!.**",
     )
     if user.is_deleted:
@@ -339,16 +413,16 @@ async def lightning_is_better(client, message):
 
 
 @bot.on_callback_query(filters.regex(pattern="krish_(.*)"))
-@inline_help_wrapprs
 async def chill(client, message):
 
     file=message.matches[0].group(1)
-    pg_no=int(message.matches[0].group(1))
-    await message.edit(
+    pg_no=message.matches[0].group(1)
+    a = 0
+    await message.edit_message_text(
             f"`File and plugin Removed`",
             reply_markup=InlineKeyboardMarkup([
         
-        [InlineKeyboardButton("Ⴆαƈƙ 💢", data="back_{}".format(pg_no))],
+        [InlineKeyboardButton("Ⴆαƈƙ 💢", callback_data="back_{}".format(a))],
 
         ],)
     )
@@ -363,14 +437,17 @@ async def chill(client, message):
 
 
 
-@bot.on_callback_query(filters.regex(pattern="back_(.*)"))
-@inline_help_wrapprs
+@bot.on_callback_query(filters.regex(pattern="back_(.*)(assitant|normal)"))
 async def ho(client, message):
     o=message.matches[0].group(1)
+    if message.matches[0].group(2) == "assistant":
+     sv = ASSISTANT_LIST
+    else:
+     sv = LIST
     await message.answer("Returned To Home", cache_time=0, show_alert=False)
-    reply_markup = help_menu(o, CMD_LIST, "help")
-    ho = f"""**Black Lightning {language('help menu')}**: {language('Commands')}: {len(CMD_LIST)}"""
-    await message.edit(ho, reply_markup=InlineKeyboardMarkup(reply_markup))
+    reply_markup = help_menu(o, sv, "help")
+    ho = f"""**Black Lightning {language('help menu')}**: {language('Commands')}: {len(sv)}"""
+    await message.edit_message_text(ho, reply_markup=InlineKeyboardMarkup(reply_markup))
 
 
 
@@ -379,37 +456,53 @@ async def ho(client, message):
         
 
 
-def help_menu(pg_num, setv, prefix):
-    rows = 7
-    columns = 3
-    helpable_modules = []
+
+def help_menu(pg_num, setv, prefix, alive: bool =  False):
+    number_of_rows = 6
+    number_of_cols = 2
+
+    sortsed = []
+    if alive:
+        data = "_cmd_data_"
+        help = "_preve"
+        help2 = "_nexte"
+        type_ = "assistant"
+    else:
+        help = "_prev"
+        help2 = "_next"
+        type_ = "normal"
+        data = f"lightning_plugins_"
     for p in setv:
+        a = p.replace(".py", "")
         if not p.startswith("_"):
-            helpable_modules.append(p)
-    helpable_modules = sorted(helpable_modules)
-    modules = [
+            sortsed.append(a)
+    sortsed = sorted(sortsed)
+    modules = [  
         InlineKeyboardButton(
-            text="{} {} {}".format("⨵", x, "⨵"),
-            callback_data="_lightning_plugins_{}".format(x, pg_num),
+            text=f"X {x} X",
+            callback_data=f"{data}{x}{type_}"
         )
-        for x in helpable_modules
+        for x in sortsed 
     ]
-    pairs = list(zip(modules[::columns], modules[1::columns]))
-    if len(modules) % columns == 1:
+    pairs = list(zip(modules[::number_of_cols], modules[1::number_of_cols]))
+    if len(modules) % number_of_cols == 1:
         pairs.append((modules[-1],))
-    max_num_pages = ceil(len(pairs) / rows)
-    page = pg_num % max_num_pages
-    if len(pairs) > rows:
+    max_num_pages = ceil(len(pairs) / number_of_rows)
+    pg_num = 0 % max_num_pages
+    if len(pairs) > number_of_rows:
         pairs = pairs[
-            page * rows : rows * (page + 1)
+            pg_num * number_of_rows : number_of_rows * (pg_num + 1)
         ] + [
             (
                 InlineKeyboardButton(
                     text="Previous",
-                    callback_data="{}_prev({})".format(prefix, pg_num),),
+                    callback_data="{}{}({})".format(prefix,help, pg_num)
+                ),
                 InlineKeyboardButton(
                     text="Next",
-                    callback_data="{}_next({})".format(prefix, setv),
+                    callback_data="{}_next({})".format(
+                        prefix, help2, pg_num
+                    ),
                 ),
             )
         ]
@@ -424,7 +517,7 @@ async def command(client ,event):
         plugs.append(i)
     des = sorted(plugs)
     
-    buttons = assitant_help(0, ASSISTANT_HELP, 'help')
+    buttons = help_menu(0, ASSISTANT_HELP, 'help')
     if des in ASSISTANT_HELP:
 
      await event.edit_message_reply_markup(reply_markup =buttons)
@@ -443,7 +536,7 @@ async def lightning_pugins_query_hndlr(client ,event):
         
         assistant_buttons = assistant_help_strin 
         assistant_buttons += "\n\n**In Case Any Problem @lightning_support_grup**".format(cmd)
-        await event.edit(assistant_buttons)
+        await event.edit_message_text(assistant_buttons)
     
     except KeyError:
         await event.answer("The command isn't displayable", cache_time=0, alert=True)
@@ -452,12 +545,15 @@ async def lightning_pugins_query_hndlr(client ,event):
 @bot.on_callback_query(filters.regex(pattern="help_preve\((.+?)\)"))
 
 async def lightning_pugins_query_hndlr(client, lightning):
-    
-        lightning_page = int(lightning.matches[0].group(1))
-        buttons = assitant_help(
-            lightning_page - 1, ASSISTANT_HELP, "help"  # pylint:disable=E0602
-        )
-        await lightning.edit_message_reply_markup(reply_markup=buttons)
+        me = await app.get_me()
+        if not  message.from_user.id ==  me.id:
+               await message.answer("I said you cannot use anything. ఠ_ఠ", show_alert=True)
+        else:
+            lightning_page = int(lightning.matches[0].group(1))
+            buttons = help_menu(
+                lightning_page - 1, ASSISTANT_HELP, "help"  # pylint:disable=E0602
+            )
+            await lightning.edit_message_reply_markup(reply_markup=buttons)
 
 import io
 # from system.sqls.bot_sql import *
@@ -476,56 +572,12 @@ async def ass_pugins_query_hndlr(client, lightning):
         await lightning.delete()
         lightning_page = int(lightning.matches[0].group(1))
         
-        buttons = assitant_help(
+        buttons = help_menu(
             lightning_page + 1, ASSISTANT_HELP, "help"  # pylint:disable=E0602
         )
         await lightning.edit_message_reply_markup(reply_markup=buttons)
 
 
 
-#    Copyright (C) 2020 Telebot
 
-def assitant_help(b_lac_krish, lists, lightning_lol):
-
- total_cmds = []
- for p in list:
-     if not p.startswith("_"):
-         total_cmds.append(p)
- total_cmds = sorted(total_cmds)
- plugins = [
-     InlineKeyboardButton(
-         "{}".format( x), callback_data="_cmd_data_{}".format(x)
-     )
-     for x in total_cmds
- ]
- pairs = list(zip(plugins[::number_of_columns_in_commands], plugins[1::number_of_columns_in_commands]))
- if len(plugins) % number_of_columns_in_commands == 1:
-     pairs.append((plugins[-1],))
- max_fix = ceil(len(pairs) / number_of_rows_in_commands)
- total_cmds_pages = b_lac_krish % max_fix
- 
- if len(pairs) > number_of_rows_in_commands:
-   
-
-     pairs = pairs[
-         total_cmds_pages * number_of_rows_in_commands : number_of_rows_in_commands * (total_cmds_pages + 1)
-     ] + [
-         (
-             InlineKeyboardButton(
-                 "Previous", callback_data="{}_prev({})".format(lightning_lol, total_cmds_pages)
-             ),
-            
-            InlineKeyboardButton(
-                 "Next", callback_data="{}_next({})".format(lightning_lol, total_cmds_pages)
-             ),
-             
-         )
-     ]
- else:
-   pairs = pairs[
-       total_cmds_pages * number_of_rows_in_commands : number_of_columns_in_commands * (total_cmds_pages + 1)
-   
-   ]
-
- return pairs
 
