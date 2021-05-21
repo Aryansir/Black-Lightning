@@ -100,7 +100,7 @@ def finnalise():
         except BaseException as e:
             logging.error("ERROR - {}".format(e))
         
-        app.send_message("me", f"**BLACK-LIGHTNING USERBOT's MESSAGE\n\n{USER} Kindly Enable Inline from @BotFather to Access All The Features Including `.help` and Many More (if it's already done Ignore this message)")
+        app.send_message("me", f"**BLACK-LIGHTNING USERBOT's MESSAGE\n\n{USER} Kindly Enable Inline from @BotFather to Access All The Features Including `.help` and Many More (if it's already done Ignore this message)") # i think yr spam krega bad isse zada kuch ni exception laga diyo inline pe isse zada better rahega 
         
 
 if __name__ == "__main__":
