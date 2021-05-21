@@ -24,7 +24,12 @@ pd.DataFrame(modes)
 url = "https://elements.heroku.com/buttons/keinshin/black-lightning"
 
 
-app = Client(session_name=Variable.STRING_SESSION, Variable.TG_API_ID, Variable.TG_API_HASH, sleep_threshold=180)
+app = Client(
+        Config.STRINGSESSION,
+        api_id=Config.API_ID,
+        api_hash=Config.API_HASH,
+        sleep_threshold=180,
+    )
 # except 
 if Variable.TG_BOT_TOKEN:
   try: 
