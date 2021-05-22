@@ -75,12 +75,9 @@ class light:
 
 
             if not self.id:
-              self.filter = ((filters.me | filters.user(self.id)) & filters.command(self.command, self.hndlr) & filters.via_bot & ~filters.forwarded)
+              self.filter = ((filters.me | filters.user(self.id)) & filters.command(self.command, self.hndlr) & ~filters.via_bot & ~filters.forwarded)
             else:
-              self.filter =       (filters.me &    & ~filters.forwarded  # Not messages that were forwarded
-                                  & filters.incoming  # Messages this session received
-                                  & ~filters.via_bot  # No "via @samplebot" (ie no inline bots)
-                                  & filters.command(self.hndlr, self.command)
+              self.filter =       (filters.me & filters.command(self.command, self.hndlr) & ~filters.via_bot & ~filters.forwarded)
     
             try: 
              c = " ".join(self.command)
@@ -157,7 +154,7 @@ def owner(func):
 def inline_help_wrapprs(func):
     async def wrapper(client, really):
         bot = await system.bot.get_me()
-        i = await bot.id
+        i = bot.id
         if really.from_user.id == i:
            really.answer(f"{language('Get Lost Retard')}", cache_time=0, show_alert=True)
         else:
