@@ -25,9 +25,9 @@ url = "https://elements.heroku.com/buttons/keinshin/black-lightning"
 
 
 app = Client(
-        Config.STRINGSESSION,
-        api_id=Config.API_ID,
-        api_hash=Config.API_HASH,
+        Variable.STRINGSESSION,
+        api_id=Variable.API_ID,
+        api_hash=Variable.API_HASH,
         sleep_threshold=180,
     )
 # except 
