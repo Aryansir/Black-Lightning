@@ -30,7 +30,7 @@ except Exception:
 class Variable(object):
     TG_API_ID = os.environ.get("TG_APP_ID", None)
     TG_API_HASH = os.environ.get("TG_API_HASH", None)
-    TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", '12344: dssdsdssd')
+    TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", None)
     TG_BOT_USER_NAME = os.environ.get("TG_BOT_USER_NAME", None)
     APP_NAME = os.environ.get("APP_NAME", None)
     HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
