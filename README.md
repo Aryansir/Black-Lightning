@@ -85,4 +85,4 @@ https://github.com/KeinShin/Black-Lightning/graphs/contributors
 
 
 
- Copyright (C) KeinShin
+ Copyright (C) KeinShin@GitHub - Black-Lightning
