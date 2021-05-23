@@ -9,6 +9,7 @@ holidays
 schedule
 pycountry
 better_profanity
+sqlalchemy
 translate
 textblob
 telegraph
@@ -17,5 +18,5 @@ apscheduler
 coffeehouse
 Pillow
 PyDictionary 
-sqlalchemy==1.2
-psycopg2
+wkhtmltopdf
+imgkit
