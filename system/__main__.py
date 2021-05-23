@@ -1,9 +1,3 @@
-# from pyrogram import Client
-# app = Client(session_name = "neww", api_id=2542398, api_hash='fd14f082a108af90513d7689a60ba71f', workdir="system/")
-# with app:
-#     o =app.export_session_string()
-#     app.send_message("me", f'`{o}`')
-
 
 
 # Copyright (C) 2021 KeinShin@Github.
