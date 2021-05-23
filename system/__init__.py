@@ -80,7 +80,22 @@ if PM_LIMIT is None:
     PM_LIMIT = "5"
 
 
+LIST = []
 
+a = [x for x in os.listdir("system/plugins/") if x.endswith(".py") and not x.startswith("__")]
+for i in a:
+
+  LIST.append(i)
+
+sa = [x for x in os.listdir("system/user_bot_assistant/") if x.endswith(".py") and not x.startswith("__") and not x.startswith("main")]
+
+
+
+
+
+for i in sa:
+
+  ASSISTANT_LIST.append(i)
 
 if ALIVE_IMG is None:
     ALIVE_IMG = "https://telegra.ph/file/4e83650cf1e3e8c31c51b.mp4"
