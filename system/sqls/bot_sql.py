@@ -1,3 +1,9 @@
+
+ # Copyright (C) 2021 KeinShin@Github.
+
+
+
+
 from . import *
 
 from sqlalchemy import *
