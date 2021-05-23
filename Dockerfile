@@ -6,8 +6,7 @@ ENV  PYTHONPATH "${PYTHONPATH}:/LIGHTNING-UB"
 
 
 COPY requirements.txt .
-COPY ub-setup.sh .
-RUN bash ub-setup.sh
+
 COPY . .
 
 
