@@ -21,3 +21,4 @@ PyDictionary
 wkhtmltopdf
 imgkit
 psycopg2
+pyautogui
