@@ -1,9 +1,9 @@
 ## Way to create your plug by fork
 
 ``` 
-from system.plugins import light
+from system.plugins import light ( deorator use light.schedule() to schedule some plug ) 
 from system import *
-from Config import Variable
+from Config import Variable ( explore it to check vars! )
 
 @light.on(["xyz plug", sudo_ids=Variable.SUDO_IDS ( if sudo is true else leave both)])
 async def command(client, message):
