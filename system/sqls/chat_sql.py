@@ -1,3 +1,7 @@
+ # Copyright (C) 2021 KeinShin@Github.
+
+
+
 from system.sqls import BASE, SESSION
 from sqlalchemy import Column, String, Integer, text
 
