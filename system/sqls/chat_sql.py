@@ -8,9 +8,9 @@ from sqlalchemy import Column, String, Integer, text
 
 class chat(BASE):
     __tablename__ = "chat"
-    name = Column(String)
-    channel = Column(String)
-    user = Column(String)
+    name = Column(String(14), primary_key=True)
+    channel = Column(String(14), primary_key=True)
+    user = Column(String(14), primary_key=True)
 
 
 chat.__table__.create(checkfirst=True)
