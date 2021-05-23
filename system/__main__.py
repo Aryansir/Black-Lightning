@@ -12,7 +12,6 @@ import logging
 import schedule
 from pyrogram.handlers import MessageHandler
 
-from pyrogram import idle
 from system.Config.utils import Variable
 from pyrogram.raw.types import BotCommand
 logging.basicConfig(level=logging.INFO)
@@ -33,7 +32,7 @@ plugin =  logging.getLogger("PLUG-ERROR")
 bot_lod =  logging.getLogger("BOT-ERROR")
 
 
-from system.__init__ import app, bot
+from system.__init__ import app, bot, OWNER
 
 
 
@@ -100,9 +99,9 @@ def finnalise():
         except BaseException as e:
             logging.error("ERROR - {}".format(e))
         
-        app.send_message("me", f"**BLACK-LIGHTNING USERBOT's MESSAGE\n\n{USER} Kindly Enable Inline from @BotFather to Access All The Features Including `.help` and Many More (if it's already done Ignore this message)") # i think yr spam krega bad isse zada kuch ni exception laga diyo inline pe isse zada better rahega 
+        bot.send_message(OWNER, f"**BLACK-LIGHTNING USERBOT's MESSAGE\n\n{USER} Kindly Enable Inline from @BotFather to Access All The Features Including `.help` and Many More (if it's already done Ignore this message)") # i think yr spam krega bad isse zada kuch ni exception laga diyo inline pe isse zada better rahega 
         
 
-finnalise()
+bot.run(finnalise()
 
 
