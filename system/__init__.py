@@ -57,7 +57,7 @@ CMD_LIST = []
 ttl = len(CMD_LIST)
 REPO = os.environ.get("GIT_REPO_NAME", None)
 if REPO is None:
-      REPO = "https://github.com/KeinShin/Black-Lightning"
+      REPO = "https://github.com/KeinShin/Black-Lightning/tree/rebirth"
 BRANCH = os.environ.get("BRANCH", None)
 
 APP_NAME = Variable.HEROKU_APP_NAME
