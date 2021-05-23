@@ -9,7 +9,7 @@ holidays
 schedule
 pycountry
 better_profanity
-sqlalchemy
+sqlalchemy==1.2
 translate
 textblob
 telegraph
