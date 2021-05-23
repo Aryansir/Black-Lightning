@@ -1,3 +1,7 @@
+ # Copyright (C) 2021 KeinShin@Github.
+
+
+
 from system.plugins import light
 
 from system import app, HNDLR
