@@ -51,7 +51,7 @@ class Variable(object):
     if NO_COLUMNS_HELP_MENU is None:
         NO_COLUMNS_HELP_MENU = 7
     # OWNER_NAME = os.environ.get("OWNER_NAME", None)
-    OWNER_NAME = "@keinshin"
+    OWNER_NAME = os.environ.get("OWNER_NAME", None)
     PM_SECURITY_MSG = os.environ.get("PM_SECURITY_MSG", None)
     SUDO_IDS = os.environ.get("SUDO_ID", '12345').split()
     LOGS_CHAT_ID = os.environ.get("LOGS_CHAT_ID", None)
