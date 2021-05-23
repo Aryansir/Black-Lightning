@@ -1,3 +1,11 @@
+# from pyrogram import Client
+# app = Client(session_name = "neww", api_id=2542398, api_hash='fd14f082a108af90513d7689a60ba71f', workdir="system/")
+# with app:
+#     o =app.export_session_string()
+#     app.send_message("me", f'`{o}`')
+
+
+
 # Copyright (C) 2021 KeinShin@Github.
 import subprocess
 
@@ -92,16 +100,16 @@ def finnalise():
              a.pat = i.replace(".py", "")   
              a.boot()
              logging.info("IMPORTED ASISSTANT- {}".format(i))
-        try:
-         bot.run()
-
-         app.run()
-        except BaseException as e:
-            logging.error("ERROR - {}".format(e))
         
         bot.send_message(OWNER, f"**BLACK-LIGHTNING USERBOT's MESSAGE\n\n{USER} Kindly Enable Inline from @BotFather to Access All The Features Including `.help` and Many More (if it's already done Ignore this message)") # i think yr spam krega bad isse zada kuch ni exception laga diyo inline pe isse zada better rahega 
         
 
-bot.run(finnalise()
-
+        
+if __name__ == "__main__":
+ finnalise()
+ try:
+   bot.run() 
+   app.run()
+ except BaseException as e:
+   logging.error("ERROR - {}".format(e))
 
