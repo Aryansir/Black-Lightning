@@ -2,8 +2,11 @@
 #kangers stay away n fuk your mothers
 #Copyright (C) 2021 Raiden-Devs@Github
 
+
 from var import Var
 from userbot.utils import lightning_cmd, bot
+from resources import photo_2020-12-19_18-34-41.jpg as lem
+
 from userbot import ALIVE_NAME
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "вℓα¢к ℓιgнтηιηg"
 @bot.on(lightning_cmd(pattern="Devbot"))
@@ -34,13 +37,13 @@ async def _(event):
     await conv.send_message(name)
     await conv.get_reponse()
     await conv.send_message("I am {DEFAULTUSER}'s Assistant You can Use me to conact him")
-   # bot pic import kese karte????
+   #bot pic import kese karte????
     #await conv.get_reponse()
    # await conv.send_message("/setbotpic)
    # await conv.get_reponse()
    # await conv.send_message(name)
    # await conv.get_reponse()
-   # await conv.send_message("")
+   # await conv.send_message(lem)
     
     respond = await conv.get_response()
   await event.edit("Bot Already Master you can check it {name}") 
