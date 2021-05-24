@@ -58,8 +58,8 @@ class Variable(object):
     if PM_SECURITY_MSG is None:
         PM_SECURITY_MSG = (
         f"**Hello User..**"
-        f"**{str(OWNER_NAME)} is under Black Lightning PM Security*\n\n"
-        f"**Kindly Choose the reason for whcih you came :)** "
+        f"**I appreciate the reason for which you came but {str(OWNER_NAME)} is under Black Lightning Security*\n\n"
+        f"**Choose the reason :)** "
     )
     else:
         WARNING = PM_SECURITY_MSG
