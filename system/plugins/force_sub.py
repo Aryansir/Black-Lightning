@@ -19,7 +19,7 @@ async def force(client, message):
      name = message.text.split()[2]
     except IndexError:
         await message.edit(f"**Correct Syntax**: `{HNDLR}forcesub (channel user name) ( group user name )`")
-    if not chats(exsis=True) == "no chats":
+    if  chats(exsis=True) == "no chats":
         await message.edit("**You can only enable force subscribe in one channel and one group at a time**")
         return
     try:
