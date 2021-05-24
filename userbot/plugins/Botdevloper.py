@@ -10,8 +10,9 @@ from resources import photo_2020-12-19_18-34-41.jpg as lem
 from userbot import ALIVE_NAME
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "вℓα¢к ℓιgнтηιηg"
 @bot.on(lightning_cmd(pattern="Devbot"))
-    await event.edit("Assistant Bot Devloping Master Keep Patience😉")
 async def _(event):
+  await event.edit("Assistant Bot Devloping Master Keep Patience😉")
+
   name=Var.TG_BOT_USER_NAME_BF_HER
   async with bot.conversation("@BotFather") as conv:
     await conv.send_message("/setinline")
@@ -29,11 +30,11 @@ async def _(event):
    
     await conv.get_response()
     await conv.send_message(name)
-     await conv.get_reponse()
+    await conv.get_reponse()
     await conv.send_message("Heyy there,🤙\nThis Black Lightning Userbot🇮🇳\nI am here to provide Assistant service to {DEFAULTUSER}😎\nYou can Message me to contact my Master😉")
-     await conv.get_reponse()
+    await conv.get_reponse()
     await conv.send_message("/setabouttext")
-     await conv.get_reponse()
+    await conv.get_reponse()
     await conv.send_message(name)
     await conv.get_reponse()
     await conv.send_message("I am {DEFAULTUSER}'s Assistant You can Use me to conact him")
