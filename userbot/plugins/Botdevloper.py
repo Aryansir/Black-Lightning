@@ -39,12 +39,12 @@ async def _(event):
     await conv.get_reponse()
     await conv.send_message("I am {DEFAULTUSER}'s Assistant You can Use me to conact him")
    #bot pic import kese karte????
-    #await conv.get_reponse()
-   # await conv.send_message("/setbotpic)
-   # await conv.get_reponse()
-   # await conv.send_message(name)
-   # await conv.get_reponse()
-   # await conv.send_message(lem)
+    await conv.get_reponse()
+    await conv.send_message("/setbotpic)
+    await conv.get_reponse()
+    await conv.send_message(name)
+    await conv.get_reponse()
+    await conv.send_message(lem)
     
     respond = await conv.get_response()
   await event.edit("Bot Already Master you can check it {name}") 
