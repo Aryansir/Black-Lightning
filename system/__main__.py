@@ -13,6 +13,7 @@ import logging
 
 import schedule
 from pyrogram.handlers import MessageHandler
+from pyrogram import idle
 
 from system.Config.utils import Variable
 from pyrogram.raw.types import BotCommand
@@ -101,10 +102,12 @@ def finnalise():
 if __name__ == "__main__":
  finnalise()
  try:
-   bot.run() 
-   app.run()
-   bot.send_message(OWNER, f"**BLACK-LIGHTNING USERBOT's MESSAGE\n\n{USER} Kindly Enable Inline from @BotFather to Access All The Features Including `.help` and Many More (if it's already done Ignore this message)") # i think yr spam krega bad isse zada kuch ni exception laga diyo inline pe isse zada better rahega 
-
+    bot.start()
+    bot.send_message(OWNER, f"**BLACK-LIGHTNING USERBOT's MESSAGE\n\n Kindly Enable Inline from @BotFather to Access All The Features Including `.help` and Many More** (if it's already done Ignore this message)") # i think yr spam krega bad isse zada kuch ni exception laga diyo inline pe isse zada better rahega 
+   
+    app.run() 
+    idle()
+ 
  except BaseException as e:
    logging.error("ERROR - {}".format(e))
 
