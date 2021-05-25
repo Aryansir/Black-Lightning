@@ -48,7 +48,7 @@ async def force(client, message):
         for s in i:
          channel.append(s)
     try:
-        await message.edit(f"**Force Subscribe enable** for channel {txt} in group {name} ")
+        await message.edit(f"**Force Subscribe enable for channel {txt} in group {name}**\n\n© [KeinShin](t.me/keinshin)")
         insert_chet(name , txt)
     except BaseException as e:
         await message.edit(f"**ERROR** - {e}")
@@ -78,7 +78,7 @@ async def sub(client, message: Message):
                 [InlineKeyboardButton("Dis-Card ( only admin )", callback_data="unmute_{}".format(message.from_user.id))]
                 ]
             )
-        await bot.send_message(message.chat.id, "You havent subscribe [{}]({}). Go and Subscribe Now! then press un-mute\n\n[Featured By Black Lightning](https://github.com/KeinShin/Black-Lightning)".format(chat[sm],aaia ), reply_markup=mkp)
+        await bot.send_message(message.chat.id, "You havent subscribe [{}]({}). Go and Subscribe Now! then press un-mute\n\n[A Feature By Black Lightning Userbot](https://github.com/KeinShin/Black-Lightning)".format(chat[sm],aaia ), reply_markup=mkp)
      
 
 @bot.on_callback_query(filters.regex(pattern="chata"))
