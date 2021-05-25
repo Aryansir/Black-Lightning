@@ -50,7 +50,6 @@ async def force(client, message):
     try:
         await message.edit(f"**Force Subscribe enable** for channel {txt} in group {name} ")
         insert_chet(name , txt)
-        print("Done")
     except BaseException as e:
         await message.edit(f"**ERROR** - {e}")
 
@@ -61,7 +60,6 @@ async def force(client, message):
 async def sub(client, message: Message):
     m = message.chat.username
     sm=  f"@{m}"
-    print(chats)
     aaia = message.from_user['id']
  
  
@@ -93,7 +91,6 @@ async def detailed(client, chet: CallbackQuery):
     for i in s:
         a = i['user']
         admin+= "\n"+ str(a['username'])
-        print(admin)
     user =  await  app.get_chat_member(sed, chet.from_user.username)
 
     if chet.from_user.username in admin:
@@ -152,7 +149,6 @@ async def s(client, chet: CallbackQuery):
     for i in s:
         a = i['user']
         admin +=  str(a['username'])
-        print(a)
     user =  await  app.get_chat_member(sed, chet.from_user.username)
 
     if not chet.from_user.username in admin:
@@ -171,5 +167,5 @@ async def s(client, chet: CallbackQuery):
 
 COMMAND_HELP.update({
     "force_sub": f"`{HNDLR}forcesub` **(group) (channel)**",
-    "": "" # not yet dont
+    "": ""
 })
