@@ -1,5 +1,5 @@
 
- # Copyright (C) 2021 KeinShin@Github.
+ # Copyright (C) 2021 KeinShin@Github. All rights reserved
 
 
 
@@ -7,9 +7,34 @@ from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant
 from system.plugins import light
 from system import COMMAND_HELP, HNDLR, app, bot
 from pyrogram import filters
-from system.sqls.chat_sql import *
+from system.datas_sqlite.chat_sqllite import (
+   CreateSafeUser,
+   insert_chet,
+   Allchats,
+   chet,
+   get_safe_user,
+   d as chat,
+   c,
+   chats
 
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ChatPermissions, CallbackQuery
+)
+
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ChatPermissions, CallbackQuery, Message
+
+
+
+channel = []
+channel_ = {}
+
+
+def search(values, searchFor):
+    for k in values:
+        for v in values[k]:
+            if searchFor in v:
+                return k
+    return None
+
+
 
 @light.on(["forcesub"])
 async def force(client, message):
@@ -19,50 +44,132 @@ async def force(client, message):
      name = message.text.split()[2]
     except IndexError:
         await message.edit(f"**Correct Syntax**: `{HNDLR}forcesub (channel user name) ( group user name )`")
-    if  chats(exsis=True) == "no chats":
-        await message.edit("**You can only enable force subscribe in one channel and one group at a time**")
-        return
+    for i in chet(username=name):
+        for s in i:
+         channel.append(s)
     try:
-        await message.edit(f"**Force Subscribe enable** for channel {name} in group {txt} ")
-        add_chat(txt, name)
+        await message.edit(f"**Force Subscribe enable** for channel {txt} in group {name} ")
+        insert_chet(name , txt)
+        print("Done")
     except BaseException as e:
         await message.edit(f"**ERROR** - {e}")
 
 
-@bot.on_message(filters.chat(chats()))
-async def sub(client, message):
-
-    user = await app.get_users(message.chat.id)
-    if  exists(user.id):
+@bot.on_message(filters.chat(
+    chats
+) & ~filters.via_bot)
+async def sub(client, message: Message):
+    m = message.chat.username
+    sm=  f"@{m}"
+    print(chats)
+    aaia = message.from_user['id']
+ 
+ 
+    if  get_safe_user(aaia):
         return
     try:
-     check = app.get_chat_member(chats(), user.username)
-     add_user(check['id'])
+     keys = sum(any(sm in s for s in subList) for subList in chat.values())
+
+     await bot.get_chat_member(chat[sm], message.from_user.id)
     except UserNotParticipant:
-        await bot.restrict_chat_member(message.chat.id, user.id, ChatPermissions(can_send_messages=False))
+        await bot.restrict_chat_member(message.chat.id, aaia, ChatPermissions(can_send_messages=False))
 
         mkp = InlineKeyboardMarkup(
-                [[InlineKeyboardButton("Unmute", callback_data="chata")]]
-            ),
-        await bot.send_message(message.chat.id, f"You havent subscribe {chats()}. Go and Subscribe Now! then press un-mute", reply_markup=mkp)
+                [[InlineKeyboardButton("Unmute", callback_data="chata")],
+                [InlineKeyboardButton("Channel", url=f"t.me/{chat[sm].replace('@', '')}")],
+                [InlineKeyboardButton("Dis-Card ( only admin )", callback_data="unmute_{}".format(message.from_user.id))]
+                ]
+            )
+        await bot.send_message(message.chat.id, "You havent subscribe [{}]({}). Go and Subscribe Now! then press un-mute\n\n[Featured By Black Lightning](https://github.com/KeinShin/Black-Lightning)".format(chat[sm],aaia ), reply_markup=mkp)
      
 
 @bot.on_callback_query(filters.regex(pattern="chata"))
 
 async def detailed(client, chet: CallbackQuery):
+    sed=chet.message.chat.username
 
-    user = await app.get_users(chet.id)
-    try:
-     check = app.get_chat_member(chats(), user.username)
-     add_user(check['id'])
-     await chet.delete()
-     await bot.restrict_chat_member(chats(), user.username, ChatPermissions(can_send_messages=True))
+    s=await app.get_chat_members(sed, filter="administrators") 
+    admin = ""
+    for i in s:
+        a = i['user']
+        admin+= "\n"+ str(a['username'])
+        print(admin)
+    user =  await  app.get_chat_member(sed, chet.from_user.username)
 
-    except UserNotParticipant:
-      await chet.answer("You havent subscribed yet!", show_alert=False)
+    if chet.from_user.username in admin:
+        text= "You are admin lol, No can mute you except Owner OwO"
+        await client.answer_callback_query(
+    chet.id,
+    text=text,
+    show_alert=True
+)       
+        return
+
+    elif user.user.is_restricted:
+        text = "Bruh, u r mute by someone else not by me :/"
+        await client.answer_callback_query(
+    chet.id,
+    text=text,
+    show_alert=True
+)       
+        return
+    else:
+
+        m = chet.from_user['id']
+        d=chet.message.chat.username
+        d=f"@{d}"
+        # chn = {}
+        try:
+        #  c.execute("SELECT * FROM chats")     
+        #  s=c.fetchall()
+        #  for i in s:
+        #     chn.update({
+        #     f"{i[0]}": f"{i[1]}"
+        # })
+         await app.get_chat_member(chat[d], chet.from_user.username)
+         await bot.restrict_chat_member(chet.message.chat.id, chet.from_user.username, ChatPermissions(can_send_messages=True))
+         await chet.message.delete()
+        except UserNotParticipant:
+    
+         user =  await  app.get_chat_member(d, chet.from_user.username)
+         text = "You haven't subscribed channel yet!"
+
+         await client.answer_callback_query(
+        chet.id,
+        text=text,
+        show_alert=True
+)
 
 
+@bot.on_callback_query(filters.regex(pattern="unmute_(.*)"))
+
+async def s(client, chet: CallbackQuery):
+    sed=chet.message.chat.id
+    user_ = chet.matches[0].group(1)
+ 
+    s=await app.get_chat_members(sed, filter="administrators") 
+    admin = ""
+    for i in s:
+        a = i['user']
+        admin +=  str(a['username'])
+        print(a)
+    user =  await  app.get_chat_member(sed, chet.from_user.username)
+
+    if not chet.from_user.username in admin:
+        text =  "Sed, You aren't an admin XoX"
+        await client.answer_callback_query(
+    chet.id,
+    text=text,
+    show_alert=True
+)       
+        return
+    else:
+      CreateSafeUser(user_)
+  
+      await bot.restrict_chat_member(chet.message.chat.id, user_, ChatPermissions(can_send_messages=True))
+      await bot.send_message(chet.id, text=f"**User Unmuted by admin {chet.from_user.username}**")
 
 COMMAND_HELP.update({
-    "force_sub": f"`{HNDLR}forcesub` **(group) (channel)**"
+    "force_sub": f"`{HNDLR}forcesub` **(group) (channel)**",
+    "": "" # not yet dont
 })
