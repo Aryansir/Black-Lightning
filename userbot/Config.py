@@ -38,7 +38,7 @@ class Var(object):
     CUSTOM_ALIVE_EMOJI = os.environ.get("CUSTOM_ALIVE_EMOJI", None)
     CHROME_DRIVER = os.environ.get("CHROME_DRIVER", None)
     GOOGLE_CHROME_BIN = os.environ.get("GOOGLE_CHROME_BIN", None)
-    SUDO_HNDLR = os.environ.get("SUDO_HNDLR", "\.")
+    SUDO_HNDLR = os.environ.get("SUDO_HNDLR", r"\!")
     OCR_SPACE_API_KEY = os.environ.get("OCR_SPACE_API_KEY", None)
     ALIVE_PHOTTO = os.environ.get("ALIVE_PHOTTO", None)
     ALIVE_MSG = os.environ.get("ALIVE_MSG", None)
