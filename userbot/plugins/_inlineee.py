@@ -205,9 +205,16 @@ else:
 
 LIGHTNING_BOT_PIC = os.environ.get("LIGHTNING_BOT_PIC", None)
 if LIGHTNING_BOT_PIC is None:
-    LIGHTNING_WARNING = "https://telegra.ph/file/ff90ed0b44221a7b438b7.jpg"
+    LIGHTNING_BOT_PIC = "https://telegra.ph/file/ff90ed0b44221a7b438b7.jpg"
 else:
     LIGHTNING_WARNING = LIGHTNING_BOT_PIC
+   
+
+LIGHTNING_BOT_PIC = (
+    LIGHTNING_BOT_PIC
+    if LIGHTNING_BOT_PIC
+    else "https://telegra.ph/file/ff90ed0b44221a7b438b7.jpg"
+)
 
 
 
