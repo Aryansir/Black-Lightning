@@ -16,8 +16,8 @@ DEFAULTUSER = (
     str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
 )
 
-ALIVE_MSG = Var.ALIVE_MSG
-if ALIVE_MSG is None:
+
+if not ALIVE_MSG:
     ALIVE_MESSAGE = "**🔱Black Lightning IS Awake🔱 \n\n\n**"
     ALIVE_MESSAGE += "`My Bot Status \n\n\n`"
     ALIVE_MESSAGE += f"`Telethon: TELETHON-15.0.0 \n\n`"
