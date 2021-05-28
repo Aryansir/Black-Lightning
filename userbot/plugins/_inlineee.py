@@ -190,6 +190,8 @@ else:
 
 
 LIGHTNING_WARN = os.environ.get("LIGHTNING_WARN", None)
+LIGHTNING_BOT_PIC = os.environ.get("LIGHTNING_BOT_PIC", None)
+
 if LIGHTNING_WARN is None:
     WARNING = (
     f"**{BOT_LIT}"
