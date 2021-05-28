@@ -16,7 +16,7 @@ DEFAULTUSER = (
     str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
 )
 
-ALIVE_MESSOGE = Var.ALIVE_MSG
+ALIVE_MSG = Var.ALIVE_MSG
 if ALIVE_MSG is None:
     ALIVE_MESSAGE = "**🔱Black Lightning IS Awake🔱 \n\n\n**"
     ALIVE_MESSAGE += "`My Bot Status \n\n\n`"
@@ -26,14 +26,14 @@ if ALIVE_MSG is None:
     ALIVE_MESSAGE += f"`Support Channel` : @blacklightningot \n\n"
     ALIVE_MESSAGE += f"`MY BOSS🤗`: {DEFAULTUSER} \n\n "
 else:
-    ALIVE_MESSAGE = ALIVE_MESSOGE
+    ALIVE_MESSAGE = ALIVE_MSG
 
 # @command(outgoing=True, pattern="^.awake$")
 @borg.on(lightning_cmd(pattern=r"awake"))
 async def amireallyalive(awake):
     """ For .awake command, check if the bot is running.  """
     await awake.delete()
-    await borg.send_file(awake.chat_id, ALIVE_PHOTTO, caption=ALIVE_MESSOGE)
+    await borg.send_file(awake.chat_id, ALIVE_PHOTTO, caption=ALIVE_MESSAGE)
 
 from userbot import CMD_HELP
 
