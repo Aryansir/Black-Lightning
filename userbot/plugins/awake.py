@@ -16,8 +16,8 @@ DEFAULTUSER = (
     str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
 )
 
-
-if not ALIVE_MSG:
+ALIVE_MESSAGE = Var.ALIVE_MESSAGE
+if not ALIVE_MESSAGE:
     ALIVE_MESSAGE = "**🔱Black Lightning IS Awake🔱 \n\n\n**"
     ALIVE_MESSAGE += "`My Bot Status \n\n\n`"
     ALIVE_MESSAGE += f"`Telethon: TELETHON-15.0.0 \n\n`"
@@ -26,7 +26,7 @@ if not ALIVE_MSG:
     ALIVE_MESSAGE += f"`Support Channel` : @blacklightningot \n\n"
     ALIVE_MESSAGE += f"`MY BOSS🤗`: {DEFAULTUSER} \n\n "
 else:
-    ALIVE_MESSAGE = ALIVE_MSG
+    ALIVE_MESSAGE = ALIVE_MESSAGE
 
 # @command(outgoing=True, pattern="^.awake$")
 @borg.on(lightning_cmd(pattern=r"awake"))
