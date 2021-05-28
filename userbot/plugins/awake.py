@@ -33,7 +33,7 @@ else:
 async def amireallyalive(awake):
     """ For .awake command, check if the bot is running.  """
     await awake.delete()
-    await borg.send_file(awake.chat_id, ALIVE_PHOTTO, caption=ALIVE_MESSAGE)
+    await borg.send_file(awake.chat_id, ALIVE_ME, caption=ALIVE_MESSAGE)
 
 from userbot import CMD_HELP
 
