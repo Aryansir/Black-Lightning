@@ -254,7 +254,7 @@ async def inline_handler(lightning):
         await lightning.answer([result])
     elif lightning.query.user_id == bot.uid and query.startswith("**Hello Sir"):
         result = builder.photo(
-            file=LIGHTNING_WARNING,
+            file=LIGHTNING_BOT_PIC,
             text=WARNING,
             buttons=[
                 [custom.Button.inline("Wanna Spam Something?😉", data="lightning_is_here_cant_spam")],
