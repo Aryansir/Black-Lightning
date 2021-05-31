@@ -8,6 +8,12 @@ ENV = bool(os.environ.get("ENV", False))
 class Var(object):
     APP_ID = int(os.environ.get("APP_ID", 6))
     # 6 is a placeholder
+    LIGHTNING_PRO = os.environ.get("LIGHTNING_PRO", None)
+    if not LIGHTNING_PRO:
+        LIGHTNING_PRO = "YES"
+    else:
+        LIGHTNING_PRO = LIGHTNING_PRO
+
     API_HASH = os.environ.get("API_HASH", "eb06d4abfb49dc3eeb1aeb98ae0f581e")
     STRING_SESSION = os.environ.get("STRING_SESSION", None)
     DB_URI = os.environ.get("DATABASE_URL", None)
