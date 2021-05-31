@@ -30,7 +30,7 @@ from userbot.utils import lightning_cmd
 LIGHTNING_WRN = {}
 LIGHTNING_REVL_MSG = {}
 
-LIGHTNING_PROTECTION = Config.LIGHTNING_PRO
+LIGHTNING_PROTECTION = Var.LIGHTNING_PRO
 
 SPAM = os.environ.get("SPAM", None)
 if SPAM is None:
