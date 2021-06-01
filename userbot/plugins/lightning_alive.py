@@ -68,5 +68,5 @@ lightning_cap += "`一═デ︻ ¢σρуяιgнт ︻デ═一`:   [KeinShin](ht
 async def lightning(alive):
     await alive.get_chat()
     """ For .alive command, check if the bot is running.  """
-    await borg.send_file(alive.chat_id, ALV_LIGHTNING, caption=lightning_cap)
+    await bot.send_file(alive.chat_id, ALV_LIGHTNING, caption=lightning_cap)
     await alive.delete()
