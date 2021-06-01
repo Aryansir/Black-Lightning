@@ -63,9 +63,9 @@ lightning_cap += "`𓂀 𝐿𝒾𝑔𝒽𝓉𝓃𝒾𝓃𝑔 𝒮𝓊𝓅𝓅�
 lightning_cap += "`一═デ︻ ¢σρуяιgнт ︻デ═一`:   [KeinShin](https://github.com/KeinShin/) and [DEVS](https://github.com/KeinShin/Black-Lightning/graphs/contributors)"
 
 
-@bot.on(lightning_cmd(outgoing=true, pattern="alive$"))
-@bot.on(sudo_cmd(pattern = "alive$", allow_sudo=True))
-   async def lightning(alive):
+@bot.on(lightning_cmd(outgoing=True, pattern="alive$"))
+@bot.on(sudo_cmd(pattern="alive$", allow_sudo=True))
+async def lightning(alive):
     await alive.get_chat()
     """ For .alive command, check if the bot is running.  """
     await borg.send_file(alive.chat_id, ALV_LIGHTNING, caption=lightning_cap)
