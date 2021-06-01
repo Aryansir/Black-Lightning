@@ -2,7 +2,7 @@ import asyncio
 import os
 
 from telethon import __version__ 
-from userbot import ALIVE_NAME, TG_CHANNEL, TG_GRUP, BOT
+from userbot import ALIVE_NAME, TG_CHANNEL, TG_GRUP
 from userbot.thunderconfig import Config
 from userbot.utils import lightning_cmd, sudo_cmd
 
