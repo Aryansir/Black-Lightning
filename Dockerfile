@@ -55,7 +55,8 @@ RUN apt -qq install -y --no-install-recommends \
     procps \
     imagemagick \
     libmagic-dev \
-    policykit-1
+    policykit-1\
+    cmake
 
 
 RUN pip3 install -U tgcrypto
