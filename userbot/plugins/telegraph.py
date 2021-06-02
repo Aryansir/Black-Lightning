@@ -59,10 +59,10 @@ async def _(event):
                 ms_two = (end - start).seconds
                 os.remove(downloaded_file_name)
                 await event.edit(
-                    "Your Telegraph Link by Black Lightning https://telegra.ph{} ".format(
+                    "Your Telegraph Link by Black Lightning https://telegra.ph{} \n ".format(
                         media_urls[0], (ms + ms_two)
                     ),
-                    link_preview=True,
+                    link_preview=False,
                 )
         elif input_str == "t":
             user_object = await borg.get_entity(r_message.from_id)
