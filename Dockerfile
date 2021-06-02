@@ -57,6 +57,7 @@ RUN apt -qq install -y --no-install-recommends \
     libmagic-dev \
     policykit-1\
     cmake
+RUN sudo apt-get install build-essential cmake 
 
 
 RUN pip3 install -U tgcrypto
