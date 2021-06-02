@@ -138,7 +138,7 @@
     "required": false
    },
    "TG_GRUP": {
-    "description": "Telegram Grup Name Starts With @ like, @lightningsupport, If No Name Leave It Default. Required For Alive ",
+    "description": "Telegram Grup Name Starts With @ like, @lightning_support_group, If No Name Leave It Default. Required For Alive ",
     "value": "Not Yet😁😁",
     "required": true
    }, 

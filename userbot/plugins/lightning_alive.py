@@ -59,7 +59,7 @@ lightning_cap += f"⚔️⚔️{DEFAULTUSER}'s⚔️⚔️ ƈɦǟռռɛʟ : {TG_
 lightning_cap += f"`тєℓєтнσи νєяѕισи`       : {__version__}\n"
 lightning_cap += "`ρყƚԋσɳ ʋҽɾʂισɳ`           : 3.9.0\n\n"
 lightning_cap += "`ֆʊքքօʀƭ ƈɦǟռռɛʟ`          : [ᴊᴏɪɴ](https://t.me/blacklightningot)\n"
-lightning_cap += "`ֆʊքքօʀƭ ɢʀօʊք`            : [ᴊᴏɪɴ](https://t.me/lightningsupport)\n"
+lightning_cap += "`ֆʊքքօʀƭ ɢʀօʊք`            : [ᴊᴏɪɴ](https://t.me/lightning_support_group)\n"
 lightning_cap += "`𝘾𝙊𝙋𝙔𝙍𝙄𝙂𝙃𝙏`:              [KeinShin](https://t.me//krish1303y)\n"
 
 
