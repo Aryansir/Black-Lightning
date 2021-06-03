@@ -56,8 +56,7 @@ RUN apt -qq install -y --no-install-recommends \
     imagemagick \
     libmagic-dev \
     policykit-1\
-    cmake
-RUN apt-get install build-essential cmake 
+    cmake 
 
 RUN apt-get install cmake
 
