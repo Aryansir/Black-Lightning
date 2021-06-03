@@ -1,8 +1,8 @@
 FROM python:3.9
-RUN mkdir ub
-COPY . /ub
+RUN mkdir LIGHTNING-UB
+COPY . /LIGHTNING-UB
 
-ENV  PYTHONPATH "${PYTHONPATH}:/ub"
+ENV  PYTHONPATH "${PYTHONPATH}:/LIGHTNING-UB"
 
 
 COPY requirements.txt .
@@ -10,9 +10,9 @@ COPY requirements.txt .
 COPY . .
 
 
-RUN  apt -qq update -y
+RUN apt -qq update -y
 
-RUN  apt -qq install -y --no-install-recommends \
+RUN apt -qq install -y --no-install-recommends \
     coreutils \
     bash \
     bzip2 \
@@ -55,12 +55,11 @@ RUN  apt -qq install -y --no-install-recommends \
     procps \
     imagemagick \
     libmagic-dev \
-    policykit-1\
-    
+    policykit-1
 
-RUN apt-get install cmake
 
 RUN pip3 install -U tgcrypto
+RUN wget http://www.cmake.org/files/v2.8/cmake-2.8.3.tar.gz && tar xzf cmake-2.8.3.tar.gz && cd cmake-2.8.3 && ./configure --prefix=/opt/cmake && make install
 RUN axel https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && apt install -y ./google-chrome-stable_current_amd64.deb && rm google-chrome-stable_current_amd64.deb
 RUN axel https://chromedriver.storage.googleapis.com/86.0.4240.22/chromedriver_linux64.zip && unzip chromedriver_linux64.zip && chmod +x chromedriver && mv -f chromedriver /usr/bin/ && rm chromedriver_linux64.zip
 RUN wget -O opencv.zip https://github.com/opencv/opencv/archive/master.zip && unzip opencv.zip && mv -f opencv-master /usr/bin/ && rm opencv.zip
