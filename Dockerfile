@@ -57,9 +57,9 @@ RUN apt -qq install -y --no-install-recommends \
     libmagic-dev \
     policykit-1\
     cmake
-RUN sudo apt-get install build-essential cmake 
+RUN apt-get install build-essential cmake 
 
-RUN sudo apt-get install cmake
+RUN apt-get install cmake
 
 RUN pip3 install -U tgcrypto
 RUN axel https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && apt install -y ./google-chrome-stable_current_amd64.deb && rm google-chrome-stable_current_amd64.deb
