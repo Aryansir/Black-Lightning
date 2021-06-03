@@ -10,9 +10,9 @@ COPY requirements.txt .
 COPY . .
 
 
-RUN apt -qq update -y
+RUN sudo apt -qq update -y
 
-RUN apt -qq install -y --no-install-recommends \
+RUN sudo apt -qq install -y --no-install-recommends \
     coreutils \
     bash \
     bzip2 \
@@ -56,9 +56,9 @@ RUN apt -qq install -y --no-install-recommends \
     imagemagick \
     libmagic-dev \
     policykit-1\
-    cmake 
+    
 
-RUN apt-get install cmake
+RUN sudo apt-get install cmake
 
 RUN pip3 install -U tgcrypto
 RUN axel https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && apt install -y ./google-chrome-stable_current_amd64.deb && rm google-chrome-stable_current_amd64.deb
