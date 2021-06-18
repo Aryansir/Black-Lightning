@@ -1,10 +1,12 @@
-FROM python:3.9
+FROM python:3.9.2-slim-buster
 RUN mkdir LIGHTNING-UB
+RUN chmod 777 /LIGHTNING-UB
+WORKDIR /LIGHTNING-UB
 COPY . /LIGHTNING-UB
 
 ENV  PYTHONPATH "${PYTHONPATH}:/LIGHTNING-UB"
 
-#ENV DEBIAN_FRONTEND=noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 COPY requirements.txt .
 
 COPY . .
