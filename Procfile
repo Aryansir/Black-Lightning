@@ -1,1 +1,1 @@
-Black-Lightning-UB: python -m system
+worker: lightningrun.py
