@@ -6,7 +6,8 @@ COPY . /LIGHTNING-UB
 
 ENV  PYTHONPATH "${PYTHONPATH}:/LIGHTNING-UB"
 
-ENV DEBIAN_FRONTEND=noninteractive
+ARG
+DEBIAN_FRONTEND=noninteractive
 COPY requirements.txt .
 
 COPY . .
