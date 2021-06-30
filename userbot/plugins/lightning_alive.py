@@ -52,21 +52,19 @@ TG_CHANN = str(TG_CHANNEL) if TG_CHANNEL else "Not Yet😁😁"
 
 from userbot import CMD_LIST
 
-lightning_cap = "**вℓα¢к ℓιgнтηιηg 𝙸𝚂 `ɘᴎi|ᴎO`**\n\n"
-lightning_cap += f"**†rïdεη† ﾚïgh†'š mαš†εr**          : {DEFAULTUSER}\n"
-lightning_cap += f"⚔️⚔️ {DEFAULTUSER}'s⚔️⚔️ ɢʀօʊք   : {TG}\n"  
-lightning_cap += f"⚔️⚔️{DEFAULTUSER}'s⚔️⚔️ ƈɦǟռռɛʟ : {TG_CHANN}\n\n"
-lightning_cap += f"`тєℓєтнσи νєяѕισи`       : {__version__}\n"
-lightning_cap += "`ρყƚԋσɳ ʋҽɾʂισɳ`           : 3.9.0\n\n"
-lightning_cap += "`ֆʊքքօʀƭ ƈɦǟռռɛʟ`          : [ᴊᴏɪɴ](https://t.me/blacklightningot)\n"
-lightning_cap += "`ֆʊքքօʀƭ ɢʀօʊք`            : [ᴊᴏɪɴ](https://t.me/lightning_support_group)\n"
-lightning_cap += "`𝘾𝙊𝙋𝙔𝙍𝙄𝙂𝙃𝙏`:              [KeinShin](https://t.me//krish1303y)\n"
+pm_caption = "**Black Lightning is online**\n\n"
+pm_caption += f"★ **Boss**            : {DEFAULTUSER}\n"
+pm_caption += "★ **Version**        : 1.17.5\n"
+pm_caption += "★ **Channel**𝙻         : [ᴊᴏɪɴ](https://t.me/lightning_support_channel)\n"
 
+pm_caption += "★ **Support Group**           : [ᴊᴏɪɴ](https://t.me/lightning_support_group)\n"
+
+pm_caption += "[┏┓━┏┓━━━━┏┓━┏┓━━━━━\n ┃┃━┃┃━━━━┃┃━┃┃━━━━━\n ┃┗━┛┃┏━━┓┃┃━┃┃━┏━━┓\n ┃┏━┓┃┃┏┓┃┃┃━┃┃━┃┏┓┃ \n ┃┃━┃┃┃┃━┫┃┗┓┃┗┓┃┗┛┃ \n ┗┛━┗┛┗━━┛┗━┛┗━┛┗━━┛](https://t.me/blacklightningot)"
 
 @borg.on(lightning_cmd(pattern=r"alive"))
 @borg.on(sudo_cmd(pattern=r"alive", allow_sudo=True))
 async def lightning(alive):
     await alive.get_chat()
     """ For .alive command, check if the bot is running.  """
-    await borg.send_file(alive.chat_id, ALV_LIGHTNING, caption=lightning_cap)
+    await borg.send_file(alive.chat_id, ALV_LIGHTNING, caption=pm_caption)
     await alive.delete()
