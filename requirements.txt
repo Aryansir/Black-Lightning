@@ -68,6 +68,7 @@ image==1.5.33
 iplookup==1.0.5
 Jinja2==2.11.2
 JustWatch==0.5.1
+libmagic
 loguru==0.5.3
 lottie==0.6.6
 lxml==4.5.2
