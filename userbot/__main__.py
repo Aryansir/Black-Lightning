@@ -57,8 +57,11 @@ for name in files:
     with open(name) as f:
         path1 = Path(f.name)
         shortname = path1.stem
-        load_module(shortname.replace(".py", ""))
-
+        try:
+            
+         load_module(shortname.replace(".py", ""))
+        except Exception:
+            pass
 print("Lightning has been deployed! ")
 
 print("Setting up Lightning")
@@ -71,7 +74,12 @@ if Config.ENABLE_ASSISTANTBOT == "ENABLE":
         with open(name) as f:
             path1 = Path(f.name)
             shortname = path1.stem
-            load_assistant(shortname.replace(".py", ""))
+            try:
+                
+            
+             load_assistant(shortname.replace(".py", ""))
+            except Exception:
+                pass
     sed.info("Black Lightning  Bot Have Been Installed Successfully !")
 else:
     sed.info("Black Lightning Has Been Installed Sucessfully !")
