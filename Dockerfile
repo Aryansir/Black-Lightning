@@ -54,6 +54,7 @@ RUN axel https://chromedriver.storage.googleapis.com/86.0.4240.22/chromedriver_l
 #Import Gudz
 RUN wget https://raw.githubusercontent.com/KeinShin/Black-Lightning/master/lightningrun.py
 RUN wget https://raw.githubusercontent.com/KeinShin/Black-Lightning/master/requirements.txt
+#Start Fumkin
 RUN pip3 install -r requirements.txt
 
 CMD ["python3","lightningrun.py"]
