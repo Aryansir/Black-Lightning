@@ -7,7 +7,7 @@
 #Animation by kiddo😎
 from telethon import events
 import asyncio
-from uniborg.util import lightning_cmd
+from uniborg.utils import lightning_cmd
 from userbot import CMD_HELP
 @borg.on(events.NewMessage(pattern=r"opp", outgoing=True))
 async def hapy(event):
