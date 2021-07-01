@@ -7,7 +7,7 @@ from userbot.thunderconfig import Config
 from userbot.utils import lightning_cmd
 
 LIGHTNING_ALV_IMG = os.environ.get("LIGHTNING_ALV_IMG", None)
-if LIGHTNING_ALV_IMG is None:
+if not LIGHTNING_ALV_IMG:
     ALV_LIGHTNING = "https://telegra.ph/file/b01cd4ef19edc14195648.mp4"
 else:
     ALV_LIGHTNING = LIGHTNING_ALV_IMG
