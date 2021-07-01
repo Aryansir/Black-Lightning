@@ -43,7 +43,8 @@ async def hapy(event):
       await event.edit(yo)
       await asyncio.sleep(1)
       re="MASKING DOMAIN □□□□■  [/]"
-      await event.edit(re)await asyncio.sleep(1)
+      await event.edit(re)
+await asyncio.sleep(1)
       au="[DONE ✓]\n SDCARD/STORAGE/TELEGRAM DATA IS HACKED SUCCESSFUL 🔥😎⚡\n removing all ghost keys"
       await event.edit(au)
       await asyncio.sleep(1)
