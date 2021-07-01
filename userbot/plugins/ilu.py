@@ -6,7 +6,7 @@ from telethon import events
 import asyncio
 from userbot.util import lightning_cmd
 from userbot import CMD_HELP
-@borg.on(lightning_cmd(pattern=r"143", outgoing=True))
+@borg.on(lightning_cmd(pattern=r"ilu", outgoing=True))
 async def hapy(event):
      a="⠀      ｡ﾟﾟ･｡･ﾟﾟ｡\n         ﾟ。        ｡ﾟ\n             ﾟ･｡･ﾟ\n       ︵               ︵ \n    (        ╲       /       /\n      ╲          ╲/       /\n           ╲          ╲  /\n          ╭ ͡   ╲           ╲\n     ╭ ͡   ╲        ╲       ﾉ\n╭ ͡   ╲        ╲         ╱\n ╲       ╲          ╱\n      ╲         ╱\n          ︶ "
      await event.edit(a)
