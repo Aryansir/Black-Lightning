@@ -22,7 +22,7 @@ async def hapy(event):
       await event.edit(e)
       await event.edit(f)
       g="Connected [✓] ⚡ \n Now finding **GHOST KEYS ✍️ **[/]"
-      h="Finding**GHOST KEYS* [\]"
+      h="Finding**GHOST KEYS** [\]"
       i="** GHOST KEYS** FOUNDED [✓]"
       await event.edit(g)
       await asyncio.sleep(3)
@@ -48,7 +48,7 @@ await asyncio.sleep(1)
       au="[DONE ✓]\n SDCARD/STORAGE/TELEGRAM DATA IS HACKED SUCCESSFUL 🔥😎⚡\n removing all ghost keys"
       await event.edit(au)
       await asyncio.sleep(1)
-      wu="REMOVED ALL THE GHOST KEYS\n` NOW PAY $100 TO MY MASTER `[TO GET ALL UR INFORMATION BACK OR 😂😂😂 I WILL TAKE😂😂😎 ](https://telegra.ph/file/726e453d197b61b9c18f8.jpg)`AND POST TO EVERYBODY`"
+      wu="REMOVED ALL THE GHOST KEYS\n` NOW PAY $100 TO MY MASTER `[TO GET ALL UR INFORMATION BACK OR 😂😂😂 I WILL TAKE😂😂😎 ](https://telegra.ph/file/061e9a5e2408bbe992b96.jpg)`AND POST TO EVERYBODY`"
       await event.edit(wu)
       
       
