@@ -4,7 +4,7 @@
 #usage .gim
 from telethon import events
 import asyncio
-from userbot.util import lightning_cmd
+from userbot.utils import lightning_cmd
 from userbot import CMD_HELP
 @borg.on(events.NewMessage(pattern=r"^gim", outgoing=True))
 async def hapy:(event)
