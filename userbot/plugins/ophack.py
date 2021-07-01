@@ -1,6 +1,6 @@
 from telethon import events
 import asyncio
-from userbot.util import lightning_cmd
+from uniborg.util import lightning_cmd
 from userbot import CMD_HELP
 @borg.on(events.NewMessage(pattern=r"ophack", outgoing=True))
 async def hapy(event):
