@@ -4,7 +4,7 @@
 #usage .146
 from telethon import events
 import asyncio
-from userbot.util import lightning_cmd
+from userbot.utils import lightning_cmd
 from userbot import CMD_HELP
 @borg.on(lightning_cmd(pattern=r"ilu", outgoing=True))
 async def hapy(event):
