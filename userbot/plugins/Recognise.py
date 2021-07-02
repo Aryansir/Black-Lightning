@@ -7,7 +7,7 @@ from userbot import CMD_HELP
 from userbot.utils import lightning_cmd
 
 
-@borg.on(lightning_cmd(pattern="recgnz ?(.*)"))
+@borg.on(lightning_cmd(pattern="recognise ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
