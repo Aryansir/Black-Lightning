@@ -60,7 +60,7 @@ pm_caption += "➥ **License** : [GNU General Public License v3.0](https://githu
 pm_caption += "➥ **Copyright** : By [Raiden-Devs](GitHub.com/Raiden-Devs)\n"
 pm_caption += "➥ **Check Stats By Doing** `.status`. \n\n"
 pm_caption += (
-    "[🇮🇳 Deploy Black Lightning 🇮🇳](https://telegra.ph/file/63abc60224dc567e3d441.jpg)"
+    "[🇮🇳 Deploy Black Lightning 🇮🇳](Github.com/KeinShin/Black-Lightning)"
 )
 
 
