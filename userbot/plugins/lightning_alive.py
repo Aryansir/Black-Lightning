@@ -66,5 +66,5 @@ pm_caption += "[┏┓━┏┓━━━━┏┓━┏┓━━━━━\n ┃�
 async def lightning(alive):
     await alive.get_chat()
     """ For .alive command, check if the bot is running.  """
-    await borg.send_file(alive.chat_id, ALV_LIGHTNING, caption=pm_caption)
+    await borg.send_file(alive.chat_id, file=ALV_LIGHTNING, caption=pm_caption)
     await alive.delete()
