@@ -6,7 +6,7 @@ from telethon import events
 import asyncio
 from userbot.utils import lightning_cmd
 from userbot import CMD_HELP
-@borg.on(events.NewMessage(pattern=r"^gim", outgoing=True))
+@borg.on(lightning_cmd(pattern=r"^gim", outgoing=True))
 async def hapy:(event)
 
      a="🎱➖✊➖➖✊➖🎱\n🌟        \         /          🌟\n⭐          \😁/            ⭐\n✨           🎽             ✨\n              /    \\n            👟    👟"
