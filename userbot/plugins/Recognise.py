@@ -49,7 +49,7 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "recognize": "`.recgnz` reply this to any media file\
+        "recognise": "`.recognise` reply this to any media file\
     \nUSAGE : Get information about an image using AWS Rekognition.\
     \nFind out information including detected labels, faces. text and moderation tags."
     }
