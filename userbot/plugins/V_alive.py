@@ -133,9 +133,7 @@ async def alive(e):
 
         await e.get_chat() 
 
-        await borg.send_file(e.chat_id, file=ALIVE_PIC)
-
-        await borg.send_message(e.chat_id, cap, link_preview=False)
+        await borg.send_file(e.chat_id, file=ALIVE_PIC,caption=cap)
 
         await e.delete()
 
