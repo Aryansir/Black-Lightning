@@ -1,5 +1,6 @@
 #Lifted from Dark Venom 
 #Credits @Error-Shivansh
+[In reply to Aditya🇮🇳🇮🇳 ⁪⁬⁮⁮⁮]
 import asyncio
 
 import time
@@ -32,7 +33,7 @@ ALIVE_PIC = Config.ALIVE_PHOTTO
 
 if ALIVE_PIC is None :
 
-    ALIVE_PIC = "hhttps://telegra.ph/file/4f754de25cb890e3fb51e.mp4"
+    ALIVE_PIC = "https://telegra.ph/file/4f754de25cb890e3fb51e.mp4"
 
 botversion = "1.2.0"
 
@@ -96,35 +97,20 @@ async def alive(e):
     uptime = get_readable_time((time.time() - Lastupdate))
 
     cap = """
-
 **𝐁𝐥𝐚𝐜𝐤-𝐋𝐢𝐠𝐡𝐭𝐧𝐢𝐧𝐠 𝐔𝐬𝐞𝐫𝐛𝐨𝐭**
-
 **{}**
-
 ✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵
-
-╔════❰ Ⲃⲟⲧ Ⲓⲛϝⲟʀⲙⲁⲧⲓⲟⲛ ❱═❍⊱❁۪۪۪
-
+╔════❰ Ⲃⲟⲧ Ⲓⲛϝⲟʀⲙⲁⲧⲓⲟⲛ ❱═❍⊱❁۪۪
 ║╭━━━━━━━━━━━━━━━➣ 
-
 ║┣⪼ **Ⲟⲱⲛⲉʀ** - `{}` 
-
 ║┣⪼ **Ⲋⲧⲁⲧυⲋ** - `Ⲟⲛⳑⲓⲛⲉ`
-
 ║┣⪼ **Ⲃⲟⲧ Ⳳⲉʀⲋⲓⲟⲛ** - `{}`
-
 ║┣⪼ **Ⳙⲣⲧⲓⲙⲉ** - `{}` 
-
-║┣⪼ **Ⲃⲟⲧ Ⲣⲓⲛⳋ** - `{}
-
+║┣⪼ **Ⲃⲟⲧ Ⲣⲓⲛⳋ** - `{}`
 ║┣⪼ **Ⲣⲩⲧⲏⲟⲛ** - `{}` 
-
 ║┣⪼ **Ⲧⲉⳑⲉⲧⲏⲟⲛ** - `{}` 
-
 ║┣⪼ [✨𝐁𝐥𝐚𝐜𝐤-𝐋𝐢𝐠𝐡𝐭𝐧𝐢𝐧𝐠 𝐔𝐬𝐞𝐫𝐛𝐨𝐭✨](https://github.com/KeinShin/Black-Lightning/)
-
-║╰━━━━━━━━━━━━━━━➣ ╚══════════════════❍⊱❁۪۪۪
-
+║╰━━━━━━━━━━━━━━━➣ ╚══════════════════❍⊱❁۪۪
 """.format(
 
         ALIVE_MSG,
@@ -149,7 +135,7 @@ async def alive(e):
 
         await borg.send_file(e.chat_id, file=ALIVE_PIC)
 
-        await borg.send_file(e.chat_id, cap, link_preview=False)
+        await borg.send_message(e.chat_id, cap, link_preview=False)
 
         await e.delete()
 
@@ -164,9 +150,7 @@ CMD_HELP.update(
     {
 
         "valive": "**VALive**\
-
 \n\n**Syntax : **`.valive`\
-
 \n**Usage :** Check if 𐌵sᥱrδ᧐ᴛ is alive"
 
     }
