@@ -9,6 +9,6 @@ from userbot import CMD_HELP
 @borg.on(lightning_cmd(pattern=r"^gim", outgoing=True))
 async def hapy:(event)
 
-     a="🎱➖✊➖➖✊➖🎱\n🌟        \         /          🌟\n⭐          \😁/            ⭐\n✨           🎽             ✨\n              /    \\n            👟    👟"
+     a="🎱➖✊➖➖✊➖🎱\n🌟        \         /          🌟\n⭐          \😁/            ⭐\n✨           🎽             ✨\n              /    \ \n            👟    👟"
      await event.edit(a)
 	
