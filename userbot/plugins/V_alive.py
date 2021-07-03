@@ -1,3 +1,5 @@
+#Lifted from Dark Venom 
+#Credits @Error-Shivansh
 import asyncio
 
 import time
