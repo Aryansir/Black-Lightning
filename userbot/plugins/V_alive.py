@@ -12,27 +12,27 @@ from telethon.errors.rpcerrorlist import ChatSendMediaForbiddenError
 
 from userbot import ALIVE_NAME, CMD_HELP, Lastupdate
 
-from userbot.utils import admin_cmd
+from userbot.utils import lightning_cmd
 
 from . import *
 
 #### Variables ####
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "𑀥ᥲrκ Vᥱᥒ᧐ⲙ"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "ʙʟᴀᴄᴋ-ʟɪɢʜᴛɴɪɴɢ ᴜꜱᴇʀ "
 
 ALIVE_MSG = Config.ALIVE_MSG
 
 if ALIVE_MSG is None :
 
-    ALIVE_MSG = f"This is {DEFAULTUSER} Dark Venom Userbot"
+    ALIVE_MSG = f"This is {DEFAULTUSER}'s 𝐁𝐥𝐚𝐜𝐤-𝐋𝐢𝐠𝐡𝐭𝐧𝐢𝐧𝐠 𝐔𝐬𝐞𝐫𝐛𝐨𝐭"
 
 ALIVE_PIC = Config.ALIVE_PHOTTO
 
 if ALIVE_PIC is None :
 
-    ALIVE_PIC = "https://telegra.ph/file/e6fe4a42cc9ccc08c9d32.jpg"
+    ALIVE_PIC = "hhttps://telegra.ph/file/4f754de25cb890e3fb51e.mp4"
 
-botversion = "0.1"
+botversion = "1.2.0"
 
 #### Functions ####
 
@@ -80,7 +80,8 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
-@borg.on(admin_cmd(pattern=r"alive"))
+@borg.on(lightning_cmd(pattern=r"valive"))
+@borg.on(sudo_cmd(pattern=r"valive", allow_sudo=True))
 
 async def alive(e):
 
@@ -94,7 +95,7 @@ async def alive(e):
 
     cap = """
 
-**𑀥ᥲrκ Vᥱᥒ᧐ⲙ 𐌵sᥱrδ᧐ᴛ**
+**𝐁𝐥𝐚𝐜𝐤-𝐋𝐢𝐠𝐡𝐭𝐧𝐢𝐧𝐠 𝐔𝐬𝐞𝐫𝐛𝐨𝐭**
 
 **{}**
 
@@ -118,7 +119,7 @@ async def alive(e):
 
 ║┣⪼ **Ⲧⲉⳑⲉⲧⲏⲟⲛ** - `{}` 
 
-║┣⪼ [✨𑀥ᥲrκ Vᥱᥒ᧐ⲙ 𐌵sᥱrδ᧐ᴛ✨](https://github.com/VENOM-USERBOT/DARK-VENOM/)
+║┣⪼ [✨𝐁𝐥𝐚𝐜𝐤-𝐋𝐢𝐠𝐡𝐭𝐧𝐢𝐧𝐠 𝐔𝐬𝐞𝐫𝐛𝐨𝐭✨](https://github.com/KeinShin/Black-Lightning/)
 
 ║╰━━━━━━━━━━━━━━━➣ ╚══════════════════❍⊱❁۪۪۪
 
@@ -164,7 +165,7 @@ CMD_HELP.update(
 
 \n\n**Syntax : **`.valive`\
 
-\n**Usage :** Check if 𑀥ᥲrκ Vᥱᥒ᧐ⲙ 𐌵sᥱrδ᧐ᴛ is alive"
+\n**Usage :** Check if 𐌵sᥱrδ᧐ᴛ is alive"
 
     }
 
