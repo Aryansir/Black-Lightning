@@ -81,18 +81,7 @@ if Config.ENABLE_ASSISTANTBOT == "ENABLE":
             except Exception:
                 pass
     sed.info("Black Lightning Has Been Deployed Successfully !")
-    sed.info("  ╔════❰ Ⲃⲟⲧ Ⲓⲛϝⲟʀⲙⲁⲧⲓⲟⲛ ❱═❍⊱❁۪۪
-                ║╭━━━━━━━━━━━━━━━➣ 
-                ║┣⪼ Ⲟⲱⲛⲉʀ - ʙʟᴀᴄᴋ-ʟɪɢʜᴛɴɪɴɢ ᴜꜱᴇʀ  
-                ║┣⪼ Ⲋⲧⲁⲧυⲋ - Ⲟⲛⳑⲓⲛⲉ
-                ║┣⪼ Ⲃⲟⲧ Ⳳⲉʀⲋⲓⲟⲛ - 1.2.0
-                ║┣⪼ Ⳙⲣⲧⲓⲙⲉ - 1h:31m:44s 
-                ║┣⪼ Ⲃⲟⲧ Ⲣⲓⲛⳋ - 0.006
-                ║┣⪼ Ⲣⲩⲧⲏⲟⲛ - 3.9.2
-                ║┣⪼ Ⲧⲉⳑⲉⲧⲏⲟⲛ - 1.17.0 
-                ║┣⪼ ✨𝐁𝐥𝐚𝐜𝐤-𝐋𝐢𝐠𝐡𝐭𝐧𝐢𝐧𝐠 𝐔𝐬𝐞𝐫𝐛𝐨𝐭✨ 
-                ║╰━━━━━━━━━━━━━━━➣ 
-                ╚══════════════════❍⊱❁۪۪")
+    sed.info("╔════❰ Ⲃⲟⲧ Ⲓⲛϝⲟʀⲙⲁⲧⲓⲟⲛ ❱═❍⊱❁۪۪\n ║╭━━━━━━━━━━━━━━━➣\n║┣⪼ Ⲟⲱⲛⲉʀ - ʙʟᴀᴄᴋ-ʟɪɢʜᴛɴɪɴɢ ᴜꜱᴇʀ\n║┣⪼ Ⲟⲱⲛⲉʀ - ʙʟᴀᴄᴋ-ʟɪɢʜᴛɴɪɴɢ ᴜꜱᴇʀ\n║┣⪼ Ⲃⲟⲧ Ⳳⲉʀⲋⲓⲟⲛ - 1.2.0\n║┣⪼ Ⳙⲣⲧⲓⲙⲉ - 00h:00m:04s\n║┣⪼ Ⲃⲟⲧ Ⲣⲓⲛⳋ - 0.006\n║┣⪼ Ⲣⲩⲧⲏⲟⲛ - 3.9.2\n║┣⪼ Ⲧⲉⳑⲉⲧⲏⲟⲛ - 1.17.0\n║┣⪼ ✨𝐁𝐥𝐚𝐜𝐤-𝐋𝐢𝐠𝐡𝐭𝐧𝐢𝐧𝐠 𝐔𝐬𝐞𝐫𝐛𝐨𝐭✨\n║╰━━━━━━━━━━━━━━━➣\n╚══════════════════❍⊱❁۪۪")   
 else:
     sed.info("Black Lightning Has Been Installed Sucessfully !")
     sed.info("You Can Visit @lightning_support For Any Support Or Doubts")
@@ -100,4 +89,14 @@ else:
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
 else:
-    bot.run_until_disconnected()
+    bot.run_until_disconnected()               
+                
+                
+               
+                
+                
+                
+               
+                
+                
+
