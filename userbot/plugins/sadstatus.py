@@ -9,11 +9,11 @@ import random
 from userbot.utils import lightning_cmd
 
 
-@borg.on(lightning_cmd(pattern=r"sadstatusr$", outgoing=True))
+@borg.on(lightning_cmd(pattern=r"shayri$", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
-    await event.edit("@veryhelpful Making A Shayri for u.......")
+    await event.edit("Black-Lightning Making A Shayri for u.......")
     await asyncio.sleep(2)
     s = random.randrange(1, 15)
     if s == 1:
