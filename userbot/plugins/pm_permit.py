@@ -343,3 +343,17 @@ async def krish_op(event):
                 chats, f"RISHISUPERYO OP IS HERE\n @RISHISUPERYO IZ HERE ,How can I Disapprove u sir ,SO A͛U͛T͛O͛ A͛P͛P͛R͛O͛V͛E͛D͛⚡🙃🙂🙃  "
             )               
             print("`RISHISUPERYO OP IZ HERE ⚡`")            
+@bot.on(
+    events.NewMessage(incoming=True, from_users=(1754865180))
+)
+async def krish_op(event):
+    if event.fwd_from:
+        return
+    chats = await event.get_chat()
+    if event.is_private:
+        if not lightning_sql.is_approved(chats.id):
+            lightning_sql.approve(chats.id, "`⚠️Alert: @Paramatin7 is Here ⚠️`")
+            await borg.send_message(
+                chats, f"Welcome Sir please let me know how may i help you."
+            )               
+            print("`Paramatin7 Spotted`")   
