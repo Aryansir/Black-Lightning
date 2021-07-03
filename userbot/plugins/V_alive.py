@@ -1,6 +1,6 @@
 #Lifted from Dark Venom 
 #Credits @Error-Shivansh
-[In reply to Aditya🇮🇳🇮🇳 ⁪⁬⁮⁮⁮]
+
 import asyncio
 
 import time
