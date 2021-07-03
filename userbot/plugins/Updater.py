@@ -41,7 +41,7 @@ async def updateme_requirements():
         return repr(e)
 
 
-@borg.on(admin_cmd(pattern="update ?(.*)"))
+@borg.on(lightning_cmd(pattern="update ?(.*)"))
 async def upstream(ups):
     "For .update command, check if the bot is up to date, update if specified"
     await ups.edit("** Checking for new updates 🧐🧐**")
