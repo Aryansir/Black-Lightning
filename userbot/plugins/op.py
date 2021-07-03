@@ -6,7 +6,7 @@
 #, plz keep credits of Rishisuperyo ⚡
 #Animation by kiddo😎
 from telethon import events
-from uniborg.utils import lightning_cmd
+from userbot.utils import lightning_cmd
 from userbot import CMD_HELP
 @borg.on(lightning_cmd(pattern=r"opp", outgoing=True))
 async def hapy(event):
