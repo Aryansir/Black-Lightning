@@ -10,7 +10,7 @@ import random
 from userbot import ALIVE_NAME
 from userbot.utils import lightning_cmd
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "@pyforub"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "@lightning_support_group"
 
 sawan = bot.uid
 
@@ -19,7 +19,7 @@ sawan = bot.uid
 async def _(event):
     if event.fwd_from:
         return
-    await event.edit("@veryhelpful Making A Shayri.......")
+    await event.edit("Black-Lightning Making A Shayri.......")
     await asyncio.sleep(1.3)
     h = random.randrange(1, 9)
     if h == 1:
