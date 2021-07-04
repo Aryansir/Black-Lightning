@@ -8,9 +8,8 @@ from userbot.utils import lightning_cmd
 
 LIGHTNING_ALV_IMG = os.environ.get("LIGHTNING_ALV_IMG", None)
 if not LIGHTNING_ALV_IMG:
-    ALV_LIGHTNING = "https://telegra.ph/file/b01cd4ef19edc14195648.mp4"
-else:
-    ALV_LIGHTNING = LIGHTNING_ALV_IMG
+    LIGHTNING_ALV_IMG = "https://telegra.ph/file/b01cd4ef19edc14195648.mp4"
+
 
 
 version = "4.5"
@@ -66,5 +65,5 @@ pm_caption += "[┏┓━┏┓━━━━┏┓━┏┓━━━━━\n┃�
 async def lightning(alive):
     await alive.get_chat()
     """ For .alive command, check if the bot is running.  """
-    await borg.send_file(alive.chat_id, file=ALV_LIGHTNING, caption=pm_caption, link_preview=False)
+    await borg.send_file(alive.chat_id, file=LIGHTNING_ALV_IMG, caption=pm_caption, link_preview=False)
     await alive.delete()
