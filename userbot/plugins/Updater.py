@@ -9,6 +9,7 @@ from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 from userbot import CMD_HELP, bot 
 from userbot import bot as borg
 from userbot.utils import *
+import asyncio
 from userbot.events import lightning_cmd
 config=Config
 
@@ -125,7 +126,13 @@ async def upstream(ups):
         await ups.edit(
             '`Force-Updating to latest stable code, please wait sur😅😅...`')
     else:
-        await ups.edit('`Updating your` 𝐁𝐥𝐚𝐜𝐤-𝐋𝐢𝐠𝐡𝐭𝐧𝐢𝐧𝐠 𝐔𝐬𝐞𝐫𝐛𝐨𝐭 `please wait for 5 mins then type .alive/.ping/.help/.test to see if I am On...`')
+        await ups.edit('`Updating your` 𝐁𝐥𝐚𝐜𝐤-𝐋𝐢𝐠𝐡𝐭𝐧𝐢𝐧𝐠 𝐔𝐬𝐞𝐫𝐛𝐨𝐭 `please wait for a while`')
+        await asyncio.sleep(4)
+        await ups.edit('Updated Sur✨\nRestarting it please have patience and enjoy botless life for a while\nIncase restart structs join [𝐋𝐢𝐠𝐡𝐭𝐧𝐢𝐧𝐠 𝐒𝐮𝐩𝐩𝐨𝐫𝐭](https://t.me/lightning_support_group) ')
+async def restart_me(event):
+    herokuHelper = HerokuHelper(Var.HEROKU_APP_NAME, Var.HEROKU_API_KEY)
+    await event.edit("`App is Restarting. This is May Take Upto 10Min.`")
+    herokuHelper.restart()
     # We're in a Heroku Dyno, handle it's memez.
     if config.HEROKU_API_KEY is not None:
         import heroku3
@@ -164,7 +171,7 @@ async def upstream(ups):
             repo.__del__()
             return
         await ups.edit('`Sync Verified Successfully 🙂🙂\n'
-                       'Restarting, please wait a min ,then type .alive to check if I alive !! Else Go to [𝐋𝐢𝐠𝐡𝐭𝐧𝐢𝐧𝐠 𝐒𝐮𝐩𝐩𝐨𝐫𝐭](https://t.me/lightning_support_group`')
+                       'Restarting, please wait a min ,then type .alive to check if I alive !! Else Go to [𝐋𝐢𝐠𝐡𝐭𝐧𝐢𝐧𝐠 𝐒𝐮𝐩𝐩𝐨𝐫𝐭](https://t.me/lightning_support_group)`')
     else:
         # Classic Updater, pretty straightforward.
         try:
