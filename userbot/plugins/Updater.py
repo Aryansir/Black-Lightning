@@ -1,7 +1,7 @@
 from os import remove, execle, path, makedirs, getenv, environ
 from shutil import rmtree
-import asyncio
-import sys
+
+import sys, os
 
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
@@ -129,10 +129,10 @@ async def upstream(ups):
         await ups.edit('`Updating your` 𝐁𝐥𝐚𝐜𝐤-𝐋𝐢𝐠𝐡𝐭𝐧𝐢𝐧𝐠 𝐔𝐬𝐞𝐫𝐛𝐨𝐭 `please wait for a while`')
         await asyncio.sleep(4)
         await ups.edit('Updated Sur✨\nRestarting it please have patience and enjoy botless life for a while\nIncase restart structs join [𝐋𝐢𝐠𝐡𝐭𝐧𝐢𝐧𝐠 𝐒𝐮𝐩𝐩𝐨𝐫𝐭](https://t.me/lightning_support_group) ')
-async def restart_me(event):
-    herokuHelper = HerokuHelper(Config.HEROKU_APP_NAME, Config.HEROKU_API_KEY)
-    await event.edit("`App is Restarting. This is May Take Upto 10Min.`")
-    herokuHelper.restart()
+        await borg.disconnect()
+    os.execl(sys.executable, sys.executable, *sys.argv)
+    # You probably don't need it but whatever
+    quit()
     # We're in a Heroku Dyno, handle it's memez.
     if config.HEROKU_API_KEY is not None:
         import heroku3
