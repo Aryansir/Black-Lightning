@@ -130,7 +130,7 @@ async def upstream(ups):
         await asyncio.sleep(4)
         await ups.edit('Updated Sur✨\nRestarting it please have patience and enjoy botless life for a while\nIncase restart structs join [𝐋𝐢𝐠𝐡𝐭𝐧𝐢𝐧𝐠 𝐒𝐮𝐩𝐩𝐨𝐫𝐭](https://t.me/lightning_support_group) ')
 async def restart_me(event):
-    herokuHelper = HerokuHelper(Var.HEROKU_APP_NAME, Var.HEROKU_API_KEY)
+    herokuHelper = HerokuHelper(Config.HEROKU_APP_NAME, Config.HEROKU_API_KEY)
     await event.edit("`App is Restarting. This is May Take Upto 10Min.`")
     herokuHelper.restart()
     # We're in a Heroku Dyno, handle it's memez.
