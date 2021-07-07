@@ -27,7 +27,7 @@ async def add_bot(bot_token):
 async def startup_log_all_done():
     try:
         await bot.send_message(
-            ghanti,
+            TELE,
             f"**Black Lightning has been deployed.\nSend** `{CMD_HNDLR}alive` **to see if the bot is working.\n\nAdd** @{BOTNAME} **to this group and make it admin for enabling all the features of userbot**",
         )
     except BaseException:
