@@ -16,7 +16,6 @@ TELE = Var.PRIVATE_GROUP_ID
 BOTNAME = Var.TG_BOT_USER_NAME_BF_HER
 LOAD_MYBOT = Var.LOAD_MYBOT
 sed = logging.getLogger("Black Lightning")
-ghanti = borg.uid
 
 async def add_bot(bot_token):
     await bot.start(bot_token)
