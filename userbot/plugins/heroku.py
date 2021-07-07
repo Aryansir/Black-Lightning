@@ -217,7 +217,7 @@ async def l(event):
 async def killdyno(event):
     app = Heroku.app(Var.HEROKU_APP_NAME)
     await event.edit("`Dyno Is Off. Manually Turn it On Later`")
-    app.kill_dyno("bash start.sh")
+    app.kill_dyno("python3 lightningrun.py")
 
 
 def prettyjson(obj, indent=2, maxlinelength=80):
