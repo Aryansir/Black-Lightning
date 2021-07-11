@@ -6,10 +6,8 @@ from userbot.Config import Var
 from userbot.utils import lightning_cmd
 import os
 ALIVE_PHOTTO = os.environ.get("ALIVE_PHOTTO", None)
-if ALIVE_PHOTTO is None:
+if not ALIVE_PHOTTO:
     ALIVE_PHOTTO = "https://telegra.ph/file/17b2d55c3bb07b2d8f805.mp4"
-else:
-    ALIVE_PHOTTO = ALIVE_PHOTTO
 
 
 DEFAULTUSER = (
