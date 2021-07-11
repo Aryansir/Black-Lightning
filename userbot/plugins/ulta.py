@@ -1,10 +1,10 @@
 import asyncio
 from datetime import datetime
-
+from userbot import bot
 from .. import ALIVE_NAME, CMD_HELP
 from ..utils import lightning_cmd, edit_or_reply
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Hell User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else None
 
 
 @borg.on(lightning_cmd(pattern=f"hbping$", outgoing=True))
@@ -60,11 +60,13 @@ async def _(event):
     if event.fwd_from:
         return
     start = datetime.now()
+    if not DEFAULTUSER:
+        DEFAULTUSER = (await bot.get_me()).username
     event = await edit_or_reply(event, "__**(❛ ᑭσɳց ❜!__**")
     end = datetime.now()
     ms = (end - start).microseconds / 1000
     await event.edit(
-        f"__**꧁ Pong! ꧂__**\n\n   ⚘ {ms}\n   ⚘ __**My OP Wale **__ __** Pyare Lightning Master**__ [{DEFAULTUSER}]"
+        f"__**Pong!__**\n\n `⚘ {ms}`\n⚘ __**Master **__  `[{DEFAULTUSER}]"
     )
 
 
