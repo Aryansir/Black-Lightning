@@ -34,11 +34,7 @@
    "STRING_SESSION": {
     "description": "Get this value by running python3 telesetup.py locally or https://repl.it/@Anmol10H/Lightning-Userbot#main.py online.",
     "value": ""
-   },  
-   "CUSTOM_PMPERMIT": {
-    "description": "The message that appears when someone PM's you. Leave it as such for default message.",
-    "value": "Do not spam here, else you will be blocked automatically."
-   },  
+   },    
    "GITHUB_ACCESS_TOKEN": {
     "description": "Your Github Access Token for gitcommit plugin.Google 'Github access token' to find.",
     "value": "",
@@ -54,18 +50,8 @@
     "value": "",
     "required": false
    }, 
-    "SUDO_HNDLR": {
-    "description": "Used to invoke sudo commands, leave blank for default",
-    "value": "",
-    "required": false
-   },  
    "GIT_REPO_NAME": {
     "description": "Your repo name Example: Anmol-dot284/Lightning, but GITHUB_ACCESS_TOKEN must be setup first.",
-    "value": "",
-    "required": false
-   },
-   "LYDIA_API_KEY": {
-    "description": "Needed for Lydia AI. Create a Intellivoid Account by visting https://coffeehouse.intellivoid.info/ to get your API.",
     "value": "",
     "required": false
    },
@@ -86,12 +72,7 @@
     "description": "Go to https://dashboard.heroku.com/account, scroll down and press Reveal API.Required for updater to work.",
     "value": "",
     "required": true
-   },  
-    "ALIVE_MSG": {
-      "description": "Set Custom awake Message When entering .awake command.",
-      "value": "Heyy There `Lightning Master` Am Alive till you turn me off manually or my Dynos get over. ",
-      "required": false
-    },
+   },
     "CHROME_BIN": {
     "description": "Leave as such, Google Chrome (or) Chromium binary location for selenium based modules.",
     "value": "/usr/bin/google-chrome",
@@ -146,36 +127,6 @@
     "description": "Telegram Channel  Starts With @ like @blacklightningot, If No Channel Leave It Default. Required For Alive ",
     "value": "Not Yet😁😁",
     "required": true
-   }, 
-   "SPAM": {
-    "description": "Number of messages one can send in your PM before being approved. By default, it is 5.",
-    "value": "5",
-    "required": false
-   },
-   "OCR_SPACE_API_KEY": {
-    "description": "Required for OCR functionality. Get from https://ocr.space/ocrapi",
-    "value": "",
-    "required": false
-   },
-   "REM_BG_API_KEY": {
-    "description": "Required for Removing image background functionality. Get from https://www.remove.bg/",
-    "value": "",
-    "required": false
-   },
-   "ALIVE_PIC": {
-    "description": "telegra.ph link to theimage you want as pic when you put .awake, leave blank for Default",
-    "value": "",
-    "required": false
-   },
-   "PMPERMIT_PIC": {
-   "description": "telegra.ph link to theimage you want as pmpermit pic, leave blank for default one!",
-   "value": "",
-   "required": false
-   },
-   "TZ": {
-    "description": "Required for Correct Time on autopic/get time. Know your timezone from http://www.timezoneconverter.com/cgi-bin/findzone.tzc",
-    "value": "",
-    "required": false
    }
   },
   "addons": [{
