@@ -65,14 +65,6 @@
       "description": "Put Your Name you can use designer fonts. ",
       "value": "",
       "required": false
-     },
-     "TG_GRUP": {
-      "description": "Telegram Grup Name Starts With @ like, @lightning_support_group, If No Name Leave It Default. Required For Alive ",
-      "value": ""
-     }, 
-     "TG_CHANNEL": {
-      "description": "Telegram Channel  Starts With @ like @blacklightningot, If No Channel Leave It Default. Required For Alive ",
-      "value": ""
      }
     },
     "addons": [{
