@@ -31,6 +31,11 @@
       "value": ".",
       "required": false
      },
+       "COMBINED_GROUP_ID": {
+      "description": "This is all in one group id. just add @Missrose_bot to your private group and do /id",
+      "value": "",
+      "required": true
+     },
       "LIGHTNING_ALV_IMG": {
       "description": "To add another Alive pic, Leave blank for default. ",
       "value": "",
