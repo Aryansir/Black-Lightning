@@ -96,7 +96,7 @@ async def _(event):
         await event.edit(
             "A friend who understands your tears is much more valuable than a lot of friends who only know your smile.\nHappy FriendShip Day. "
         )
-        await astncio.sleep(5)
+        await asyncio.sleep(5)
     await bot.send_message(event.chat_id, "Please Stay Awake For a While one more Parcel Coming")
     await asyncio.sleep(10)
     f = random.randrange(1, 7)    
