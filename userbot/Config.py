@@ -14,16 +14,16 @@ class Var(object):
     else:
         LIGHTNING_PRO = LIGHTNING_PRO
 
-    API_HASH = os.environ.get("API_HASH", "eb06d4abfb49dc3eeb1aeb98ae0f581e")
+    API_HASH = os.environ.get("API_HASH", None)
     STRING_SESSION = os.environ.get("STRING_SESSION", None)
     DB_URI = os.environ.get("DATABASE_URL", None)
-    TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY", None)
+    TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY", "./userbot/DOWNLOADS/")
     BIO_MSG = os.environ.get("BIO_MSG", None)
     ALIVE_MESSAGE = os.environ.get("ALIVE_MESSAGE", None)
 
-    TMP_DOWNLOAD_DIRECTORY = os.environ.get("TMP_DOWNLOAD_DIRECTORY", None)
-    CHROME_DRIVER = os.environ.get("CHROME_DRIVER", None)
-    GOOGLE_CHROME_BIN = os.environ.get("GOOGLE_CHROME_BIN", None)
+    TMP_DOWNLOAD_DIRECTORY = os.environ.get("TMP_DOWNLOAD_DIRECTORY", )
+    CHROME_DRIVER = os.environ.get("CHROME_DRIVER", "/usr/bin/chromedriver")
+    GOOGLE_CHROME_BIN = os.environ.get("GOOGLE_CHROME_BIN", "/usr/bin/google-chrome")
     LOGGER = True
     GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
     GIT_REPO_NAME = os.environ.get("GIT_REPO_NAME", None)
@@ -64,7 +64,8 @@ class Var(object):
     NO_SONGS = bool(os.environ.get("NO_SONGS", False))
     DOWNLOAD_PFP_URL_CLOCK = os.environ.get("DOWNLOAD_PFP_URL_CLOCK", None)
     MAX_FLOOD_IN_P_M_s = os.environ.get("MAX_FLOOD_IN_P_M_s", "3")
-    PLUGIN_CHANNEL = int(os.environ.get("PLUGIN_CHANNEL", None))
+    COMBINED_GROUP_ID = int(os.environ.get("COMBINED_GROUP_ID", -100))
+    PLUGIN_CHANNEL = os.environ.get("PLUGIN_CHANNEL", f"{COMBINED_GROUP_ID}")
     G_DRIVE_CLIENT_ID = os.environ.get("G_DRIVE_CLIENT_ID", None)
     MAX_MESSAGE_SIZE_LIMIT = 4095
     G_DRIVE_CLIENT_SECRET = os.environ.get("G_DRIVE_CLIENT_SECRET", None)
@@ -113,7 +114,7 @@ class Var(object):
     ANTISPAM_FEATURE = os.environ.get("ANTISPAM_FEATURE", "ENABLE")
     ANTI_SPAMINC_TOKEN = os.environ.get("ANTI_SPAMINC_TOKEN", None)
     ASSISTANT_LOG = int(os.environ.get("ASSISTANT_LOG", False))
-    PRIVATE_GROUP_BOT_API_ID = os.environ.get("PRIVATE_GROUP_BOT_API_ID", None)
+    PRIVATE_GROUP_BOT_API_ID = os.environ.get("PRIVATE_GROUP_BOT_API_ID",  f"{COMBINED_GROUP_ID}")
     if PRIVATE_GROUP_BOT_API_ID:
         PRIVATE_GROUP_BOT_API_ID = int(PRIVATE_GROUP_BOT_API_ID)
     AUTH_TOKEN_DATA = os.environ.get("AUTH_TOKEN_DATA", None)
@@ -133,7 +134,7 @@ class Var(object):
     UB_BLACK_LIST_CHAT = set(
         int(x) for x in os.environ.get("UB_BLACK_LIST_CHAT", "").split()
     )
-    PRIVATE_GROUP_ID = os.environ.get("PRIVATE_GROUP_ID", None)
+    PRIVATE_GROUP_ID = os.environ.get("PRIVATE_GROUP_ID",  f"{COMBINED_GROUP_ID}")
     if PRIVATE_GROUP_ID is not None:
         try:
             PRIVATE_GROUP_ID = int(PRIVATE_GROUP_ID)
@@ -142,7 +143,7 @@ class Var(object):
                 "Invalid Private Group ID. Make sure your ID is starts with -100 and make sure that it is only numbers."
             )
 
-    PM_LOGGR_BOT_API_ID = os.environ.get("PM_LOGGR_BOT_API_ID", None)
+    PM_LOGGR_BOT_API_ID = os.environ.get("PM_LOGGR_BOT_API_ID",  f"{COMBINED_GROUP_ID}")
     if PM_LOGGR_BOT_API_ID:
         PM_LOGGR_BOT_API_ID = int(PM_LOGGR_BOT_API_ID)
 
@@ -150,8 +151,8 @@ class Var(object):
 class Development(Var):
 
     LOGGER = True
-    CHROME_DRIVER = os.environ.get("CHROME_DRIVER", None)
-    GOOGLE_CHROME_BIN = os.environ.get("GOOGLE_CHROME_BIN", None)
+    CHROME_DRIVER = os.environ.get("CHROME_DRIVER", "/usr/bin/chromedriver")
+    GOOGLE_CHROME_BIN = os.environ.get("GOOGLE_CHROME_BIN", "/usr/bin/google-chrome")
 
     # Here for later purposes
 
@@ -160,11 +161,12 @@ if ENV:
 
     class Config(object):
         LOGGER = True
-        CHROME_DRIVER = os.environ.get("CHROME_DRIVER", None)
-        GOOGLE_CHROME_BIN = os.environ.get("GOOGLE_CHROME_BIN", None)
+        CHROME_DRIVER = os.environ.get("CHROME_DRIVER", "/usr/bin/chromedriver")
+        GOOGLE_CHROME_BIN = os.environ.get("GOOGLE_CHROME_BIN", "/usr/bin/google-chrome")
         # Get this value from my.telegram.org! Please do not steal
         LOCATION = os.environ.get("LOCATION", None)
         OPEN_WEATHER_MAP_APPID = os.environ.get("OPEN_WEATHER_MAP_APPID", None)
+        COMBINED_GROUP_ID = int(os.environ.get("COMBINED_GROUP_ID", -100))
         # Get your own ACCESS_KEY from
         # http://api.screenshotlayer.com/api/capture
         SCREEN_SHOT_LAYER_ACCESS_KEY = os.environ.get(
@@ -173,7 +175,7 @@ if ENV:
         # Send .get_id in any channel to fill this value. ReQuired for
         # @Manuel15 inspiration to work!
         PRIVATE_CHANNEL_BOT_API_ID = int(
-            os.environ.get("PRIVATE_CHANNEL_BOT_API_ID", -100123456789)
+            os.environ.get("PRIVATE_CHANNEL_BOT_API_ID",  f"{COMBINED_GROUP_ID}")
         )
         # This is required for the plugins involving the file system.
         TMP_DOWNLOAD_DIRECTORY = os.environ.get(
@@ -191,11 +193,11 @@ if ENV:
             "HASH_TO_TORRENT_API", "https://example.com/torrent/{}"
         )
         # This is required for the @telegraph functionality.
-        TELEGRAPH_SHORT_NAME = os.environ.get("TELEGRAPH_SHORT_NAME", "TeleBot")
+        TELEGRAPH_SHORT_NAME = os.environ.get("TELEGRAPH_SHORT_NAME", "Black-Lightning")
         # Get a Free API Key from OCR.Space
         OCR_SPACE_API_KEY = os.environ.get("OCR_SPACE_API_KEY", None)
         # Send .get_id in any group with all your administration bots (added)
-        G_BAN_LOGGER_GROUP = int(os.environ.get("G_BAN_LOGGER_GROUP", -100123456789))
+        G_BAN_LOGGER_GROUP = int(os.environ.get("G_BAN_LOGGER_GROUP",  f"{COMBINED_GROUP_ID}"))
         # TG API limit. An album can have atmost 10 media!
         GOOGLE_SEARCH_COUNT_LIMIT = int(os.environ.get("GOOGLE_SEARCH_COUNT_LIMIT", 9))
         TG_GLOBAL_ALBUM_LIMIT = int(os.environ.get("TG_GLOBAL_ALBUM_LIMIT", 9))
@@ -205,7 +207,7 @@ if ENV:
         #
         NO_SONGS = bool(os.environ.get("NO_SONGS", False))
         #
-        CHROME_DRIVER = os.environ.get("CHROME_DRIVER", None)
+        CHROME_DRIVER = os.environ.get("CHROME_DRIVER", "/usr/bin/chromedriver")
         GOOGLE_CHROME_BIN = os.environ.get("GOOGLE_CHROME_BIN", "/usr/bin/google-chrome")
 
         # DO NOT EDIT BELOW THIS LINE IF YOU DO NOT KNOW WHAT YOU ARE DOING
@@ -237,7 +239,7 @@ if ENV:
         # set to True if you want to log PMs to your PM_LOGGR_BOT_API_ID
         NC_LOG_P_M_S = bool(os.environ.get("NC_LOG_P_M_S", False))
         # send .get_id in any channel to forward all your NEW PMs to this group
-        PM_LOGGR_BOT_API_ID = os.environ.get("PM_LOGGR_BOT_API_ID", None)
+        PM_LOGGR_BOT_API_ID = os.environ.get("PM_LOGGR_BOT_API_ID",  f"{COMBINED_GROUP_ID}")
         if PM_LOGGR_BOT_API_ID:
             PM_LOGGR_BOT_API_ID = int(PM_LOGGR_BOT_API_ID)
         # For Databases
@@ -297,8 +299,8 @@ else:
 
     class Config(object):
         DB_URI = None
-        CHROME_DRIVER = os.environ.get("CHROME_DRIVER", None)
-        GOOGLE_CHROME_BIN = os.environ.get("GOOGLE_CHROME_BIN", None)
+        CHROME_DRIVER = os.environ.get("CHROME_DRIVER", "/usr/bin/chromedriver")
+        GOOGLE_CHROME_BIN = os.environ.get("GOOGLE_CHROME_BIN", "/usr/bin/google-chrome")
 
 
         # Add your extra vars if any here
