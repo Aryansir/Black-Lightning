@@ -14,10 +14,6 @@
   "success_url": "https://t.me/blacklightningot",
   "stack": "container",
   "env": {
-   "ENV": {
-    "description": "Setting this to ANYTHING will enable heroku.",
-    "value": "ANYTHING"
-   },
    "TEMP_DOWNLOAD_DIRECTORY": {
     "description": "Where downloaded files will go.",
     "value": "./userbot/DOWNLOADS/",
@@ -32,13 +28,8 @@
     "value": ""
    },
    "STRING_SESSION": {
-    "description": "Get this value by running python3 telesetup.py locally or https://repl.it/@Anmol10H/Lightning-Userbot#main.py online.",
+    "description": "Get this value by running python3 telesetup.py locally or https://replit.com/@Paramatin/Lightning-Repl#main.py online.",
     "value": ""
-   },    
-   "GITHUB_ACCESS_TOKEN": {
-    "description": "Your Github Access Token for gitcommit plugin.Google 'Github access token' to find.",
-    "value": "",
-    "required": false
    },
     "CMD_HNDLR": {
     "description": "Used to invoke commands, leave as it for default",
@@ -47,11 +38,6 @@
    },
     "LIGHTNING_ALV_IMG": {
     "description": "To add another Alive pic, Leave blank for default. ",
-    "value": "",
-    "required": false
-   }, 
-   "GIT_REPO_NAME": {
-    "description": "Your repo name Example: Anmol-dot284/Lightning, but GITHUB_ACCESS_TOKEN must be setup first.",
     "value": "",
     "required": false
    },
@@ -104,12 +90,12 @@
     "required": true
    },
    "TG_BOT_TOKEN_BF_HER": {
-    "description": "Needed for inline buttons maker. Make a bot at [BotFather](http://telegram.dog/BotFather) and get the token of your bot. Get it else .help won't work.",
+    "description": "Needed for inline buttons maker. Make a bot at http://telegram.dog/BotFather and get the token of your bot. Get it else .help won't work.",
     "value": "",
     "required": true
    },
    "TG_BOT_USER_NAME_BF_HER": {
-    "description": "Needed for inline buttons maker. Make a bot at [BotFather](http://telegram.dog/BotFather) and get the username of your bot. Needed for .help to work.",
+    "description": "Needed for inline buttons maker. Make a bot at http://telegram.dog/BotFather and get the username of your bot. Needed for .help to work.",
     "value": "",
     "required": true
    },
@@ -120,13 +106,11 @@
    },
    "TG_GRUP": {
     "description": "Telegram Grup Name Starts With @ like, @lightning_support_group, If No Name Leave It Default. Required For Alive ",
-    "value": "Not Yet😁😁",
-    "required": true
+    "value": "",
    }, 
    "TG_CHANNEL": {
     "description": "Telegram Channel  Starts With @ like @blacklightningot, If No Channel Leave It Default. Required For Alive ",
-    "value": "Not Yet😁😁",
-    "required": true
+    "value": "",
    }
   },
   "addons": [{
