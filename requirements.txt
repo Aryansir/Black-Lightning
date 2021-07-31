@@ -41,7 +41,6 @@ Deprecated==1.2.10
 dnspython==2.0.0
 emoji==0.6.0
 feedparser==6.0.2
-httplib2>=0.19.0
 faker==5.0.0
 gcg==0.2.0
 geographiclib==1.50
