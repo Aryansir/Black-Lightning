@@ -28,6 +28,10 @@ Thanks"""
 
 
 
+
+
+
+
 import os
 
 import re
@@ -224,7 +228,7 @@ async def inline_handler(lightning):
     builder = lightning.builder
     result = None
     query = lightning.text
-    if lightning.query.user_id == bot.uid and query.startswith("**Black") or query.startswith("Black"):
+    if lightning.query.user_id == bot.uid and query.startswith("**sed") or query.startswith("soosed"):
         rev_text = query[::-1]
         buttons = lightnings_menu_for_help(0, CMD_LIST, "helpme")
         result = builder.article(
@@ -233,25 +237,24 @@ async def inline_handler(lightning):
             buttons=buttons,
             link_preview=False,
         )
-        await lightning.answer([result])
-    elif lightning.query.user_id == bot.uid and query == "**Cool":
+        await lightning.answer([result] if result else None)
+    elif lightning.query.user_id == bot.uid and query.startswith("**Black") or query.startswith("Black"):
         result = builder.article(
             title="Cool",
             text=f"**How If Face Problem \n{LIGHTNINGUSER}** \nChoose Your Problem For Help ",
             buttons=[
-                [custom.Button.inline("Help", data="what?")],
-                [Button.url("Commands Not Working🥺", "https://t.me/lightning_support_group")],
-                [Button.url("Help Article 🤓", "https://app.gitbook.com/@poxsisofficial/s/help/")],
-                [
-                    Button.url(
-                
-                    "Want To Learn CMDS😅",
-                    "https://t.me/lightning_support_group" ,
+                [custom.Button.inline("Help Menu😎", data="what?"),
+                custom.Button.inline("Ping🙃", data="bitch")],
+                [Button.url("Support Group🥺", "https://t.me/lightning_support_group")],
+                [Button.url("Help Article🤓", "https://app.gitbook.com/@poxsisofficial/s/help/")],
+                [Button.url("Get Updates😅",
+                    "https://t.me/black_lightning_channel"
                     )
                 ], 
             ],
         )
         await lightning.answer([result])
+
     elif lightning.query.user_id == bot.uid and query.startswith("**Hello Sir"):
         result = builder.photo(
             file=LIGHTNING_BOT_PIC,
@@ -388,8 +391,9 @@ async def lightning_pugins_query_hndlr(lightning):
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"what?")))
 async def what(lightning):
     if lightning.query.user_id == bot.uid:
-        fck_bit = f"{LIGHTNINGUSER}  Use The Buttons Bellow "
-        await lightning.answer(fck_bit, alert=True)
+        fck_bit = "**Black Lightning Heres With The Detailed Help For CMDs** 😉😉 ! "
+        buttons = lightnings_menu_for_help(0, CMD_LIST, "helpme")
+        await lightning.edit(fck_bit, buttons=buttons)
     else:
         txt = f"Ohh C'mon You Think That This Is For You?\n Ok I Will Complain To {LIGHTNINGUSER}👀👀"
         await lightning.answer(txt, alert=True)
@@ -431,8 +435,37 @@ async def lightning_is_better(lightning):
     )
 
 
+@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"coming_soon")))
+async def lightning_is_better(lightning):
+    if lightning.query.user_id == bot.uid:
+        await lightning.edit(
+        "Which Alive You Wanna See?", buttons= [
+        (Button.inline("Friday Alive", data="falive"),
+        Button.inline("Dark Cobra Alive", data="dalive"))
+        , [Button.inline("Lightning Alive", data="alive"),
+            Button.inline("Hell Alive", data="halive")],[
+            Button.inline("Venom Alive", data="valive"
+            )
+            ]
+    ])
 
 
+@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"bitch")))
+
+async def lightning_is_better(lightning):
+        start = datetime.now()
+
+        end = datetime.now()
+
+        ping = (end - start).microseconds / 1000
+        wews = bot.me.first_name
+        weds = bot.me.username
+        if lightning.query.user_id == bot.uid:
+          fck_bit = f"꧁ Pong! ꧂\n\n⚘ Ping Time:- {ping}\n\n⚘ My Lightning Master [{wews}][t.me/{weds})"
+          await lightning.edit(fck_bit, link_preview=False, buttons=[Button.inline("Back", data="wtshit")])
+        else: 
+           await lightning.answer(f"I am {LIGHTNINGUSER}'s Assistant not your", alert=True)
+    
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"he_sucks")))
 async def lightning_is_better(lightning):
@@ -571,12 +604,30 @@ async def hmm(lightning):
         await lightning.answer(text, alert=True)
     else:
         txt = f"For {LIGHTNINGUSER} Not For You :)"
-        await lightning.answer(txt, alert=True)        
+        await lightning.answer(txt, alert=True)   
 
+@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"wtshit"))) 
+async def lmaao(lightning):
+    if lightning.query.user_id == bot.uid:
+        await lightning.edit(
+            "Hi Master,\nPlss lemme know in which section you need my help🤨",
+            buttons=[
+                [custom.Button.inline("Help Menu😎", data="what?"),
+                custom.Button.inline("Ping🙃", data="bitch")],
+                [Button.url("Support Group🥺", "https://t.me/lightning_support_group")],
+                [Button.url("Help Article🤓", "https://app.gitbook.com/@poxsisofficial/s/help/")],
+                [Button.url("Get Updates😅",
+                    "https://t.me/lightning_support_group" ,
+                    )
+                ], 
+            ]
+        )
+    else:
+        fukoff = "You Don't belong to my master's category. So, why should i follow your orders\nHence, Fuck off" 
+        await lightning.answer(fukoff, alert=True)
 
 """
 Thanks To Friday Userbot and @Midhun_xD For This idea
-
 """
 import requests
 
@@ -630,7 +681,7 @@ def lightnings_menu_for_help(b_lac_krish, lightning_plugs, lightning_lol):
                     "🗡яιgнт ρℓυgιи", data="{}_prev({})".format(lightning_lol, lightning_plugins_pages)
                 ),
                # Thanks To Friday For This Idea
-               custom.Button.inline("〽️Stats〽️", data="stta"
+               custom.Button.inline("Back", data="wtshit"
                ),
                custom.Button.inline(
                     "ℓєfт ρℓυgιи ", data="{}_next({})".format(lightning_lol, lightning_plugins_pages)
