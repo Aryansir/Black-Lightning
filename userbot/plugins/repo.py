@@ -2,7 +2,7 @@
 #Kang = ultra gey
 #keep credits = cool coder :)
 #usage :-.repo
-#plz dont kang it take a lot of time to made🥺
+#plz dont kang it take a lot of time to made🥺 plz Dont kang 🥺🥺
 #, plz keep credits of Rishisuperyo 😎⚡
 from telethon import events
 from userbot.utils import lightning_cmd
