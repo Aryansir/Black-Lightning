@@ -13,7 +13,6 @@ class Var(object):
     GIT_REPO_NAME = os.environ.get("GIT_REPO_NAME", None)
     # Here for later purposes
     SUDO_USERS = set(int(x) for x in os.environ.get("SUDO_USERS", "").split())
-    SUDO_CMD = set(int(x) for x in os.environ.get("SUDO_CMD", ,))
     LYDIA_API_KEY = os.environ.get("LYDIA_API_KEY", None)
     LESS_SPAMMY = os.environ.get("LESS_SPAMMY", None), 
     HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
