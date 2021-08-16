@@ -141,7 +141,7 @@ if bool(ENV):
     YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
 
     # Default .alive name
-    ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
+    ALIVE_NAME = os.environ.get("ALIVE_NAME", bot.me.first_name)
     AUTONAME = os.environ.get("AUTONAME", None)
     
     # Personal Info
