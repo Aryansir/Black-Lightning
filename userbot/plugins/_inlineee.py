@@ -312,7 +312,7 @@ async def lightning_pugins_query_hndlr(lightning):
         return
     light_pulu_name = lightning.data_match.group(1).decode("UTF-8")
    
-    if light_pulu_name in CMD_HELP:
+    if light_pulu_name in CMD_HELP.keys():
        
        lightning_help_strin  = f"**🔺 NAME 🔺 :** `{light_pulu_name}` \n\n{CMD_HELP[light_pulu_name]}"
        lightning_is_best = lightning_help_strin 
