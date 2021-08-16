@@ -54,7 +54,7 @@ from userbot import CMD_LIST
 pm_caption = "**Black Lightning is online**\n\n"
 pm_caption += f"★ **Boss**            : {DEFAULTUSER}\n"
 pm_caption += "★ **Version**        : 1.17.5\n"
-pm_caption += "★ **Channel**          : [ᴊᴏɪɴ](https://t.me/lightning_support_channel)\n"
+pm_caption += "★ **Channel**          : [ᴊᴏɪɴ](https://t.me/black_lightning_channel)\n"
 
 pm_caption += "★ **Support Group**           : [ᴊᴏɪɴ](https://t.me/lightning_support_group)\n"
 
