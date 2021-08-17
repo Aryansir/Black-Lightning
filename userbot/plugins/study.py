@@ -6,7 +6,7 @@ Syntax: .study REASON"""
 
 import asyncio
 import datetime
-
+from var import Var
 from telethon import events
 from telethon.tl import functions, types
 
