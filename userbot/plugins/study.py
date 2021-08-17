@@ -34,13 +34,13 @@ async def set_not_night(event):
     if ".night" not in current_message and "yes" in USER_night:  # pylint:disable=E0602
         try:
             await borg.send_message(  # pylint:disable=E0602
-                Var.PLUGIN_CHANNEL,  # pylint:disable=E0602
+                Var.PRIVATE_GROUP_BOT_API_ID,  # pylint:disable=E0602
                 "Mine Owner has Gone Study `Pure Din Sota hi Rehta He Ye Abb Padhai Karega`",
             )
         except Exception as e:  # pylint:disable=C0103,W0703
             await borg.send_message(  # pylint:disable=E0602
                 event.chat_id,
-                "Please set `PLUGIN_CHANNEL` "
+                "Please set `PRIVATE_GROUP_BOT_API_ID` "
                 + "for the proper functioning of study functionality "
                 + "in @blacklightningot \n\n `{}`".format(str(e)),
                 reply_to=event.message.id,
@@ -77,7 +77,7 @@ async def _(event):
         await event.delete()
         try:
             await borg.send_message(  # pylint:disable=E0602
-                Var.PLUGIN_CHANNEL, f"My BOss Wants So Study"  # pylint:disable=E0602
+                Var.PRIVATE_GROUP_BOT_API_ID, f"My BOss Wants So Study"  # pylint:disable=E0602
             )
         except Exception as e:  # pylint:disable=C0103,W0703
             logger.warn(str(e))  # pylint:disable=E0602
