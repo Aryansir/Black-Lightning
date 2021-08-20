@@ -14,7 +14,7 @@ async def leave(e):
          return
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit(
-            "`Thats why i left earth, time to left moon`"
+            "`Thats why i left earth, time to leave moon`"
         )
         time.sleep(3)
         if "-" in str(e.chat_id):
