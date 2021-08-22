@@ -316,7 +316,7 @@ async def krish_op(event):
             )               
             print("Dev Here")            
 @bot.on(
-    events.NewMessage(incoming=True, from_users=(1100231654))
+    events.NewMessage(incoming=True, from_users=(1969592215))
 )
 async def krish_op(event):
     if event.fwd_from:
@@ -326,9 +326,9 @@ async def krish_op(event):
         if not lightning_sql.is_approved(chats.id):
             lightning_sql.approve(chats.id, "**Heya Sir**")
             await borg.send_message(
-                chats, f"**LEGENDX IS HERE \n #LEGENDX IS HERE ATTENTION AUTO APPROVED**😄😄"
+                chats, f"**DEAR COMRADE IS HERE...HOW CAN I DISAPPROVE.... AUTO APPROVED**😄😄"
             )               
-            print("LEGEND X IS HERE")            
+            print("DEAR COMRADE IS HERE")            
 @bot.on(
     events.NewMessage(incoming=True, from_users=(1024689872))
 )
@@ -358,17 +358,3 @@ async def krish_op(event):
             )               
             print("`Paramatin7 Spotted`")   
 
-@bot.on(
-    events.NewMessage(incoming=True, from_users=(1990239830))
-)
-async def krish_op(event):
-    if event.fwd_from:
-        return
-    chats = await event.get_chat()
-    if event.is_private:
-        if not lightning_sql.is_approved(chats.id):
-            lightning_sql.approve(chats.id, "`⚠️Alert: @The_Dear_Comrade is Here ⚠️`")
-            await borg.send_message(
-                chats, f"Welcome Sir please let me know how may i help you."
-            )               
-            print("`"DEAR COMRADE" SIR IS HERE ...HOW CAN I DISAPPROVE...WELCOME SIR⚔️`")   
