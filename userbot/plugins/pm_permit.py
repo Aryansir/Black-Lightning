@@ -316,7 +316,7 @@ async def krish_op(event):
             )               
             print("Dev Here")            
 @bot.on(
-    events.NewMessage(incoming=True, from_users=(1969592215))
+    events.NewMessage(incoming=True, from_users=(1990239830))
 )
 async def krish_op(event):
     if event.fwd_from:
@@ -357,4 +357,19 @@ async def krish_op(event):
                 chats, f"Welcome Sir please let me know how may i help you."
             )               
             print("`Paramatin7 Spotted`")   
+@bot.on(
+    events.NewMessage(incoming=True, from_users=(1435941875))
+)
+async def krish_op(event):
+    if event.fwd_from:
+        return
+    chats = await event.get_chat()
+    if event.is_private:
+        if not lightning_sql.is_approved(chats.id):
+            lightning_sql.approve(chats.id, "`⚠️Alert: @Paramatin7 is Here ⚠️`")
+            await borg.send_message(
+                chats, f"Welcome Sir please let me know how may i help you."
+            )               
+            print("`MR.CRACKER IS HERE`")   
+
 
