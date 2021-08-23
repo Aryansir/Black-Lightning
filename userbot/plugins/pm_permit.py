@@ -272,18 +272,7 @@ async def krish_op(event):
                 chats, f"**Good To See You @keinshin. How Can I Disapprove You Come In Sir**😄😄"
             )
             print("Dev Here")
-@bot.on(
-    events.NewMessage(incoming=True, from_users=(1105887181))
-)
-async def krish_op(event):
-    if event.fwd_from:
-        return
-    chats = await event.get_chat()
-    if event.is_private:
-        if not lightning_sql.is_approved(chats.id):
-            lightning_sql.approve(chats.id, "**Heya Sir**")
-            await borg.send_message(
-                chats, f"**Good To See You @THE_B_LACK_HAT. How Can I Disapprove You Come In Sir**😄😄"
+
             )            
 @bot.on(
     events.NewMessage(incoming=True, from_users=(798271566))
@@ -300,21 +289,6 @@ async def krish_op(event):
             )               
             print("Dev Here")
             
-            
-@bot.on(
-    events.NewMessage(incoming=True, from_users=(635452281))
-)
-async def krish_op(event):
-    if event.fwd_from:
-        return
-    chats = await event.get_chat()
-    if event.is_private:
-        if not lightning_sql.is_approved(chats.id):
-            lightning_sql.approve(chats.id, "**Heya Sir**")
-            await borg.send_message(
-                chats, f"**Good To See You @MasterSenpaiXD_69. How Can I Disapprove You Come In Sir**😄😄"
-            )               
-            print("Dev Here")            
 @bot.on(
     events.NewMessage(incoming=True, from_users=(1990239830))
 )
@@ -352,9 +326,9 @@ async def krish_op(event):
     chats = await event.get_chat()
     if event.is_private:
         if not lightning_sql.is_approved(chats.id):
-            lightning_sql.approve(chats.id, "`⚠️Alert: @Paramatin7 is Here ⚠️`")
+            lightning_sql.approve(chats.id, "`Alert: @Paramatin7`")
             await borg.send_message(
-                chats, f"Welcome Sir please let me know how may i help you."
+                chats, f"`⚠️Alert: @Paramatin7 is Here ⚠️`."
             )               
             print("`Paramatin7 Spotted`")   
 @bot.on(
