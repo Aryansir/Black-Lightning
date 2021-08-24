@@ -142,12 +142,12 @@ async def promote(promt):
         add_admins=False,
         invite_users=True,
         change_info=False,
-        ban_users=True,
+        ban_users=False,
         delete_messages=True,
         pin_messages=True,
     )
 
-    await promt.edit("`Promoting...`")
+    await promt.edit("`Promoting...Wait`")
     user, rank = await get_user_from_event(promt)
     if not rank:
         rank = "Black Lightning"  # Just in case.
