@@ -176,11 +176,11 @@ async def gben(userbot):
 
                      ]
 
-        rgt = ChatAdminRights(add_admins=False,
+        rgt = ChatAdminRights(add_admins=True,
 
                                invite_users=True,
 
-                                change_info=False,
+                                change_info=True,
 
                                  ban_users=True,
 
