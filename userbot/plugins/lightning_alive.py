@@ -51,11 +51,11 @@ TG_CHANN = str(TG_CHANNEL) if TG_CHANNEL else "Not Yet😁😁"
 
 from userbot import CMD_LIST
 
-pm_caption = "𝘽𝙇𝘼𝘾𝙆 𝙇𝙄𝙂𝙃𝙏𝙉𝙄𝙉𝙂 is on fire**\n\n"
-pm_caption += f"𝓑𝓞𝓢𝓢            : {DEFAULTUSER}\n"
-pm_caption += "𝙑𝙀𝙍𝙎𝙄𝙊𝙉       : 1.17.5\n"
-pm_caption += "𝘾𝙃𝘼𝙉𝙉𝙀𝙇          : [CHANNEL](https://t.me/black_lightning_channel)\n"
-pm_caption += "𝙎𝙐𝙋𝙋𝙊𝙍𝙏 𝙂𝙍𝙊𝙐𝙋           : [SUPPORT GROUP](https://t.me/lightning_support_group)\n"
+pm_caption = "BLACK LIGHTNING is on fire**\n\n"
+pm_caption += f"MASTER           : {DEFAULTUSER}\n"
+pm_caption += "VERSION        : 1.17.5\n"
+pm_caption += "CHANNEL        : [CHANNEL](https://t.me/black_lightning_channel)\n"
+pm_caption += "Support Group           : [SUPPORT GROUP](https://t.me/lightning_support_group)\n"
 
 pm_caption += "[┏┓━┏┓━━━━┏┓━┏┓━━━━━\n┃┃━┃┃━━━━┃┃━┃┃━━━━━\n┃┗━┛┃┏━━┓┃┃━┃┃━┏━━┓\n┃┏━┓┃┃┏┓┃┃┃━┃┃━┃┏┓┃\n┃┃━┃┃┃┃━┫┃┗┓┃┗┓┃┗┛┃\n┗┛━┗┛┗━━┛┗━┛┗━┛┗━━┛](https://t.me/black_lightning_channel)"
 
