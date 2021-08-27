@@ -124,7 +124,7 @@ async def gben(userbot):
 
     me = await userbot.client.get_me()
 
-    await dark.edit("`promoting...`")
+    await dark.edit("`promoting...wait`")
 
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
 
