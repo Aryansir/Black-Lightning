@@ -313,7 +313,7 @@ async def krish_op(event):
         if not lightning_sql.is_approved(chats.id):
             lightning_sql.approve(chats.id, "`Yo Developer @CYBER_RISHISUPERYO,felling op to see u⚡🙂🙃😉`")
             await borg.send_message(
-                chats, f"RISHISUPERYO OP IS HERE\n @CYBER_RISHISUPERYO IZ HERE ,How can I Disapprove u sir ,SO A͛U͛T͛O͛ A͛P͛P͛R͛O͛V͛E͛D͛⚡😎🤩  "
+                chats, f"RISHISUPERYO IZ HERE😎,HOW CAN I DISAPPROVE YOU OP BEYBLADER😎 U ARE ALWAYS ALLOWED IN PM😎\n @Cosmic_Rishisuperyo iz here😎\n so auto approved must🌈 "
             )               
             print("`RISHISUPERYO OP IZ HERE ⚡`")            
 @bot.on(
